@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    public partial class FormPagoTarjeta : Form
+    public partial class FormPagoEfectivo : Form
     {
-        public FormPagoTarjeta()
+        public FormPagoEfectivo()
         {
             InitializeComponent();
         }

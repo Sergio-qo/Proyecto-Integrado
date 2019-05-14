@@ -67,6 +67,18 @@
     <Compile Include="FormMenuDia.Designer.cs">
       <DependentUpon>FormMenuDia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPagoEfectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoEfectivo.Designer.cs">
+      <DependentUpon>FormPagoEfectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoTarjeta.Designer.cs">
+      <DependentUpon>FormPagoTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuDia.resx">
       <DependentUpon>FormMenuDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoEfectivo.resx">
+      <DependentUpon>FormPagoEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoTarjeta.resx">
+      <DependentUpon>FormPagoTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPedidos.resx">
       <DependentUpon>FormPedidos.cs</DependentUpon>
