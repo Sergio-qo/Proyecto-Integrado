@@ -139,6 +139,7 @@
             this.Name = "FormIdioma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormIdioma";
+            this.Load += new System.EventHandler(this.FormIdioma_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

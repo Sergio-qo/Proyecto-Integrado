@@ -34,5 +34,10 @@ namespace ProyectoIntegrado
 
             this.Close();
         }
+
+        private void FormIdioma_Load(object sender, EventArgs e)
+        {
+            //Prueba, se puede borrar
+        }
     }
 }
