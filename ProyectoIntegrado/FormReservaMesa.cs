@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    public partial class FormReservas : Form
+    public partial class FormReservaMesa : Form
     {
-        public FormReservas()
+        public FormReservaMesa()
         {
             InitializeComponent();
         }

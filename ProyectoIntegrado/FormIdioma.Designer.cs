@@ -37,6 +37,7 @@
             this.rdbEnglish = new System.Windows.Forms.RadioButton();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
+            this.btnAceptarIdioma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -80,6 +81,7 @@
             // rdbSpanish
             // 
             this.rdbSpanish.AutoSize = true;
+            this.rdbSpanish.Checked = true;
             this.rdbSpanish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbSpanish.Location = new System.Drawing.Point(338, 205);
             this.rdbSpanish.Name = "rdbSpanish";
@@ -97,7 +99,6 @@
             this.rdbEnglish.Name = "rdbEnglish";
             this.rdbEnglish.Size = new System.Drawing.Size(70, 24);
             this.rdbEnglish.TabIndex = 7;
-            this.rdbEnglish.TabStop = true;
             this.rdbEnglish.Text = "Inglés";
             this.rdbEnglish.UseVisualStyleBackColor = true;
             // 
@@ -122,11 +123,22 @@
             this.lblAtras.TabIndex = 19;
             this.lblAtras.Text = "Atrás";
             // 
+            // btnAceptarIdioma
+            // 
+            this.btnAceptarIdioma.Location = new System.Drawing.Point(338, 317);
+            this.btnAceptarIdioma.Name = "btnAceptarIdioma";
+            this.btnAceptarIdioma.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarIdioma.TabIndex = 21;
+            this.btnAceptarIdioma.Text = "Cambiar";
+            this.btnAceptarIdioma.UseVisualStyleBackColor = true;
+            this.btnAceptarIdioma.Click += new System.EventHandler(this.btnAceptarIdioma_Click);
+            // 
             // FormIdioma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAceptarIdioma);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblAtras);
             this.Controls.Add(this.rdbEnglish);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.RadioButton rdbEnglish;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label lblAtras;
+        private System.Windows.Forms.Button btnAceptarIdioma;
     }
 }

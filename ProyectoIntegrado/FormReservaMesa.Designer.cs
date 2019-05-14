@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntegrado
 {
-    partial class FormReservas
+    partial class FormReservaMesa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservaMesa));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
             this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.grbReserva = new System.Windows.Forms.GroupBox();
@@ -47,9 +47,7 @@
             this.lblNombreReserva = new System.Windows.Forms.Label();
             this.lblTituloReserva = new System.Windows.Forms.Label();
             this.lblSiguiente = new System.Windows.Forms.Label();
-            this.lblSiguienteLleno = new System.Windows.Forms.Label();
             this.btnSiguienteDisponible = new System.Windows.Forms.Button();
-            this.btnSiguienteLleno = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.grbReserva.SuspendLayout();
@@ -229,41 +227,21 @@
             // 
             this.lblSiguiente.AutoSize = true;
             this.lblSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSiguiente.Location = new System.Drawing.Point(317, 344);
+            this.lblSiguiente.Location = new System.Drawing.Point(317, 367);
             this.lblSiguiente.Name = "lblSiguiente";
             this.lblSiguiente.Size = new System.Drawing.Size(162, 16);
             this.lblSiguiente.TabIndex = 13;
             this.lblSiguiente.Text = "Siguiente (Disponible)";
             // 
-            // lblSiguienteLleno
-            // 
-            this.lblSiguienteLleno.AutoSize = true;
-            this.lblSiguienteLleno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSiguienteLleno.Location = new System.Drawing.Point(317, 377);
-            this.lblSiguienteLleno.Name = "lblSiguienteLleno";
-            this.lblSiguienteLleno.Size = new System.Drawing.Size(125, 16);
-            this.lblSiguienteLleno.TabIndex = 14;
-            this.lblSiguienteLleno.Text = "Siguiente (Lleno)";
-            // 
             // btnSiguienteDisponible
             // 
             this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
             this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
-            this.btnSiguienteDisponible.Location = new System.Drawing.Point(252, 322);
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(252, 345);
             this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
             this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 15;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
-            // 
-            // btnSiguienteLleno
-            // 
-            this.btnSiguienteLleno.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteLleno.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteLleno.Image")));
-            this.btnSiguienteLleno.Location = new System.Drawing.Point(252, 366);
-            this.btnSiguienteLleno.Name = "btnSiguienteLleno";
-            this.btnSiguienteLleno.Size = new System.Drawing.Size(53, 37);
-            this.btnSiguienteLleno.TabIndex = 16;
-            this.btnSiguienteLleno.UseVisualStyleBackColor = false;
             // 
             // lblAtras
             // 
@@ -286,23 +264,21 @@
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // FormReservas
+            // FormReservaMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblAtras);
-            this.Controls.Add(this.btnSiguienteLleno);
             this.Controls.Add(this.btnSiguienteDisponible);
-            this.Controls.Add(this.lblSiguienteLleno);
             this.Controls.Add(this.lblSiguiente);
             this.Controls.Add(this.lblTituloReserva);
             this.Controls.Add(this.grbReserva);
             this.Controls.Add(this.grbBarraInferior);
             this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormReservas";
+            this.Name = "FormReservaMesa";
             this.Text = "FormReservas";
             this.grbReserva.ResumeLayout(false);
             this.grbReserva.PerformLayout();
@@ -331,9 +307,7 @@
         private System.Windows.Forms.TextBox txtNombreReserva;
         private System.Windows.Forms.Label lblTituloReserva;
         private System.Windows.Forms.Label lblSiguiente;
-        private System.Windows.Forms.Label lblSiguienteLleno;
         private System.Windows.Forms.Button btnSiguienteDisponible;
-        private System.Windows.Forms.Button btnSiguienteLleno;
         private System.Windows.Forms.Label lblAtras;
         private System.Windows.Forms.Button btnAtras;
     }
