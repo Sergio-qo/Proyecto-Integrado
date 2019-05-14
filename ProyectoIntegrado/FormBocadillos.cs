@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    public partial class FormComida : Form
+    public partial class FormBocadillos : Form
     {
-        public FormComida()
+        public FormBocadillos()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
