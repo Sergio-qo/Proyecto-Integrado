@@ -26,5 +26,23 @@ namespace ProyectoIntegrado
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormPedidos formPedidos = new FormPedidos();
+            formPedidos.Show();
+
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();     //Boton que hace que se cierre la paginas
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
+        }
     }
 }
