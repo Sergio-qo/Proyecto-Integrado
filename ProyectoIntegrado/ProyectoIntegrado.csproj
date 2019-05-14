@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="Articulos.cs" />
     <Compile Include="ConexionBBDD.cs" />
+    <Compile Include="FormComida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComida.Designer.cs">
+      <DependentUpon>FormComida.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservas.cs" />
+    <EmbeddedResource Include="FormComida.resx">
+      <DependentUpon>FormComida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIdioma.resx">
       <DependentUpon>FormIdioma.cs</DependentUpon>
     </EmbeddedResource>
