@@ -62,7 +62,7 @@
             this.dgvPrecio});
             this.dataGridView1.Location = new System.Drawing.Point(12, 113);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(311, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 229);
             this.dataGridView1.TabIndex = 22;
             // 
             // dgvItem
@@ -93,11 +93,12 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox2.Location = new System.Drawing.Point(-1, 452);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 411);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(802, 41);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // cmbItems
             // 
@@ -129,7 +130,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(12, 414);
+            this.btnAtras.Location = new System.Drawing.Point(12, 377);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(311, 23);
             this.btnAtras.TabIndex = 24;
@@ -138,7 +139,7 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(12, 385);
+            this.btnFinalizar.Location = new System.Drawing.Point(12, 348);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(311, 23);
             this.btnFinalizar.TabIndex = 23;
@@ -149,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 486);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grbBarraSuperior);

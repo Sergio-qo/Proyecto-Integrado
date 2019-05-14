@@ -63,7 +63,7 @@
             // grpBarraInferior
             // 
             this.grpBarraInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grpBarraInferior.Location = new System.Drawing.Point(-1, 304);
+            this.grpBarraInferior.Location = new System.Drawing.Point(-1, 409);
             this.grpBarraInferior.Name = "grpBarraInferior";
             this.grpBarraInferior.Size = new System.Drawing.Size(802, 41);
             this.grpBarraInferior.TabIndex = 3;
@@ -226,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 345);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rdbBD);
             this.Controls.Add(this.rdbBU);
             this.Controls.Add(this.rdbSPD);

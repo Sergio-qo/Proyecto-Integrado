@@ -31,14 +31,14 @@
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.ptbCarrito = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cmbItems = new System.Windows.Forms.ComboBox();
-            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCarrito)).BeginInit();
@@ -71,13 +71,29 @@
             this.dgvPrecio});
             this.dataGridView1.Location = new System.Drawing.Point(12, 114);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(311, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 221);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // dgvItem
+            // 
+            this.dgvItem.HeaderText = "Item";
+            this.dgvItem.Name = "dgvItem";
+            this.dgvItem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dgvCantidad
+            // 
+            this.dgvCantidad.HeaderText = "Cantidad";
+            this.dgvCantidad.Name = "dgvCantidad";
+            // 
+            // dgvPrecio
+            // 
+            this.dgvPrecio.HeaderText = "Precio";
+            this.dgvPrecio.Name = "dgvPrecio";
+            // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(12, 386);
+            this.btnFinalizar.Location = new System.Drawing.Point(12, 341);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(311, 23);
             this.btnFinalizar.TabIndex = 5;
@@ -86,7 +102,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(12, 415);
+            this.btnAtras.Location = new System.Drawing.Point(12, 370);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(311, 23);
             this.btnAtras.TabIndex = 6;
@@ -121,36 +137,21 @@
             this.cmbItems.Size = new System.Drawing.Size(121, 21);
             this.cmbItems.TabIndex = 9;
             // 
-            // dgvItem
-            // 
-            this.dgvItem.HeaderText = "Item";
-            this.dgvItem.Name = "dgvItem";
-            this.dgvItem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dgvCantidad
-            // 
-            this.dgvCantidad.HeaderText = "Cantidad";
-            this.dgvCantidad.Name = "dgvCantidad";
-            // 
-            // dgvPrecio
-            // 
-            this.dgvPrecio.HeaderText = "Precio";
-            this.dgvPrecio.Name = "dgvPrecio";
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox2.Location = new System.Drawing.Point(-1, 453);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 411);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(802, 41);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // FormComida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 490);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbItems);

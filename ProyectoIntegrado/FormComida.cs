@@ -21,5 +21,10 @@ namespace ProyectoIntegrado
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
