@@ -85,6 +85,12 @@
     <Compile Include="FormIdioma.Designer.cs">
       <DependentUpon>FormIdioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPostre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPostre.Designer.cs">
+      <DependentUpon>FormPostre.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReservaMesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPortada.resx">
       <DependentUpon>FormPortada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPostre.resx">
+      <DependentUpon>FormPostre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReservaMesa.resx">
       <DependentUpon>FormReservaMesa.cs</DependentUpon>
