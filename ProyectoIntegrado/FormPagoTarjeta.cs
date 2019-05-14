@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    public partial class FormReservas : Form
+    public partial class FormPagoTarjeta : Form
     {
-        public FormReservas()
+        public FormPagoTarjeta()
         {
             InitializeComponent();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
+        private void lblHora_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPortada = new FormPrincipal();
-            formPortada.Show();
 
-
-            this.Close();
         }
     }
 }

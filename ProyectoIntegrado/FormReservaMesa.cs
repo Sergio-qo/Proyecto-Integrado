@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    public partial class FormIdioma : Form
+    public partial class FormReservaMesa : Form
     {
-        public FormIdioma()
+        public FormReservaMesa()
         {
             InitializeComponent();
         }
@@ -21,36 +21,9 @@ namespace ProyectoIntegrado
         {
             FormPrincipal formPortada = new FormPrincipal();
             formPortada.Show();
-            
-
-            this.Close();
-        }
-
-        private void btnAtras_Click_1(object sender, EventArgs e)
-        {
-            FormPrincipal formPortada = new FormPrincipal();
-            formPortada.Show();
 
 
             this.Close();
-        }
-
-        private void FormIdioma_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnAceptarIdioma_Click(object sender, EventArgs e)
-        {
-            if (rdbSpanish.Checked == true)
-            {
-                MessageBox.Show("El idioma ha sido cambiado");
-            }
-            else
-            {
-                MessageBox.Show("Language has been changed");
-            }
-            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

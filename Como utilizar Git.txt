@@ -1,0 +1,9 @@
+- Me pongo en mi rama personal
+- Hago lo que quiera en la carpeta
+- Commit cambios
+- SI ES BUENO, doble click en 'master'
+- En master apreco con el boton derecho en la rama perosnal y le doy a "Merge Xavi into current branch"
+- Sin moverte de master hago 'Pull'
+- Por ultimo hago 'Push' (solo de master)
+- VOLVER A RAMA PERSONAL
+- En mi rama personal hago clic derecho en master y merge into current branch para actualizar mi rama
