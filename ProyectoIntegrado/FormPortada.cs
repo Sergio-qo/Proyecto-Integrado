@@ -32,7 +32,7 @@ namespace ProyectoIntegrado
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
-            FormReservas formReservas = new FormReservas();
+            FormReservaMesa formReservas = new FormReservaMesa();
             formReservas.Show();
 
             this.Hide();

@@ -37,7 +37,20 @@ namespace ProyectoIntegrado
 
         private void FormIdioma_Load(object sender, EventArgs e)
         {
-            //Prueba, se puede borrar
+            
+        }
+
+        private void btnAceptarIdioma_Click(object sender, EventArgs e)
+        {
+            if (rdbSpanish.Checked == true)
+            {
+                MessageBox.Show("El idioma ha sido cambiado");
+            }
+            else
+            {
+                MessageBox.Show("Language has been changed");
+            }
+            
         }
     }
 }
