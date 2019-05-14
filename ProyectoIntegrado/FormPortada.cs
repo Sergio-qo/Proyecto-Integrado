@@ -45,5 +45,19 @@ namespace ProyectoIntegrado
 
             this.Hide();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();     //Boton que hace que se cierre la pagina
+        }
+
+        
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
+        }
+
+        
     }
 }
