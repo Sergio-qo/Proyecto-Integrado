@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComida));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
-            this.ptbCarrito = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cmbItems = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiguienteDisponible = new System.Windows.Forms.Button();
+            this.lblFinalizar = new System.Windows.Forms.Label();
+            this.lblAtras = new System.Windows.Forms.Label();
+            this.pcbCarrito = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -91,32 +94,6 @@
             this.dgvPrecio.HeaderText = "Precio";
             this.dgvPrecio.Name = "dgvPrecio";
             // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(12, 341);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(311, 23);
-            this.btnFinalizar.TabIndex = 5;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Location = new System.Drawing.Point(12, 370);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(311, 23);
-            this.btnAtras.TabIndex = 6;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            // 
-            // ptbCarrito
-            // 
-            this.ptbCarrito.Location = new System.Drawing.Point(99, 47);
-            this.ptbCarrito.Name = "ptbCarrito";
-            this.ptbCarrito.Size = new System.Drawing.Size(140, 61);
-            this.ptbCarrito.TabIndex = 7;
-            this.ptbCarrito.TabStop = false;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(568, 46);
@@ -147,26 +124,77 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(12, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 38);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnSiguienteDisponible
+            // 
+            this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
+            this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(258, 354);
+            this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
+            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
+            this.btnSiguienteDisponible.TabIndex = 22;
+            this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            // 
+            // lblFinalizar
+            // 
+            this.lblFinalizar.AutoSize = true;
+            this.lblFinalizar.Location = new System.Drawing.Point(194, 367);
+            this.lblFinalizar.Name = "lblFinalizar";
+            this.lblFinalizar.Size = new System.Drawing.Size(45, 13);
+            this.lblFinalizar.TabIndex = 26;
+            this.lblFinalizar.Text = "Finalizar";
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.AutoSize = true;
+            this.lblAtras.Location = new System.Drawing.Point(80, 367);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(31, 13);
+            this.lblAtras.TabIndex = 25;
+            this.lblAtras.Text = "Atras";
+            // 
+            // pcbCarrito
+            // 
+            this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
+            this.pcbCarrito.Location = new System.Drawing.Point(135, 58);
+            this.pcbCarrito.Name = "pcbCarrito";
+            this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
+            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCarrito.TabIndex = 27;
+            this.pcbCarrito.TabStop = false;
+            // 
             // FormComida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pcbCarrito);
+            this.Controls.Add(this.btnSiguienteDisponible);
+            this.Controls.Add(this.lblFinalizar);
+            this.Controls.Add(this.lblAtras);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbItems);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.ptbCarrito);
-            this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormComida";
             this.Text = "FormComida";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,14 +203,16 @@
         private System.Windows.Forms.GroupBox grbBarraSuperior;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.PictureBox ptbCarrito;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox cmbItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrecio;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiguienteDisponible;
+        private System.Windows.Forms.Label lblFinalizar;
+        private System.Windows.Forms.Label lblAtras;
+        private System.Windows.Forms.PictureBox pcbCarrito;
     }
 }

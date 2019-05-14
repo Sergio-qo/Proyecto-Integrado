@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuDia));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
             this.grpBarraInferior = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.btnAtras = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblPrimerPlato = new System.Windows.Forms.Label();
             this.lblSegundoPlato = new System.Windows.Forms.Label();
             this.lblBebida = new System.Windows.Forms.Label();
@@ -46,9 +42,17 @@
             this.rdbSPD = new System.Windows.Forms.RadioButton();
             this.rdbBU = new System.Windows.Forms.RadioButton();
             this.rdbBD = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiguienteDisponible = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAtras = new System.Windows.Forms.Label();
+            this.lblFinalizar = new System.Windows.Forms.Label();
+            this.pcbCarrito = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -72,58 +76,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(166, 32);
+            this.groupBox1.Location = new System.Drawing.Point(339, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(72, 387);
+            this.groupBox1.Size = new System.Drawing.Size(72, 388);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(37, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dgvItems
-            // 
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(12, 102);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.Size = new System.Drawing.Size(148, 135);
-            this.dgvItems.TabIndex = 5;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Location = new System.Drawing.Point(12, 272);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(148, 23);
-            this.btnAtras.TabIndex = 8;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(12, 243);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(148, 23);
-            this.btnFinalizar.TabIndex = 7;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(244, 46);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(138, 104);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // lblPrimerPlato
             // 
             this.lblPrimerPlato.AutoSize = true;
-            this.lblPrimerPlato.Location = new System.Drawing.Point(388, 46);
+            this.lblPrimerPlato.Location = new System.Drawing.Point(428, 46);
             this.lblPrimerPlato.Name = "lblPrimerPlato";
             this.lblPrimerPlato.Size = new System.Drawing.Size(63, 13);
             this.lblPrimerPlato.TabIndex = 10;
@@ -132,7 +94,7 @@
             // lblSegundoPlato
             // 
             this.lblSegundoPlato.AutoSize = true;
-            this.lblSegundoPlato.Location = new System.Drawing.Point(388, 120);
+            this.lblSegundoPlato.Location = new System.Drawing.Point(428, 120);
             this.lblSegundoPlato.Name = "lblSegundoPlato";
             this.lblSegundoPlato.Size = new System.Drawing.Size(77, 13);
             this.lblSegundoPlato.TabIndex = 11;
@@ -141,7 +103,7 @@
             // lblBebida
             // 
             this.lblBebida.AutoSize = true;
-            this.lblBebida.Location = new System.Drawing.Point(388, 192);
+            this.lblBebida.Location = new System.Drawing.Point(428, 192);
             this.lblBebida.Name = "lblBebida";
             this.lblBebida.Size = new System.Drawing.Size(40, 13);
             this.lblBebida.TabIndex = 12;
@@ -149,7 +111,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(391, 270);
+            this.btnAceptar.Location = new System.Drawing.Point(431, 270);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(148, 23);
             this.btnAceptar.TabIndex = 13;
@@ -159,7 +121,7 @@
             // rdbPPU
             // 
             this.rdbPPU.AutoSize = true;
-            this.rdbPPU.Location = new System.Drawing.Point(391, 62);
+            this.rdbPPU.Location = new System.Drawing.Point(431, 62);
             this.rdbPPU.Name = "rdbPPU";
             this.rdbPPU.Size = new System.Drawing.Size(85, 17);
             this.rdbPPU.TabIndex = 14;
@@ -170,7 +132,7 @@
             // rdbPPD
             // 
             this.rdbPPD.AutoSize = true;
-            this.rdbPPD.Location = new System.Drawing.Point(391, 85);
+            this.rdbPPD.Location = new System.Drawing.Point(431, 85);
             this.rdbPPD.Name = "rdbPPD";
             this.rdbPPD.Size = new System.Drawing.Size(85, 17);
             this.rdbPPD.TabIndex = 15;
@@ -181,7 +143,7 @@
             // rdbSPU
             // 
             this.rdbSPU.AutoSize = true;
-            this.rdbSPU.Location = new System.Drawing.Point(388, 136);
+            this.rdbSPU.Location = new System.Drawing.Point(428, 136);
             this.rdbSPU.Name = "rdbSPU";
             this.rdbSPU.Size = new System.Drawing.Size(85, 17);
             this.rdbSPU.TabIndex = 16;
@@ -192,7 +154,7 @@
             // rdbSPD
             // 
             this.rdbSPD.AutoSize = true;
-            this.rdbSPD.Location = new System.Drawing.Point(388, 159);
+            this.rdbSPD.Location = new System.Drawing.Point(428, 159);
             this.rdbSPD.Name = "rdbSPD";
             this.rdbSPD.Size = new System.Drawing.Size(85, 17);
             this.rdbSPD.TabIndex = 17;
@@ -203,7 +165,7 @@
             // rdbBU
             // 
             this.rdbBU.AutoSize = true;
-            this.rdbBU.Location = new System.Drawing.Point(388, 208);
+            this.rdbBU.Location = new System.Drawing.Point(428, 208);
             this.rdbBU.Name = "rdbBU";
             this.rdbBU.Size = new System.Drawing.Size(85, 17);
             this.rdbBU.TabIndex = 18;
@@ -214,7 +176,7 @@
             // rdbBD
             // 
             this.rdbBD.AutoSize = true;
-            this.rdbBD.Location = new System.Drawing.Point(388, 231);
+            this.rdbBD.Location = new System.Drawing.Point(428, 231);
             this.rdbBD.Name = "rdbBD";
             this.rdbBD.Size = new System.Drawing.Size(85, 17);
             this.rdbBD.TabIndex = 19;
@@ -222,11 +184,92 @@
             this.rdbBD.Text = "radioButton6";
             this.rdbBD.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(12, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 38);
+            this.button1.TabIndex = 20;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnSiguienteDisponible
+            // 
+            this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
+            this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(260, 358);
+            this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
+            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
+            this.btnSiguienteDisponible.TabIndex = 21;
+            this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvItem,
+            this.dgvCantidad,
+            this.dgvPrecio});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 102);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(311, 221);
+            this.dataGridView1.TabIndex = 22;
+            // 
+            // dgvItem
+            // 
+            this.dgvItem.HeaderText = "Item";
+            this.dgvItem.Name = "dgvItem";
+            this.dgvItem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dgvCantidad
+            // 
+            this.dgvCantidad.HeaderText = "Cantidad";
+            this.dgvCantidad.Name = "dgvCantidad";
+            // 
+            // dgvPrecio
+            // 
+            this.dgvPrecio.HeaderText = "Precio";
+            this.dgvPrecio.Name = "dgvPrecio";
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.AutoSize = true;
+            this.lblAtras.Location = new System.Drawing.Point(80, 371);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(31, 13);
+            this.lblAtras.TabIndex = 23;
+            this.lblAtras.Text = "Atras";
+            // 
+            // lblFinalizar
+            // 
+            this.lblFinalizar.AutoSize = true;
+            this.lblFinalizar.Location = new System.Drawing.Point(205, 371);
+            this.lblFinalizar.Name = "lblFinalizar";
+            this.lblFinalizar.Size = new System.Drawing.Size(45, 13);
+            this.lblFinalizar.TabIndex = 24;
+            this.lblFinalizar.Text = "Finalizar";
+            // 
+            // pcbCarrito
+            // 
+            this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
+            this.pcbCarrito.Location = new System.Drawing.Point(133, 46);
+            this.pcbCarrito.Name = "pcbCarrito";
+            this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
+            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCarrito.TabIndex = 25;
+            this.pcbCarrito.TabStop = false;
+            // 
             // FormMenuDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pcbCarrito);
+            this.Controls.Add(this.lblFinalizar);
+            this.Controls.Add(this.lblAtras);
+            this.Controls.Add(this.btnSiguienteDisponible);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.rdbBD);
             this.Controls.Add(this.rdbBU);
             this.Controls.Add(this.rdbSPD);
@@ -237,20 +280,15 @@
             this.Controls.Add(this.lblBebida);
             this.Controls.Add(this.lblSegundoPlato);
             this.Controls.Add(this.lblPrimerPlato);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.dgvItems);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBarraInferior);
             this.Controls.Add(this.grbBarraSuperior);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuDia";
             this.Text = "FormMenuDia";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,11 +299,6 @@
         private System.Windows.Forms.GroupBox grbBarraSuperior;
         private System.Windows.Forms.GroupBox grpBarraInferior;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgvItems;
-        private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblPrimerPlato;
         private System.Windows.Forms.Label lblSegundoPlato;
         private System.Windows.Forms.Label lblBebida;
@@ -276,5 +309,14 @@
         private System.Windows.Forms.RadioButton rdbSPD;
         private System.Windows.Forms.RadioButton rdbBU;
         private System.Windows.Forms.RadioButton rdbBD;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiguienteDisponible;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrecio;
+        private System.Windows.Forms.Label lblAtras;
+        private System.Windows.Forms.Label lblFinalizar;
+        private System.Windows.Forms.PictureBox pcbCarrito;
     }
 }
