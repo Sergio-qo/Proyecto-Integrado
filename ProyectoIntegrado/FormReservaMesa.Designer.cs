@@ -279,6 +279,7 @@
             this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReservaMesa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReservas";
             this.grbReserva.ResumeLayout(false);
             this.grbReserva.PerformLayout();
