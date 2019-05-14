@@ -37,8 +37,18 @@
             this.btnCarrito = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
             this.lblFinalizar = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbMenuLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -61,14 +71,15 @@
             // 
             // grbMenuLateral
             // 
+            this.grbMenuLateral.Controls.Add(this.dataGridView1);
             this.grbMenuLateral.Controls.Add(this.btnAtras);
             this.grbMenuLateral.Controls.Add(this.pcbCarrito);
             this.grbMenuLateral.Controls.Add(this.btnCarrito);
             this.grbMenuLateral.Controls.Add(this.lblAtras);
             this.grbMenuLateral.Controls.Add(this.lblFinalizar);
-            this.grbMenuLateral.Location = new System.Drawing.Point(-1, 48);
+            this.grbMenuLateral.Location = new System.Drawing.Point(-1, 47);
             this.grbMenuLateral.Name = "grbMenuLateral";
-            this.grbMenuLateral.Size = new System.Drawing.Size(204, 355);
+            this.grbMenuLateral.Size = new System.Drawing.Size(204, 356);
             this.grbMenuLateral.TabIndex = 3;
             this.grbMenuLateral.TabStop = false;
             // 
@@ -86,7 +97,7 @@
             // pcbCarrito
             // 
             this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
-            this.pcbCarrito.Location = new System.Drawing.Point(6, 19);
+            this.pcbCarrito.Location = new System.Drawing.Point(6, 10);
             this.pcbCarrito.Name = "pcbCarrito";
             this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
             this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,11 +135,93 @@
             this.lblFinalizar.TabIndex = 14;
             this.lblFinalizar.Text = "Finalizar";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.articulo,
+            this.Cantidad,
+            this.Precio});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(144, 163);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(328, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 100);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Menu Del Dia";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(427, 303);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 100);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Bebidas";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(527, 57);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 100);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Comidas";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(328, 185);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 100);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Bocadillos";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(527, 185);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 100);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Postres";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // articulo
+            // 
+            this.articulo.HeaderText = "";
+            this.articulo.Name = "articulo";
+            this.articulo.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grbMenuLateral);
             this.Controls.Add(this.grbBarraInferior);
             this.Controls.Add(this.grbBarraSuperior);
@@ -139,6 +232,7 @@
             this.grbMenuLateral.ResumeLayout(false);
             this.grbMenuLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,5 +247,14 @@
         private System.Windows.Forms.Button btnCarrito;
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
