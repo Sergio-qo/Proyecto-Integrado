@@ -6,3 +6,4 @@
 - Sin moverte de master hago 'Pull'
 - Por ultimo hago 'Push' (solo de master)
 - VOLVER A RAMA PERSONAL
+- En mi rama personal hago clic derecho en master y merge into current branch para actualizar mi rama
