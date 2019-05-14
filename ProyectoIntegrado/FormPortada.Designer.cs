@@ -35,6 +35,8 @@
             this.btnAjustes = new System.Windows.Forms.Button();
             this.pcbPortada = new System.Windows.Forms.PictureBox();
             this.grbBarraInferior = new System.Windows.Forms.GroupBox();
+            this.lblTituloReserva = new System.Windows.Forms.Label();
+            this.lblTituloComida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPortada)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             this.btnReserva.AutoSize = true;
             this.btnReserva.BackColor = System.Drawing.Color.White;
             this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
-            this.btnReserva.Location = new System.Drawing.Point(278, 269);
+            this.btnReserva.Location = new System.Drawing.Point(234, 260);
             this.btnReserva.Name = "btnReserva";
             this.btnReserva.Size = new System.Drawing.Size(134, 134);
             this.btnReserva.TabIndex = 2;
@@ -64,7 +66,7 @@
             this.btnPedidos.AutoSize = true;
             this.btnPedidos.BackColor = System.Drawing.Color.White;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
-            this.btnPedidos.Location = new System.Drawing.Point(456, 269);
+            this.btnPedidos.Location = new System.Drawing.Point(405, 260);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(134, 134);
             this.btnPedidos.TabIndex = 3;
@@ -86,7 +88,7 @@
             // pcbPortada
             // 
             this.pcbPortada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbPortada.BackgroundImage")));
-            this.pcbPortada.Location = new System.Drawing.Point(149, 41);
+            this.pcbPortada.Location = new System.Drawing.Point(119, 41);
             this.pcbPortada.Name = "pcbPortada";
             this.pcbPortada.Size = new System.Drawing.Size(564, 180);
             this.pcbPortada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,12 +104,34 @@
             this.grbBarraInferior.TabIndex = 1;
             this.grbBarraInferior.TabStop = false;
             // 
+            // lblTituloReserva
+            // 
+            this.lblTituloReserva.AutoSize = true;
+            this.lblTituloReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReserva.Location = new System.Drawing.Point(253, 239);
+            this.lblTituloReserva.Name = "lblTituloReserva";
+            this.lblTituloReserva.Size = new System.Drawing.Size(96, 18);
+            this.lblTituloReserva.TabIndex = 6;
+            this.lblTituloReserva.Text = "RESERVAS";
+            // 
+            // lblTituloComida
+            // 
+            this.lblTituloComida.AutoSize = true;
+            this.lblTituloComida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloComida.Location = new System.Drawing.Point(423, 239);
+            this.lblTituloComida.Name = "lblTituloComida";
+            this.lblTituloComida.Size = new System.Drawing.Size(84, 18);
+            this.lblTituloComida.TabIndex = 7;
+            this.lblTituloComida.Text = "COMIDAS";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTituloComida);
+            this.Controls.Add(this.lblTituloReserva);
             this.Controls.Add(this.grbBarraInferior);
             this.Controls.Add(this.pcbPortada);
             this.Controls.Add(this.btnAjustes);
@@ -133,6 +157,8 @@
         private System.Windows.Forms.Button btnAjustes;
         private System.Windows.Forms.PictureBox pcbPortada;
         private System.Windows.Forms.GroupBox grbBarraInferior;
+        private System.Windows.Forms.Label lblTituloReserva;
+        private System.Windows.Forms.Label lblTituloComida;
     }
 }
 
