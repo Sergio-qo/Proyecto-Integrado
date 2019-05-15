@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.grbMenuLateral = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -46,14 +48,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grbBarraSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.grbMenuLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -66,6 +66,33 @@
             this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 1;
             this.grbBarraSuperior.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.White;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(760, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 24;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(781, 11);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 25;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // grbBarraInferior
             // 
@@ -129,7 +156,7 @@
             this.btnAtras.Location = new System.Drawing.Point(6, 311);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(62, 38);
-            this.btnAtras.TabIndex = 18;
+            this.btnAtras.TabIndex = 7;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
@@ -151,7 +178,7 @@
             this.btnCarrito.Location = new System.Drawing.Point(9, 235);
             this.btnCarrito.Name = "btnCarrito";
             this.btnCarrito.Size = new System.Drawing.Size(59, 59);
-            this.btnCarrito.TabIndex = 5;
+            this.btnCarrito.TabIndex = 6;
             this.btnCarrito.UseVisualStyleBackColor = false;
             // 
             // lblAtras
@@ -179,7 +206,7 @@
             this.button1.Location = new System.Drawing.Point(328, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 100);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Menu Del Dia";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -199,7 +226,7 @@
             this.button3.Location = new System.Drawing.Point(527, 57);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 100);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Comidas";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -209,7 +236,7 @@
             this.button4.Location = new System.Drawing.Point(328, 185);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(168, 100);
-            this.button4.TabIndex = 7;
+            this.button4.TabIndex = 3;
             this.button4.Text = "Bocadillos";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -219,37 +246,10 @@
             this.button5.Location = new System.Drawing.Point(527, 185);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(168, 100);
-            this.button5.TabIndex = 8;
+            this.button5.TabIndex = 4;
             this.button5.Text = "Postres";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(760, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 24;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(781, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 25;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FormPedidos
             // 
@@ -269,12 +269,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPedidos";
             this.grbBarraSuperior.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.grbMenuLateral.ResumeLayout(false);
             this.grbMenuLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
