@@ -35,5 +35,38 @@ namespace ProyectoIntegrado
         {
             this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
         }
+
+        private void btnSiguienteDisponible_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+
+            if(txtNombreReserva.Text == "")
+            {
+                errorProvider1.SetError(txtNombreReserva, "Introduce nombre");
+            }
+
+            if (txtApellidosReserva.Text == "")
+            {
+                errorProvider1.SetError(txtApellidosReserva, "Introduce apellidos");
+            }
+
+            if (txtEmailReserva.Text == "")
+            {
+                errorProvider1.SetError(txtEmailReserva, "Introduce email");
+            }
+
+            if (txtNumeroComensales.Text == "")
+            {
+                errorProvider1.SetError(txtNumeroComensales, "Indica número de comensales");
+            }
+
+            if (cmbHoraReserva.Text == "")
+            {
+                errorProvider1.SetError(cmbHoraReserva, "Indica hora");
+            }
+
+
+
+        }
     }
 }

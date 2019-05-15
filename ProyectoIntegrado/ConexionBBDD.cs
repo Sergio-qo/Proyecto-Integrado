@@ -30,7 +30,7 @@ namespace ProyectoIntegrado
 
             // Ejemplo de Conexión remota: db4free.net
             string server = "server=localhost;";
-            string database = "database=bbddpi;";
+            string database = "database=mydb;";
             string usuario = "uid=root;";
             string password = "pwd=;";
             string connectionstring = server + database + usuario + password;

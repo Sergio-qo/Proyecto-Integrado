@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservaMesa));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -52,10 +53,12 @@
             this.btnSiguienteDisponible = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.grbReserva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -253,9 +256,9 @@
             this.lblTituloReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloReserva.Location = new System.Drawing.Point(302, 44);
             this.lblTituloReserva.Name = "lblTituloReserva";
-            this.lblTituloReserva.Size = new System.Drawing.Size(181, 20);
+            this.lblTituloReserva.Size = new System.Drawing.Size(229, 20);
             this.lblTituloReserva.TabIndex = 13;
-            this.lblTituloReserva.Text = "Datos para la reserva";
+            this.lblTituloReserva.Text = "Datos para la reserva mesa";
             // 
             // lblSiguiente
             // 
@@ -276,6 +279,7 @@
             this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 7;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
             // 
             // lblAtras
             // 
@@ -297,6 +301,10 @@
             this.btnAtras.TabIndex = 19;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormReservaMesa
             // 
@@ -320,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.grbReserva.ResumeLayout(false);
             this.grbReserva.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +359,6 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
