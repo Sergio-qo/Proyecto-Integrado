@@ -13,7 +13,12 @@ namespace ProyectoIntegrado
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private string nombre;
         private string descripcion;
+        private int cantidad;
+        private double precio;
+
         public int Id{ get { return id; } }
+        public int Cantidad { get {return this.cantidad; } set {this.cantidad = value; } }
+        public double Precio { get { return this.precio; } set { this.precio = value; } }
 
         public Articulos(int id, string nombre, string descripcion)
         {

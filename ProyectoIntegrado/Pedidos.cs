@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
@@ -13,6 +14,16 @@ namespace ProyectoIntegrado
         public List<Articulos> Articulos { get {return this.articulos; } }
         private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
+        private int cantidadPedidos;
+        private double precioPedido;
+
+        public Pedidos(int id, int cantidadPedidos, double precioPedido)
+        {
+            this.id = id;
+            this.cantidadPedidos = cantidadPedidos;
+            this.precioPedido = precioPedido;
+        }
+        
 
         public Pedidos()
         {
@@ -35,7 +46,7 @@ namespace ProyectoIntegrado
 
             if (esta == true)
             {
-
+                MessageBox.Show("El artículo que se intenta añadir ya está");
             }
             else
             {
@@ -68,16 +79,41 @@ namespace ProyectoIntegrado
             }
         }
 
-        //Descomentar cuando este la propiedad Precio y Cantidad en Articulos
-        //public double CalcularPrecio()
-        //{
-        //    double precio = 0;
-        //    foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
-        //    {
-        //        precio += articulo.Precio * articulo.Cantidad;
-        //    }
-        //    return precio;
-        //}
+        //Calcula el precio total de este pedido
+        public double CalcularPrecio()
+        {
+            double precio = 0;
+            foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
+            {
+                precio += articulo.Precio * articulo.Cantidad;
+            }
+            return precio;
+        }
+
+
+        //Muestra la lista de todos los pedidos
+        public List<Pedidos> VerListaPedidos()
+        {
+            List<Pedidos> lista = new List<Pedidos>();
+
+            ConexionBBDD conex = new ConexionBBDD();
+            MySqlCommand comando;
+
+            string consulta = String.Format("select * from articulospedido ");
+            comando = new MySqlCommand(consulta, conex.Conexion);
+
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lista.Add(new Pedidos(reader.GetInt32(0), reader.GetInt32(2), reader.GetDouble(3)));
+            }
+
+            reader.Close();
+
+            return lista;
+
+        }
 
     }
 }
