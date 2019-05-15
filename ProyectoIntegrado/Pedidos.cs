@@ -9,13 +9,14 @@ namespace ProyectoIntegrado
 {
     class Pedidos
     {
-        List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
+        private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
         public List<Articulos> Articulos { get {return this.articulos; } }
-        int id;
+        private static int idst; //Hago un id estático que sera el que va incrementando
+        private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
 
         public Pedidos()
         {
-
+            this.id = idst; //Asigno el id desde idst
         }
 
         //Añade un articulo a la lista si no está ya
@@ -42,17 +43,17 @@ namespace ProyectoIntegrado
             }
         }
 
-        //public void HacerPedido()
-        //{
-        //    ConexionBBDD conexion = new ConexionBBDD();
-        //    MySqlCommando comando;
-        //    foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
-        //    {
-        //        string consulta = String.Format("insert into articulospedido (idpedido, idarticulo) values('{0}', '{1}')", this.id, elem.Id);
-        //        comando = new MySqlCommand(consulta, conexion.Conexion);
-        //        comando.ExecuteNonQuery();
-        //    }
-        //}
+        public void HacerPedido()
+        {
+            ConexionBBDD conexion = new ConexionBBDD();
+            MySqlCommand comando;
+            foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
+            {
+                string consulta = String.Format("insert into articulospedido (idpedido, idarticulo) values('{0}', '{1}')", this.id, elem.Id);
+                comando = new MySqlCommand(consulta, conexion.Conexion);
+                comando.ExecuteNonQuery();
+            }
+        }
 
         //Elimina un artículo de la lista segun id
         public void EliminarArticulo(int id)
@@ -66,5 +67,17 @@ namespace ProyectoIntegrado
                 }
             }
         }
+
+        //Descomentar cuando este la propiedad Precio y Cantidad en Articulos
+        //public double CalcularPrecio()
+        //{
+        //    double precio = 0;
+        //    foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
+        //    {
+        //        precio += articulo.Precio * articulo.Cantidad;
+        //    }
+        //    return precio;
+        //}
+
     }
 }
