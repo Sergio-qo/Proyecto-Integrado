@@ -42,7 +42,7 @@ namespace ProyectoIntegrado
         /// <returns> 1 si se ha ejecutado una linea de codigo 0 si no se ha ejecutado ninguna </returns>
         public int ReservarMesa()
         {
-            int retorno=0;
+            int retorno;
             //Ejecuta en la base de datos una reserva
             String consulta = "INSERT INTO reservaMesa (idReservaMesa,dia,numComensales,nombre,apellidos,correo,aprobado) " +
                               "VALUES (@id,@dia,@num,@nom,@ape,@corr,@apro)";
