@@ -13,7 +13,13 @@ namespace ProyectoIntegrado
         {
 
         }
-     public double getPrecioTotal(Pedidos pedido)
+
+        public virtual void EfectuarPago(Pedidos pedido)
+        {
+            
+        }
+
+        public double getPrecioTotal(Pedidos pedido)
         {
             String consulta = "SELECT precio FROM ArticulosPedido where id=$id";
             ConexionBBDD conexion = new ConexionBBDD();
@@ -22,7 +28,7 @@ namespace ProyectoIntegrado
             comando.Parameters.AddWithValue("id", pedido.PrecioPedido);
             MySqlDataReader reader = comando.ExecuteReader();
             double preciotot = reader.GetDouble(0);
-           
+
             return preciotot;
         }
 
