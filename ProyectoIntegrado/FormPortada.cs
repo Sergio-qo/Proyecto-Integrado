@@ -15,6 +15,7 @@ namespace ProyectoIntegrado
         public FormPrincipal()
         {
             InitializeComponent();
+            Pedidos pedido = new Pedidos();
         }
 
         private void btnAjustes_Click(object sender, EventArgs e)

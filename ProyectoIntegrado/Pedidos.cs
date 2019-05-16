@@ -8,14 +8,19 @@ using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
 {
-    class Pedidos
+     class Pedidos
     {
         private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
-        public List<Articulos> Articulos { get {return this.articulos; } }
         private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private int cantidadPedidos;
         private double precioPedido;
+
+        public List<Articulos> Articulos { get { return this.articulos; } }
+
+
+
+
 
         public Pedidos(int id, int cantidadPedidos, double precioPedido)
         {
@@ -92,28 +97,28 @@ namespace ProyectoIntegrado
 
 
         //Muestra la lista de todos los pedidos
-        public List<Pedidos> VerListaPedidos()
-        {
-            List<Pedidos> lista = new List<Pedidos>();
+        //public List<Pedidos> VerListaPedidos()
+        //{
+        //    List<Pedidos> lista = new List<Pedidos>();
 
-            ConexionBBDD conex = new ConexionBBDD();
-            MySqlCommand comando;
+        //    ConexionBBDD conex = new ConexionBBDD();
+        //    MySqlCommand comando;
 
-            string consulta = String.Format("select * from articulospedido ");
-            comando = new MySqlCommand(consulta, conex.Conexion);
+        //    string consulta = String.Format("select * from articulospedido ");
+        //    comando = new MySqlCommand(consulta, conex.Conexion);
 
-            MySqlDataReader reader = comando.ExecuteReader();
+        //    MySqlDataReader reader = comando.ExecuteReader();
 
-            while (reader.Read())
-            {
-                lista.Add(new Pedidos(reader.GetInt32(0), reader.GetInt32(2), reader.GetDouble(3)));
-            }
+        //    while (reader.Read())
+        //    {
+        //        lista.Add(new Pedidos(reader.GetInt32(0), reader.GetInt32(2), reader.GetDouble(3)));
+        //    }
 
-            reader.Close();
+        //    reader.Close();
 
-            return lista;
+        //    return lista;
 
-        }
+        //}
 
     }
 }
