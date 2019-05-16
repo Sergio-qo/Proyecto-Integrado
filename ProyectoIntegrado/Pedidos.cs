@@ -19,6 +19,7 @@ namespace ProyectoIntegrado
         //private string estado;
 
         //public List<Articulos> Articulos { get { return this.articulos; } }
+        public double PrecioPedido { get{ return precioPedido; } }
 
 
 
