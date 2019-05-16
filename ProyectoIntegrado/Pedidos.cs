@@ -10,13 +10,16 @@ namespace ProyectoIntegrado
 {
      class Pedidos
     {
-        private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
+        //private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
         private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private int cantidadPedidos;
         private double precioPedido;
+        private int cantidadArticulos = 0;
+        //private string estado;
 
-        public List<Articulos> Articulos { get { return this.articulos; } }
+        //public List<Articulos> Articulos { get { return this.articulos; } }
+        public double PrecioPedido { get{ return precioPedido; } }
 
 
 
@@ -27,8 +30,8 @@ namespace ProyectoIntegrado
             this.id = id;
             this.cantidadPedidos = cantidadPedidos;
             this.precioPedido = precioPedido;
+            //this.estado = "Por hacer";
         }
-        
 
         public Pedidos()
         {
@@ -38,7 +41,17 @@ namespace ProyectoIntegrado
         //Añade un articulo a la lista si no está ya
         public void AnyadirArticulo(Articulos articulo)
         {
+            ConexionBBDD conexion = new ConexionBBDD();
+            List<Articulos> articulos = new List<Articulos>();
+            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
 
+            while (reader.Read())
+            {
+                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+            }
+            reader.Close();
             //Comprueba si el artículo está o no está en la lista
             bool esta = false;
             foreach (Articulos elem in articulos)
@@ -55,12 +68,15 @@ namespace ProyectoIntegrado
             }
             else
             {
-                this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+                consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
+                //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+                
             }
         }
 
         public void HacerPedido()
         {
+            List<Articulos> articulos = new List<Articulos>();
             ConexionBBDD conexion = new ConexionBBDD();
             MySqlCommand comando;
             foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
@@ -74,19 +90,45 @@ namespace ProyectoIntegrado
         //Elimina un artículo de la lista segun id
         public void EliminarArticulo(int id)
         {
-            //Recorro la lista y cuando el id coincide lo borra
-            foreach(Articulos elem in articulos)
+            ConexionBBDD conexion = new ConexionBBDD();
+            List<Articulos> articulos = new List<Articulos>();
+            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
             {
-                if(elem.Id == id)
-                {
-                    articulos.Remove(elem);
-                }
+                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
             }
+            reader.Close();
+
+
+            consulta = String.Format("delete from articulospedido where id = {0}", id);
+
+            //Recorro la lista y cuando el id coincide lo borra
+            //foreach (Articulos elem in articulos)
+            //{
+            //    if(elem.Id == id)
+            //    {
+            //        //articulos.Remove(elem);//cambiar por delete en bd
+            //    }
+            //}
         }
 
         //Calcula el precio total de este pedido
         public double CalcularPrecio()
         {
+            ConexionBBDD conexion = new ConexionBBDD();
+            List<Articulos> articulos = new List<Articulos>();
+            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+            }
+            reader.Close();
             double precio = 0;
             foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
             {

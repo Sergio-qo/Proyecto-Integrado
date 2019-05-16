@@ -19,12 +19,18 @@ namespace ProyectoIntegrado
         public int Id{ get { return id; } }
         public int Cantidad { get {return this.cantidad; } set {this.cantidad = value; } }
         public double Precio { get { return this.precio; } set { this.precio = value; } }
+        public string Nombre { get { return this.nombre; } }
+        public string Descripcion { get { return this.descripcion; } }
 
         public Articulos(int id, string nombre, string descripcion)
         {
             this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
+        }
+
+        public Articulos(string nombre, string descripcion)
+        {
             this.id = idst; //Asigno el id desde idst
         }
     }
