@@ -133,6 +133,9 @@
     <Compile Include="FormRespuestaEfectivo.Designer.cs">
       <DependentUpon>FormRespuestaEfectivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pago.cs" />
+    <Compile Include="PagoEfectivo.cs" />
+    <Compile Include="PagoTarjeta.cs" />
     <Compile Include="Pedidos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

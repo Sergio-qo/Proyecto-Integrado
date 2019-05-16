@@ -35,15 +35,15 @@
             this.lblSalir = new System.Windows.Forms.Label();
             this.lblTituloReserva = new System.Windows.Forms.Label();
             this.grbReserva = new System.Windows.Forms.GroupBox();
+            this.lblNotificacion = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblReservaDia = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblMesa = new System.Windows.Forms.Label();
             this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
-            this.lblMesa = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblReservaDia = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblNotificacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grbReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -65,6 +65,7 @@
             this.btnSiguienteDisponible.Size = new System.Drawing.Size(80, 58);
             this.btnSiguienteDisponible.TabIndex = 23;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            this.btnSiguienteDisponible.Click += new System.EventHandler(this.BtnSiguienteDisponible_Click);
             // 
             // lblSalir
             // 
@@ -102,6 +103,59 @@
             this.grbReserva.Size = new System.Drawing.Size(556, 365);
             this.grbReserva.TabIndex = 22;
             this.grbReserva.TabStop = false;
+            // 
+            // lblNotificacion
+            // 
+            this.lblNotificacion.AutoSize = true;
+            this.lblNotificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificacion.Location = new System.Drawing.Point(91, 288);
+            this.lblNotificacion.Name = "lblNotificacion";
+            this.lblNotificacion.Size = new System.Drawing.Size(373, 29);
+            this.lblNotificacion.TabIndex = 4;
+            this.lblNotificacion.Text = "Se enviara el codigo a tu email";
+            this.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(69, 233);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(437, 29);
+            this.lblCodigo.TabIndex = 3;
+            this.lblCodigo.Text = "El codigon de reserva es el: \'codigo\'";
+            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblReservaDia
+            // 
+            this.lblReservaDia.AutoSize = true;
+            this.lblReservaDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservaDia.Location = new System.Drawing.Point(111, 167);
+            this.lblReservaDia.Name = "lblReservaDia";
+            this.lblReservaDia.Size = new System.Drawing.Size(353, 29);
+            this.lblReservaDia.TabIndex = 2;
+            this.lblReservaDia.Text = "Reserva para el \'dia\' de \'mes\'";
+            this.lblReservaDia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(131, 100);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(280, 29);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "A nombre de: \'Nombre\'";
+            // 
+            // lblMesa
+            // 
+            this.lblMesa.AutoSize = true;
+            this.lblMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesa.Location = new System.Drawing.Point(111, 46);
+            this.lblMesa.Name = "lblMesa";
+            this.lblMesa.Size = new System.Drawing.Size(337, 29);
+            this.lblMesa.TabIndex = 0;
+            this.lblMesa.Text = "Se ha reservado la mesa \'X\'";
             // 
             // grbBarraInferior
             // 
@@ -149,59 +203,6 @@
             this.grbBarraSuperior.Size = new System.Drawing.Size(1203, 66);
             this.grbBarraSuperior.TabIndex = 20;
             this.grbBarraSuperior.TabStop = false;
-            // 
-            // lblMesa
-            // 
-            this.lblMesa.AutoSize = true;
-            this.lblMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMesa.Location = new System.Drawing.Point(111, 46);
-            this.lblMesa.Name = "lblMesa";
-            this.lblMesa.Size = new System.Drawing.Size(337, 29);
-            this.lblMesa.TabIndex = 0;
-            this.lblMesa.Text = "Se ha reservado la mesa \'X\'";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(131, 100);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(280, 29);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "A nombre de: \'Nombre\'";
-            // 
-            // lblReservaDia
-            // 
-            this.lblReservaDia.AutoSize = true;
-            this.lblReservaDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservaDia.Location = new System.Drawing.Point(111, 167);
-            this.lblReservaDia.Name = "lblReservaDia";
-            this.lblReservaDia.Size = new System.Drawing.Size(353, 29);
-            this.lblReservaDia.TabIndex = 2;
-            this.lblReservaDia.Text = "Reserva para el \'dia\' de \'mes\'";
-            this.lblReservaDia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(69, 233);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(437, 29);
-            this.lblCodigo.TabIndex = 3;
-            this.lblCodigo.Text = "El codigon de reserva es el: \'codigo\'";
-            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNotificacion
-            // 
-            this.lblNotificacion.AutoSize = true;
-            this.lblNotificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotificacion.Location = new System.Drawing.Point(91, 288);
-            this.lblNotificacion.Name = "lblNotificacion";
-            this.lblNotificacion.Size = new System.Drawing.Size(373, 29);
-            this.lblNotificacion.TabIndex = 4;
-            this.lblNotificacion.Text = "Se enviara el codigo a tu email";
-            this.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMesaReservada
             // 

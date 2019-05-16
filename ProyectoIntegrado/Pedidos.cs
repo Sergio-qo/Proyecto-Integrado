@@ -16,6 +16,7 @@ namespace ProyectoIntegrado
         private int cantidadPedidos;
         private double precioPedido;
         private int cantidadArticulos = 0;
+        public int Id { get { return this.id; } }
         //private string estado;
 
         //public List<Articulos> Articulos { get { return this.articulos; } }

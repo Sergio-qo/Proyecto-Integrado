@@ -17,6 +17,11 @@ namespace ProyectoIntegrado
             InitializeComponent();
         }
 
-
+        private void BtnPagoEfectivo_Click(object sender, EventArgs e)
+        {
+            FormPagoEfectivo formpagoefectivo = new FormPagoEfectivo();
+            formpagoefectivo.Show();
+            this.Hide();
+        }
     }
 }
