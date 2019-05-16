@@ -34,10 +34,6 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.grbMenuLateral = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAtras = new System.Windows.Forms.Button();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.btnCarrito = new System.Windows.Forms.Button();
@@ -48,12 +44,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.grbMenuLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -113,41 +113,9 @@
             this.grbMenuLateral.Controls.Add(this.lblFinalizar);
             this.grbMenuLateral.Location = new System.Drawing.Point(-1, 47);
             this.grbMenuLateral.Name = "grbMenuLateral";
-            this.grbMenuLateral.Size = new System.Drawing.Size(204, 356);
+            this.grbMenuLateral.Size = new System.Drawing.Size(310, 356);
             this.grbMenuLateral.TabIndex = 3;
             this.grbMenuLateral.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.articulo,
-            this.Cantidad,
-            this.Precio});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(144, 163);
-            this.dataGridView1.TabIndex = 19;
-            // 
-            // articulo
-            // 
-            this.articulo.HeaderText = "";
-            this.articulo.Name = "articulo";
-            this.articulo.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // btnAtras
             // 
@@ -175,7 +143,7 @@
             this.btnCarrito.AutoSize = true;
             this.btnCarrito.BackColor = System.Drawing.Color.White;
             this.btnCarrito.Image = ((System.Drawing.Image)(resources.GetObject("btnCarrito.Image")));
-            this.btnCarrito.Location = new System.Drawing.Point(9, 235);
+            this.btnCarrito.Location = new System.Drawing.Point(239, 291);
             this.btnCarrito.Name = "btnCarrito";
             this.btnCarrito.Size = new System.Drawing.Size(59, 59);
             this.btnCarrito.TabIndex = 6;
@@ -195,7 +163,7 @@
             // 
             this.lblFinalizar.AutoSize = true;
             this.lblFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinalizar.Location = new System.Drawing.Point(83, 256);
+            this.lblFinalizar.Location = new System.Drawing.Point(166, 322);
             this.lblFinalizar.Name = "lblFinalizar";
             this.lblFinalizar.Size = new System.Drawing.Size(67, 16);
             this.lblFinalizar.TabIndex = 14;
@@ -251,6 +219,40 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.articulo,
+            this.Cantidad,
+            this.Precio});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(170, 239);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // articulo
+            // 
+            this.articulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.articulo.HeaderText = "Artículo";
+            this.articulo.Name = "articulo";
+            this.articulo.ReadOnly = true;
+            this.articulo.Width = 69;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "€";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Nº";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,8 +275,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.grbMenuLateral.ResumeLayout(false);
             this.grbMenuLateral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,10 +291,6 @@
         private System.Windows.Forms.Button btnCarrito;
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -300,5 +298,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }
