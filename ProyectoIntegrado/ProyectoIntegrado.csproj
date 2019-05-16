@@ -115,6 +115,7 @@
     <Compile Include="FormReservaMesa.Designer.cs">
       <DependentUpon>FormReservaMesa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pago.cs" />
     <Compile Include="Pedidos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
