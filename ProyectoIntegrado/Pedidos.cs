@@ -16,6 +16,7 @@ namespace ProyectoIntegrado
         private int cantidadPedidos;
         private double precioPedido;
         private int cantidadArticulos = 0;
+        //private string estado;
 
         //public List<Articulos> Articulos { get { return this.articulos; } }
 
@@ -28,6 +29,7 @@ namespace ProyectoIntegrado
             this.id = id;
             this.cantidadPedidos = cantidadPedidos;
             this.precioPedido = precioPedido;
+            //this.estado = "Por hacer";
         }
 
         public Pedidos()
@@ -65,7 +67,7 @@ namespace ProyectoIntegrado
             }
             else
             {
-                consulta = String.Format("insert into articulospedido values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);
+                consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
                 //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
                 
             }
