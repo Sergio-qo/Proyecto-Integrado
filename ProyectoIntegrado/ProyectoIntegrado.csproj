@@ -136,7 +136,8 @@
     <Compile Include="Pedidos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservas.cs" />
+    <Compile Include="ReservaMesa.cs" />
+    <Compile Include="ReservaPedido.cs" />
     <EmbeddedResource Include="FormBebida.resx">
       <DependentUpon>FormBebida.cs</DependentUpon>
     </EmbeddedResource>

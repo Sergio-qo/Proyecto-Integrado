@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuDia));
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grpBarraInferior = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPrimerPlato = new System.Windows.Forms.Label();
@@ -51,13 +53,17 @@
             this.lblAtras = new System.Windows.Forms.Label();
             this.lblFinalizar = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.grbPrimerPlato = new System.Windows.Forms.GroupBox();
+            this.grbSegundoPlato = new System.Windows.Forms.GroupBox();
+            this.grbBebida = new System.Windows.Forms.GroupBox();
             this.grbBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
+            this.grbPrimerPlato.SuspendLayout();
+            this.grbSegundoPlato.SuspendLayout();
+            this.grbBebida.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbBarraSuperior
@@ -70,6 +76,33 @@
             this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 3;
             this.grbBarraSuperior.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.White;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(759, 12);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 26;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(780, 12);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 27;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // grpBarraInferior
             // 
@@ -92,7 +125,7 @@
             // lblPrimerPlato
             // 
             this.lblPrimerPlato.AutoSize = true;
-            this.lblPrimerPlato.Location = new System.Drawing.Point(428, 46);
+            this.lblPrimerPlato.Location = new System.Drawing.Point(3, 15);
             this.lblPrimerPlato.Name = "lblPrimerPlato";
             this.lblPrimerPlato.Size = new System.Drawing.Size(63, 13);
             this.lblPrimerPlato.TabIndex = 10;
@@ -101,7 +134,7 @@
             // lblSegundoPlato
             // 
             this.lblSegundoPlato.AutoSize = true;
-            this.lblSegundoPlato.Location = new System.Drawing.Point(428, 120);
+            this.lblSegundoPlato.Location = new System.Drawing.Point(0, 15);
             this.lblSegundoPlato.Name = "lblSegundoPlato";
             this.lblSegundoPlato.Size = new System.Drawing.Size(77, 13);
             this.lblSegundoPlato.TabIndex = 11;
@@ -110,7 +143,7 @@
             // lblBebida
             // 
             this.lblBebida.AutoSize = true;
-            this.lblBebida.Location = new System.Drawing.Point(428, 192);
+            this.lblBebida.Location = new System.Drawing.Point(6, 15);
             this.lblBebida.Name = "lblBebida";
             this.lblBebida.Size = new System.Drawing.Size(40, 13);
             this.lblBebida.TabIndex = 12;
@@ -118,17 +151,18 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(431, 270);
+            this.btnAceptar.Location = new System.Drawing.Point(431, 300);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(148, 23);
             this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // rdbPPU
             // 
             this.rdbPPU.AutoSize = true;
-            this.rdbPPU.Location = new System.Drawing.Point(431, 62);
+            this.rdbPPU.Location = new System.Drawing.Point(6, 31);
             this.rdbPPU.Name = "rdbPPU";
             this.rdbPPU.Size = new System.Drawing.Size(85, 17);
             this.rdbPPU.TabIndex = 14;
@@ -139,7 +173,7 @@
             // rdbPPD
             // 
             this.rdbPPD.AutoSize = true;
-            this.rdbPPD.Location = new System.Drawing.Point(431, 85);
+            this.rdbPPD.Location = new System.Drawing.Point(6, 54);
             this.rdbPPD.Name = "rdbPPD";
             this.rdbPPD.Size = new System.Drawing.Size(85, 17);
             this.rdbPPD.TabIndex = 15;
@@ -150,7 +184,7 @@
             // rdbSPU
             // 
             this.rdbSPU.AutoSize = true;
-            this.rdbSPU.Location = new System.Drawing.Point(428, 136);
+            this.rdbSPU.Location = new System.Drawing.Point(0, 31);
             this.rdbSPU.Name = "rdbSPU";
             this.rdbSPU.Size = new System.Drawing.Size(85, 17);
             this.rdbSPU.TabIndex = 16;
@@ -161,7 +195,7 @@
             // rdbSPD
             // 
             this.rdbSPD.AutoSize = true;
-            this.rdbSPD.Location = new System.Drawing.Point(428, 159);
+            this.rdbSPD.Location = new System.Drawing.Point(0, 54);
             this.rdbSPD.Name = "rdbSPD";
             this.rdbSPD.Size = new System.Drawing.Size(85, 17);
             this.rdbSPD.TabIndex = 17;
@@ -172,7 +206,7 @@
             // rdbBU
             // 
             this.rdbBU.AutoSize = true;
-            this.rdbBU.Location = new System.Drawing.Point(428, 208);
+            this.rdbBU.Location = new System.Drawing.Point(6, 31);
             this.rdbBU.Name = "rdbBU";
             this.rdbBU.Size = new System.Drawing.Size(85, 17);
             this.rdbBU.TabIndex = 18;
@@ -183,7 +217,7 @@
             // rdbBD
             // 
             this.rdbBD.AutoSize = true;
-            this.rdbBD.Location = new System.Drawing.Point(428, 231);
+            this.rdbBD.Location = new System.Drawing.Point(6, 54);
             this.rdbBD.Name = "rdbBD";
             this.rdbBD.Size = new System.Drawing.Size(85, 17);
             this.rdbBD.TabIndex = 19;
@@ -268,53 +302,53 @@
             this.pcbCarrito.TabIndex = 25;
             this.pcbCarrito.TabStop = false;
             // 
-            // btnMinimizar
+            // grbPrimerPlato
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(759, 12);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 26;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.grbPrimerPlato.Controls.Add(this.lblPrimerPlato);
+            this.grbPrimerPlato.Controls.Add(this.rdbPPU);
+            this.grbPrimerPlato.Controls.Add(this.rdbPPD);
+            this.grbPrimerPlato.Location = new System.Drawing.Point(431, 48);
+            this.grbPrimerPlato.Name = "grbPrimerPlato";
+            this.grbPrimerPlato.Size = new System.Drawing.Size(108, 78);
+            this.grbPrimerPlato.TabIndex = 26;
+            this.grbPrimerPlato.TabStop = false;
             // 
-            // btnCerrar
+            // grbSegundoPlato
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(780, 12);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 27;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.grbSegundoPlato.Controls.Add(this.lblSegundoPlato);
+            this.grbSegundoPlato.Controls.Add(this.rdbSPU);
+            this.grbSegundoPlato.Controls.Add(this.rdbSPD);
+            this.grbSegundoPlato.Location = new System.Drawing.Point(431, 132);
+            this.grbSegundoPlato.Name = "grbSegundoPlato";
+            this.grbSegundoPlato.Size = new System.Drawing.Size(102, 78);
+            this.grbSegundoPlato.TabIndex = 27;
+            this.grbSegundoPlato.TabStop = false;
+            // 
+            // grbBebida
+            // 
+            this.grbBebida.Controls.Add(this.lblBebida);
+            this.grbBebida.Controls.Add(this.rdbBU);
+            this.grbBebida.Controls.Add(this.rdbBD);
+            this.grbBebida.Location = new System.Drawing.Point(431, 216);
+            this.grbBebida.Name = "grbBebida";
+            this.grbBebida.Size = new System.Drawing.Size(108, 78);
+            this.grbBebida.TabIndex = 28;
+            this.grbBebida.TabStop = false;
             // 
             // FormMenuDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grbBebida);
+            this.Controls.Add(this.grbSegundoPlato);
+            this.Controls.Add(this.grbPrimerPlato);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.lblFinalizar);
             this.Controls.Add(this.lblAtras);
             this.Controls.Add(this.btnSiguienteDisponible);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rdbBD);
-            this.Controls.Add(this.rdbBU);
-            this.Controls.Add(this.rdbSPD);
-            this.Controls.Add(this.rdbSPU);
-            this.Controls.Add(this.rdbPPD);
-            this.Controls.Add(this.rdbPPU);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblBebida);
-            this.Controls.Add(this.lblSegundoPlato);
-            this.Controls.Add(this.lblPrimerPlato);
             this.Controls.Add(this.grpBarraInferior);
             this.Controls.Add(this.grbBarraSuperior);
             this.Controls.Add(this.dataGridView1);
@@ -324,10 +358,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuDia";
             this.grbBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
+            this.grbPrimerPlato.ResumeLayout(false);
+            this.grbPrimerPlato.PerformLayout();
+            this.grbSegundoPlato.ResumeLayout(false);
+            this.grbSegundoPlato.PerformLayout();
+            this.grbBebida.ResumeLayout(false);
+            this.grbBebida.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +399,8 @@
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.GroupBox grbPrimerPlato;
+        private System.Windows.Forms.GroupBox grbSegundoPlato;
+        private System.Windows.Forms.GroupBox grbBebida;
     }
 }
