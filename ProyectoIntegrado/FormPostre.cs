@@ -39,5 +39,10 @@ namespace ProyectoIntegrado
         {
             this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
         }
+
+        private void FormPostre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
