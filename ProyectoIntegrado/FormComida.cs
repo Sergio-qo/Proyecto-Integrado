@@ -12,6 +12,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormComida : Form
     {
+        Pedidos pedido;
         public FormComida()
         {
             InitializeComponent();
@@ -43,6 +44,17 @@ namespace ProyectoIntegrado
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void FormComida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

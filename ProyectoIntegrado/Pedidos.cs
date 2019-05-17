@@ -151,29 +151,29 @@ namespace ProyectoIntegrado
         }
 
 
-        //Muestra la lista de todos los pedidos
-        //public List<Pedidos> VerListaPedidos()
-        //{
-        //    List<Pedidos> lista = new List<Pedidos>();
+        //Muestra la lista de todos los articulos
+        public List<Articulos> VerListaArticulos()
+        {
+            List<Articulos> lista = new List<Articulos>();
 
-        //    ConexionBBDD conex = new ConexionBBDD();
-        //    MySqlCommand comando;
+            ConexionBBDD conex = new ConexionBBDD();
+            MySqlCommand comando;
 
-        //    string consulta = String.Format("select * from articulospedido ");
-        //    comando = new MySqlCommand(consulta, conex.Conexion);
+            string consulta = String.Format("select nombre, cantidad, precio from articulospedido inner join articulos on id=idarticulo");
+            comando = new MySqlCommand(consulta, conex.Conexion);
 
-        //    MySqlDataReader reader = comando.ExecuteReader();
+            MySqlDataReader reader = comando.ExecuteReader();
 
-        //    while (reader.Read())
-        //    {
-        //        lista.Add(new Pedidos(reader.GetInt32(0), reader.GetInt32(2), reader.GetDouble(3)));
-        //    }
+            while (reader.Read())
+            {
+                lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
+            }
 
-        //    reader.Close();
+            reader.Close();
 
-        //    return lista;
+            return lista;
 
-        //}
+        }
 
     }
 }

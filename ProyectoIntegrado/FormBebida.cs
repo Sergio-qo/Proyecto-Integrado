@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
 {
     public partial class FormBebida : Form
     {
         private Articulos articulo = null;
+        Pedidos pedido;
         public FormBebida()
         {
             InitializeComponent();
@@ -46,8 +48,39 @@ namespace ProyectoIntegrado
             {
                 articulo.IncrementarCantidad();
             }
-            Pedidos pedido = new Pedidos();
-            pedido.AnyadirArticulo(articulo);
+            List<Articulos> lista = new List<Articulos>();
+
+            ConexionBBDD conex = new ConexionBBDD();
+
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
+
+                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    MessageBox.Show("dentro de reader: " + reader.GetDouble(2));
+                    lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
+                }
+
+                reader.Close();
+                dataGridView2.Rows.Clear();
+                foreach (Articulos articulo in lista)
+                {
+                    MessageBox.Show(articulo.Nombre + " " + articulo.Cantidad + " " + articulo.Precio);
+                    dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,6 +88,11 @@ namespace ProyectoIntegrado
             this.Hide();
             FormPago pago = new FormPago();
             pago.Show();
+        }
+
+        private void FormBebida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,13 +13,20 @@ namespace ProyectoIntegrado
         //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private string nombre;
-        private int cantidad  = 1;
+        private int cantidad = 1;
         private double precio;
 
         public int Id{ get { return id; } }
         public int Cantidad { get {return this.cantidad; } set {this.cantidad = value; } }
         public double Precio { get { return this.precio; } set { this.precio = value; } }
         public string Nombre { get { return this.nombre; } }
+
+        public Articulos(string nombre, int cantidad, double precio)
+        {
+            this.nombre = nombre;
+            this.cantidad = cantidad;
+            this.precio = precio;
+        }
 
         public Articulos(string nombre)
         {

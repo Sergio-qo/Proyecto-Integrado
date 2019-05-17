@@ -13,6 +13,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormPedidos : Form
     {
+        Pedidos pedido;
         public FormPedidos()
         {
             InitializeComponent();

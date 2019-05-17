@@ -136,6 +136,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cmbItems
             // 
@@ -227,6 +228,7 @@
             this.Name = "FormComida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comida";
+            this.Load += new System.EventHandler(this.FormComida_Load);
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
