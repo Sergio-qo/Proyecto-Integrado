@@ -221,6 +221,7 @@
             this.btnPagoEfectivo.Size = new System.Drawing.Size(198, 352);
             this.btnPagoEfectivo.TabIndex = 55;
             this.btnPagoEfectivo.UseVisualStyleBackColor = true;
+            this.btnPagoEfectivo.Click += new System.EventHandler(this.BtnPagoEfectivo_Click);
             // 
             // btnPagoTarjeta
             // 
