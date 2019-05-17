@@ -12,7 +12,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormBebida : Form
     {
-        private Articulos articulo;
+        private Articulos articulo = null;
         public FormBebida()
         {
             InitializeComponent();
@@ -38,7 +38,14 @@ namespace ProyectoIntegrado
 
         private void button4_Click(object sender, EventArgs e)
         {
-            articulo = new Articulos(cmbItems.Text, cmbItems.Text);
+            if (articulo == null)
+            {
+                articulo = new Articulos(comboBox1.Text);
+            }
+            else
+            {
+                articulo.IncrementarCantidad();
+            }
             Pedidos pedido = new Pedidos();
             pedido.AnyadirArticulo(articulo);
         }

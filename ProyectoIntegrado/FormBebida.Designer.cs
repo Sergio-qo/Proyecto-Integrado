@@ -329,7 +329,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Chivito 3.8€",
+            "patata",
             "Beicon y huevo 3.8€"});
             this.comboBox1.Location = new System.Drawing.Point(441, 44);
             this.comboBox1.Name = "comboBox1";
