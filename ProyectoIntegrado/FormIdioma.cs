@@ -32,7 +32,7 @@ namespace ProyectoIntegrado
             formPortada.Show();
 
 
-            this.Close();
+            this.Dispose();
         }
 
         private void FormIdioma_Load(object sender, EventArgs e)

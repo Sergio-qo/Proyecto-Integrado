@@ -23,7 +23,7 @@ namespace ProyectoIntegrado
             FormPedidos formPedidos = new FormPedidos();
             formPedidos.Show();
 
-            this.Close();
+            this.Dispose();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
