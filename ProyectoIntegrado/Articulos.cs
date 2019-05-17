@@ -75,6 +75,7 @@ namespace ProyectoIntegrado
 
         public void IncrementarCantidad()
         {
+            System.Windows.Forms.MessageBox.Show("Estoy en " + Nombre);
             this.cantidad++;
         }
     }

@@ -20,6 +20,23 @@ namespace ProyectoIntegrado
         public FormBebida()
         {
             InitializeComponent();
+            ConexionBBDD conexion = new ConexionBBDD();
+            if (conexion.AbrirConexion())
+            {
+                string consulta = "select nombre from articulos";
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+                List<string> lista = new List<string>();
+                while (reader.Read())
+                {
+                    lista.Add(reader.GetString(0));
+                }
+                comboBox1.DataSource = lista;
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -42,12 +59,17 @@ namespace ProyectoIntegrado
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //List<Articulos> articulos = new List<Articulos>();
+            
+            articulo = new Articulos(comboBox1.Text);
+            MessageBox.Show("Añado a "+articulo.Nombre);
             if (articulo == null)
             {
                 articulo = new Articulos(comboBox1.Text);
             }
             else
             {
+                MessageBox.Show("Entro en incrementar de " + articulo.Nombre);
                 articulo.IncrementarCantidad();
             }
 
