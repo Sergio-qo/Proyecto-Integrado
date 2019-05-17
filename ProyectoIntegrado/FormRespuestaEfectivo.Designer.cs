@@ -56,11 +56,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(477, 48);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(318, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(159, 645);
+            this.groupBox1.Size = new System.Drawing.Size(106, 419);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             // 
@@ -71,10 +69,9 @@
             this.dgvItem,
             this.dgvCantidad,
             this.dgvPrecio});
-            this.dataGridView1.Location = new System.Drawing.Point(1, 165);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 107);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(466, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 229);
             this.dataGridView1.TabIndex = 31;
             // 
             // dgvItem
@@ -96,11 +93,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox2.Location = new System.Drawing.Point(-19, 623);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(-13, 405);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(1203, 63);
+            this.groupBox2.Size = new System.Drawing.Size(802, 41);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             // 
@@ -109,11 +104,9 @@
             this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
             this.grbBarraSuperior.Controls.Add(this.btnCerrar);
-            this.grbBarraSuperior.Location = new System.Drawing.Point(-19, -11);
-            this.grbBarraSuperior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbBarraSuperior.Location = new System.Drawing.Point(-13, -7);
             this.grbBarraSuperior.Name = "grbBarraSuperior";
-            this.grbBarraSuperior.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbBarraSuperior.Size = new System.Drawing.Size(1203, 63);
+            this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 28;
             this.grbBarraSuperior.TabStop = false;
             // 
@@ -122,9 +115,10 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.BackColor = System.Drawing.Color.White;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1138, 18);
+            this.btnMinimizar.Location = new System.Drawing.Point(759, 12);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(26, 25);
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 28;
             this.btnMinimizar.TabStop = false;
@@ -133,9 +127,10 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1170, 18);
+            this.btnCerrar.Location = new System.Drawing.Point(780, 12);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 29;
             this.btnCerrar.TabStop = false;
@@ -143,10 +138,9 @@
             // pcbCarrito
             // 
             this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
-            this.pcbCarrito.Location = new System.Drawing.Point(173, 79);
-            this.pcbCarrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pcbCarrito.Location = new System.Drawing.Point(115, 51);
             this.pcbCarrito.Name = "pcbCarrito";
-            this.pcbCarrito.Size = new System.Drawing.Size(93, 77);
+            this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
             this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCarrito.TabIndex = 38;
             this.pcbCarrito.TabStop = false;
@@ -154,10 +148,9 @@
             // lblFinalizar
             // 
             this.lblFinalizar.AutoSize = true;
-            this.lblFinalizar.Location = new System.Drawing.Point(816, 544);
-            this.lblFinalizar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinalizar.Location = new System.Drawing.Point(544, 354);
             this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(68, 20);
+            this.lblFinalizar.Size = new System.Drawing.Size(45, 13);
             this.lblFinalizar.TabIndex = 37;
             this.lblFinalizar.Text = "Finalizar";
             // 
@@ -165,21 +158,20 @@
             // 
             this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
             this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
-            this.btnSiguienteDisponible.Location = new System.Drawing.Point(932, 525);
-            this.btnSiguienteDisponible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(621, 341);
             this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
-            this.btnSiguienteDisponible.Size = new System.Drawing.Size(80, 58);
+            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 35;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
             // 
             // lblPagoEfectivo
             // 
             this.lblPagoEfectivo.AutoSize = true;
             this.lblPagoEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagoEfectivo.Location = new System.Drawing.Point(785, 79);
-            this.lblPagoEfectivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPagoEfectivo.Location = new System.Drawing.Point(523, 51);
             this.lblPagoEfectivo.Name = "lblPagoEfectivo";
-            this.lblPagoEfectivo.Size = new System.Drawing.Size(263, 29);
+            this.lblPagoEfectivo.Size = new System.Drawing.Size(181, 20);
             this.lblPagoEfectivo.TabIndex = 40;
             this.lblPagoEfectivo.Text = "PAGO EN EFECTIVO";
             // 
@@ -187,10 +179,9 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(17, 32);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(11, 21);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(423, 29);
+            this.lblCodigo.Size = new System.Drawing.Size(284, 20);
             this.lblCodigo.TabIndex = 41;
             this.lblCodigo.Text = "Tu código de pedido es el número:";
             // 
@@ -198,9 +189,11 @@
             // 
             this.grbPago.Controls.Add(this.lblNombre);
             this.grbPago.Controls.Add(this.lblCodigo);
-            this.grbPago.Location = new System.Drawing.Point(671, 218);
+            this.grbPago.Location = new System.Drawing.Point(447, 142);
+            this.grbPago.Margin = new System.Windows.Forms.Padding(2);
             this.grbPago.Name = "grbPago";
-            this.grbPago.Size = new System.Drawing.Size(461, 299);
+            this.grbPago.Padding = new System.Windows.Forms.Padding(2);
+            this.grbPago.Size = new System.Drawing.Size(307, 194);
             this.grbPago.TabIndex = 42;
             this.grbPago.TabStop = false;
             // 
@@ -208,18 +201,17 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(43, 179);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(29, 116);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(368, 29);
+            this.lblNombre.Size = new System.Drawing.Size(253, 20);
             this.lblNombre.TabIndex = 42;
             this.lblNombre.Text = "Llamara a \'nombre\' desde caja";
             // 
             // FormRespuestaEfectivo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 683);
+            this.ClientSize = new System.Drawing.Size(789, 444);
             this.Controls.Add(this.grbPago);
             this.Controls.Add(this.lblPagoEfectivo);
             this.Controls.Add(this.groupBox1);
@@ -230,8 +222,9 @@
             this.Controls.Add(this.lblFinalizar);
             this.Controls.Add(this.btnSiguienteDisponible);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRespuestaEfectivo";
-            this.Text = "FormRespuestaEfectivo";
+            this.Text = "Código pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

@@ -55,11 +55,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(494, 57);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(329, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(159, 645);
+            this.groupBox1.Size = new System.Drawing.Size(106, 419);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -70,10 +68,9 @@
             this.dgvItem,
             this.dgvCantidad,
             this.dgvPrecio});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 174);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 113);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(466, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 229);
             this.dataGridView1.TabIndex = 22;
             // 
             // dgvItem
@@ -97,11 +94,9 @@
             this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
             this.grbBarraSuperior.Controls.Add(this.btnCerrar);
-            this.grbBarraSuperior.Location = new System.Drawing.Point(-2, -2);
-            this.grbBarraSuperior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbBarraSuperior.Location = new System.Drawing.Point(-1, -1);
             this.grbBarraSuperior.Name = "grbBarraSuperior";
-            this.grbBarraSuperior.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbBarraSuperior.Size = new System.Drawing.Size(1203, 63);
+            this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 19;
             this.grbBarraSuperior.TabStop = false;
             // 
@@ -110,9 +105,10 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.BackColor = System.Drawing.Color.White;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1136, 18);
+            this.btnMinimizar.Location = new System.Drawing.Point(757, 12);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(26, 25);
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 33;
             this.btnMinimizar.TabStop = false;
@@ -122,9 +118,10 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1167, 18);
+            this.btnCerrar.Location = new System.Drawing.Point(778, 12);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 34;
             this.btnCerrar.TabStop = false;
@@ -133,11 +130,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox2.Location = new System.Drawing.Point(-2, 632);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 411);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(1203, 63);
+            this.groupBox2.Size = new System.Drawing.Size(802, 41);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -148,18 +143,16 @@
             this.cmbItems.Items.AddRange(new object[] {
             "Fondie 3.8€",
             "Fresas 3.8€"});
-            this.cmbItems.Location = new System.Drawing.Point(662, 71);
-            this.cmbItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbItems.Location = new System.Drawing.Point(441, 46);
             this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(180, 28);
+            this.cmbItems.Size = new System.Drawing.Size(121, 21);
             this.cmbItems.TabIndex = 27;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(852, 69);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(568, 45);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(30, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(20, 23);
             this.btnAgregar.TabIndex = 26;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -168,10 +161,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(18, 535);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(12, 348);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 58);
+            this.button1.Size = new System.Drawing.Size(62, 38);
             this.button1.TabIndex = 28;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -180,49 +172,45 @@
             // 
             this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
             this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
-            this.btnSiguienteDisponible.Location = new System.Drawing.Point(405, 535);
-            this.btnSiguienteDisponible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(270, 348);
             this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
-            this.btnSiguienteDisponible.Size = new System.Drawing.Size(80, 58);
+            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 29;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
             // 
             // lblFinalizar
             // 
             this.lblFinalizar.AutoSize = true;
-            this.lblFinalizar.Location = new System.Drawing.Point(315, 555);
-            this.lblFinalizar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinalizar.Location = new System.Drawing.Point(210, 361);
             this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(68, 20);
+            this.lblFinalizar.Size = new System.Drawing.Size(45, 13);
             this.lblFinalizar.TabIndex = 31;
             this.lblFinalizar.Text = "Finalizar";
             // 
             // lblAtras
             // 
             this.lblAtras.AutoSize = true;
-            this.lblAtras.Location = new System.Drawing.Point(128, 555);
-            this.lblAtras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAtras.Location = new System.Drawing.Point(85, 361);
             this.lblAtras.Name = "lblAtras";
-            this.lblAtras.Size = new System.Drawing.Size(47, 20);
+            this.lblAtras.Size = new System.Drawing.Size(31, 13);
             this.lblAtras.TabIndex = 30;
             this.lblAtras.Text = "Atras";
             // 
             // pcbCarrito
             // 
             this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
-            this.pcbCarrito.Location = new System.Drawing.Point(189, 88);
-            this.pcbCarrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pcbCarrito.Location = new System.Drawing.Point(126, 57);
             this.pcbCarrito.Name = "pcbCarrito";
-            this.pcbCarrito.Size = new System.Drawing.Size(93, 77);
+            this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
             this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCarrito.TabIndex = 32;
             this.pcbCarrito.TabStop = false;
             // 
             // FormPostre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.lblFinalizar);
             this.Controls.Add(this.lblAtras);
@@ -235,10 +223,9 @@
             this.Controls.Add(this.cmbItems);
             this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPostre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPostre";
+            this.Text = "Postres";
             this.Load += new System.EventHandler(this.FormPostre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbBarraSuperior.ResumeLayout(false);
