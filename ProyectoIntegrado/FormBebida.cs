@@ -14,7 +14,9 @@ namespace ProyectoIntegrado
     public partial class FormBebida : Form
     {
         private Articulos articulo = null;
-        Pedidos pedido;
+
+        Pedidos pedido = new Pedidos();
+
         public FormBebida()
         {
             InitializeComponent();
@@ -48,6 +50,9 @@ namespace ProyectoIntegrado
             {
                 articulo.IncrementarCantidad();
             }
+
+            pedido.AnyadirArticulo(articulo);
+
             List<Articulos> lista = new List<Articulos>();
 
             ConexionBBDD conex = new ConexionBBDD();
@@ -63,7 +68,6 @@ namespace ProyectoIntegrado
 
                 while (reader.Read())
                 {
-                    MessageBox.Show("dentro de reader: " + reader.GetDouble(2));
                     lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
                 }
 
@@ -71,7 +75,6 @@ namespace ProyectoIntegrado
                 dataGridView2.Rows.Clear();
                 foreach (Articulos articulo in lista)
                 {
-                    MessageBox.Show(articulo.Nombre + " " + articulo.Cantidad + " " + articulo.Precio);
                     dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
                 }
             }
