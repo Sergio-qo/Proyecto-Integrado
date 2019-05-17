@@ -67,12 +67,14 @@ namespace ProyectoIntegrado
 
                 if (esta == true)
                 {
-                    MessageBox.Show("El artículo que se intenta añadir ya está");
+                    consulta = String.Format("update articulospedido set cantidad = cantidad + 1");//si lo quiero utilizar añado estado
+                    comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+                    comando.ExecuteNonQuery();
                 }
                 else
                 {
 
-                    consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
+                    consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, articulo.Cantidad);//si lo quiero utilizar añado estado
                     comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
                     comando.ExecuteNonQuery();
                 }

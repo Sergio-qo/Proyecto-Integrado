@@ -13,7 +13,6 @@ namespace ProyectoIntegrado
         //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private string nombre;
-        private string descripcion;
         private int cantidad  = 1;
         private double precio;
 
