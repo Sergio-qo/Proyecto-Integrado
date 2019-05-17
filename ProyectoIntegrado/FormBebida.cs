@@ -12,6 +12,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormBebida : Form
     {
+        private Articulos articulo;
         public FormBebida()
         {
             InitializeComponent();
@@ -33,6 +34,20 @@ namespace ProyectoIntegrado
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            articulo = new Articulos(cmbItems.Text, cmbItems.Text);
+            Pedidos pedido = new Pedidos();
+            pedido.AnyadirArticulo(articulo);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPago pago = new FormPago();
+            pago.Show();
         }
     }
 }
