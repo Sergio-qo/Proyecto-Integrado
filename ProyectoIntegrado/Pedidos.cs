@@ -11,7 +11,7 @@ namespace ProyectoIntegrado
      class Pedidos
     {
         //private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
-        private static int idst; //Hago un id estático que sera el que va incrementando
+        //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private int cantidadPedidos;
         private double precioPedido;
@@ -26,9 +26,9 @@ namespace ProyectoIntegrado
 
 
 
-        public Pedidos(int id, int cantidadPedidos, double precioPedido)
+        public Pedidos(int cantidadPedidos, double precioPedido)
         {
-            this.id = id;
+            this.id = 1;
             this.cantidadPedidos = cantidadPedidos;
             this.precioPedido = precioPedido;
             //this.estado = "Por hacer";
@@ -36,42 +36,50 @@ namespace ProyectoIntegrado
 
         public Pedidos()
         {
-            this.id = idst; //Asigno el id desde idst
+            this.id = 1; //Asigno el id desde idst
         }
 
         //Añade un articulo a la lista si no está ya
         public void AnyadirArticulo(Articulos articulo)
         {
             ConexionBBDD conexion = new ConexionBBDD();
-            List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
-            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
+            if (conexion.AbrirConexion())
+            {
+                List<Articulos> articulos = new List<Articulos>();
+                string consulta = "select nombre, idarticulo from articulospedido inner join Articulos on idarticulo=id";
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
 
-            while (reader.Read())
-            {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
-            }
-            reader.Close();
-            //Comprueba si el artículo está o no está en la lista
-            bool esta = false;
-            foreach (Articulos elem in articulos)
-            {
-                if (elem.Id == articulo.Id)
+                while (reader.Read())
                 {
-                    esta = true;
+                    articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
                 }
-            }
+                reader.Close();
+                //Comprueba si el artículo está o no está en la lista
+                bool esta = false;
+                foreach (Articulos elem in articulos)
+                {
+                    if (elem.Id == articulo.Id)
+                    {
+                        esta = true;
+                    }
+                }
 
-            if (esta == true)
-            {
-                MessageBox.Show("El artículo que se intenta añadir ya está");
+                if (esta == true)
+                {
+                    MessageBox.Show("El artículo que se intenta añadir ya está");
+                }
+                else
+                {
+
+                    consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
+                    comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+                    comando.ExecuteNonQuery();
+                }
             }
             else
             {
-                consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
-                //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
-                
+                MessageBox.Show("Error al conectar con bd");
             }
         }
 
@@ -82,7 +90,7 @@ namespace ProyectoIntegrado
             MySqlCommand comando;
             foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
             {
-                string consulta = String.Format("insert into articulospedido (idpedido, idarticulo) values('{0}', '{1}')", this.id, elem.Id);
+                string consulta = String.Format("insert into articulospedido (idpedido) values('{0}')", this.id);
                 comando = new MySqlCommand(consulta, conexion.Conexion);
                 comando.ExecuteNonQuery();
             }
@@ -93,18 +101,20 @@ namespace ProyectoIntegrado
         {
             ConexionBBDD conexion = new ConexionBBDD();
             List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            string consulta = "select id, nombre from articulospedido inner join Articulos on idarticulo=id";
             MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
             {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                articulos.Add(new Articulos(reader.GetString(0)));
             }
             reader.Close();
 
 
             consulta = String.Format("delete from articulospedido where id = {0}", id);
+            comando = new MySqlCommand(consulta, conexion.Conexion);
+            comando.ExecuteNonQuery();
 
             //Recorro la lista y cuando el id coincide lo borra
             //foreach (Articulos elem in articulos)
@@ -121,13 +131,13 @@ namespace ProyectoIntegrado
         {
             ConexionBBDD conexion = new ConexionBBDD();
             List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            string consulta = "select nombre from articulospedido inner join Articulos on idarticulo=id";
             MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
             {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                articulos.Add(new Articulos(reader.GetString(0)));
             }
             reader.Close();
             double precio = 0;
