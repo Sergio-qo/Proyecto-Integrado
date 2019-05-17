@@ -36,7 +36,7 @@ namespace ProyectoIntegrado
             FormReservaMesa formReservas = new FormReservaMesa();
             formReservas.Show();
 
-            this.Dispose();
+            this.Hide();
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace ProyectoIntegrado
             FormPedidos formPedidos = new FormPedidos();
             formPedidos.Show();
 
-            this.Dispose();
+            this.Hide();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
