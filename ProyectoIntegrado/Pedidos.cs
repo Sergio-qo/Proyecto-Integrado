@@ -116,21 +116,21 @@ namespace ProyectoIntegrado
                         esta = true;
                         articul = elem;
                     }
-                    else
-                    {
-                        esta = false;
-                        articul = articulo;
-                    }
+                    //else
+                    //{
+                    //    esta = false;
+                    //    articul = elem;
+                    //}
                 }
                 if (esta == false)
                 {
-                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articulo.Cantidad, articulo.Id);
+                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articul.Cantidad, articul.Id);
                     comando = new MySqlCommand(consulta, conex.Conexion);
                     comando.ExecuteNonQuery();
                 }
                 else
                 {
-                    IncrementarCantidadArticulo(articul);
+                    IncrementarCantidadArticulo(articulo);
                 }
                 reader.Close();
                 //conex.CerrarConexion();
