@@ -50,21 +50,21 @@ namespace ProyectoIntegrado
 
         public Articulos(string nombre, int id)
         {
-
-            ConexionBBDD conexion = new ConexionBBDD();
-            if (conexion.AbrirConexion())
-            {
-                string consulta = String.Format("select id from articulos where nombre = '{0}'", nombre);
-                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-                MySqlDataReader reader = comando.ExecuteReader();
-                reader.Read();
-                this.id = reader.GetInt32(0);
-                reader.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    string consulta = String.Format("select id from articulos where nombre = '{0}'", nombre);
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    MySqlDataReader reader = comando.ExecuteReader();
+            //    reader.Read();
+            //    this.id = reader.GetInt32(0);
+            //    reader.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al cargar articulo");
+            //}
+            this.id = id;
             this.nombre = nombre;
         }
 

@@ -42,46 +42,102 @@ namespace ProyectoIntegrado
         //Añade un articulo a la lista si no está ya
         public void AnyadirArticulo(Articulos articulo)
         {
-            ConexionBBDD conexion = new ConexionBBDD();
-            if (conexion.AbrirConexion())
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    List<Articulos> articulos = new List<Articulos>();
+            //    string consulta = "select nombre, idarticulo from articulospedido inner join Articulos on idarticulo=id";
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    MySqlDataReader reader = comando.ExecuteReader();
+
+            //    while (reader.Read())
+            //    {
+            //        articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
+            //    }
+            //    reader.Close();
+            //    //Comprueba si el artículo está o no está en la lista
+            //    bool esta = false;
+            //    foreach (Articulos elem in articulos)
+            //    {
+            //        if (elem.Id == articulo.Id)
+            //        {
+            //            esta = true;
+            //        }
+            //    }
+
+            //    if (esta == true)
+            //    {
+            //        consulta = String.Format("update articulospedido set cantidad = cantidad + 1");//si lo quiero utilizar añado estado
+            //        comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+            //        comando.ExecuteNonQuery();
+            //    }
+            //    else
+            //    {
+
+            //        consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, articulo.Cantidad);//si lo quiero utilizar añado estado
+            //        comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+            //        comando.ExecuteNonQuery();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al conectar con bd");
+            //}
+
+            ConexionBBDD conex = new ConexionBBDD();
+            string consulta;
+            MySqlCommand comando;
+            MySqlDataReader reader;
+
+            List<Articulos> articulos = new List<Articulos>();
+
+            bool esta = false;
+            if (conex.AbrirConexion())
             {
-                List<Articulos> articulos = new List<Articulos>();
-                string consulta = "select nombre, idarticulo from articulospedido inner join Articulos on idarticulo=id";
-                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-                MySqlDataReader reader = comando.ExecuteReader();
+
+                consulta = String.Format("select nombre, idarticulo from articulospedido inner join articulos on id = idarticulo");
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
                     articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
                 }
+
                 reader.Close();
-                //Comprueba si el artículo está o no está en la lista
-                bool esta = false;
+
+                Articulos articul = null;
+
                 foreach (Articulos elem in articulos)
                 {
-                    if (elem.Id == articulo.Id)
+                    if (articulo.Nombre == elem.Nombre)
                     {
                         esta = true;
+                        articul = elem;
+                    }
+                    else
+                    {
+                        esta = false;
+                        articul = articulo;
                     }
                 }
-
-                if (esta == true)
+                if (esta == false)
                 {
-                    consulta = String.Format("update articulospedido set cantidad = cantidad + 1");//si lo quiero utilizar añado estado
-                    comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articulo.Cantidad, articulo.Id);
+                    comando = new MySqlCommand(consulta, conex.Conexion);
                     comando.ExecuteNonQuery();
                 }
                 else
                 {
-
-                    consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, articulo.Cantidad);//si lo quiero utilizar añado estado
-                    comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
-                    comando.ExecuteNonQuery();
+                    IncrementarCantidadArticulo(articul);
                 }
+                reader.Close();
+                //conex.CerrarConexion();
             }
             else
             {
-                MessageBox.Show("Error al conectar con bd");
+                MessageBox.Show("Error al añadir articulo");
             }
         }
 
@@ -173,6 +229,23 @@ namespace ProyectoIntegrado
 
             return lista;
 
+        }
+
+        public void IncrementarCantidadArticulo(Articulos articulo)
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
+
+                string consulta = String.Format("update articulospedido set cantidad = cantidad + 1 where idarticulo = {0}", articulo.Id);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                comando.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
     }
