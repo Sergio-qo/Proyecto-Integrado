@@ -114,17 +114,17 @@ namespace ProyectoIntegrado
                     if (articulo.Nombre == elem.Nombre)
                     {
                         esta = true;
-                        articul = elem;
                     }
+                    //articul = elem;
                     //else
                     //{
-                    //    esta = false;
+                    //    //esta = false;
                     //    articul = elem;
                     //}
                 }
                 if (esta == false)
                 {
-                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articul.Cantidad, articul.Id);
+                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articulo.Cantidad, articulo.Id);
                     comando = new MySqlCommand(consulta, conex.Conexion);
                     comando.ExecuteNonQuery();
                 }
