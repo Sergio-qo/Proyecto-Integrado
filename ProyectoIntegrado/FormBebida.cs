@@ -23,7 +23,7 @@ namespace ProyectoIntegrado
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
             {
-                string consulta = "select nombre from articulos";
+                string consulta = "select nombre from articulos where tipo = 'Bebida'";
                 MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
                 MySqlDataReader reader = comando.ExecuteReader();
                 List<string> lista = new List<string>();
