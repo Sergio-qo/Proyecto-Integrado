@@ -181,15 +181,31 @@ namespace ProyectoIntegrado
 
                 reader.Close();
 
-                if (esta == true && cantidad >= 1)
+
+                consulta = String.Format("select cantidad from articulospedido inner join Articulos on idarticulo=id where idarticulo = {0}", idp);
+                comando = new MySqlCommand(consulta, conexion.Conexion);
+                reader = comando.ExecuteReader();
+
+                
+                if (reader.HasRows)
                 {
-                    DecrementarCantidadArticulo(articulo);
+                    reader.Read();
+                    cantidad = reader.GetInt32(0);
+                    reader.Close();
+                    if (cantidad >= 2)
+                    {
+                        DecrementarCantidadArticulo(articulo);
+                    }
+                    else
+                    {
+                        consulta = String.Format("delete from articulospedido where idarticulo in(select id from articulos where nombre = '{0}')", nombre);
+                        comando = new MySqlCommand(consulta, conexion.Conexion);
+                        comando.ExecuteNonQuery();
+                    }
                 }
                 else
                 {
-                    consulta = String.Format("delete from articulospedido where idarticulo in(select * from articulos where nombre = '{0}')", nombre);
-                    comando = new MySqlCommand(consulta, conexion.Conexion);
-                    comando.ExecuteNonQuery();
+                    MessageBox.Show("No esta el artículo");
                 }
             }
             else
