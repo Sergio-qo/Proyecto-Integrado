@@ -95,7 +95,7 @@ namespace ProyectoIntegrado
             if (conex.AbrirConexion())
             {
 
-                consulta = String.Format("select nombre, idarticulo, articulospedido.precio from articulospedido inner join articulos on id = idarticulo");
+                consulta = String.Format("select nombre, idarticulo, articulos.precio from articulospedido inner join articulos on id = idarticulo");
                 comando = new MySqlCommand(consulta, conex.Conexion);
 
                 reader = comando.ExecuteReader();
@@ -107,7 +107,14 @@ namespace ProyectoIntegrado
 
                 reader.Close();
 
-                //Articulos articul = null;
+                Articulos articul = articulo;
+                consulta = String.Format("select precio from articulos where nombre = '{0}'", articulo.Nombre);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                reader = comando.ExecuteReader();
+                reader.Read();
+                articul.Precio = reader.GetDouble(0);
+                articul.Id = articulo.Id;
+                reader.Close();
 
                 foreach (Articulos elem in articulos)
                 {
@@ -115,6 +122,7 @@ namespace ProyectoIntegrado
                     {
                         esta = true;
                     }
+                    articul = elem;
                     //articul = elem;
                     //else
                     //{
@@ -124,7 +132,7 @@ namespace ProyectoIntegrado
                 }
                 if (esta == false)
                 {
-                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, 0)", this.id, articulo.Cantidad, articulo.Id);
+                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, '{3}')", this.id, articul.Cantidad, articul.Id, articul.Precio);
                     comando = new MySqlCommand(consulta, conex.Conexion);
                     comando.ExecuteNonQuery();
                 }
@@ -158,10 +166,11 @@ namespace ProyectoIntegrado
         public void EliminarArticulo(string nombre)
         {
             int idp = 0;
+            double precio;
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
             {
-                bool esta = false;
+                //bool esta = false;
                 string consulta = "select nombre, cantidad, idarticulo from articulospedido inner join Articulos on idarticulo=id";
                 MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -172,10 +181,11 @@ namespace ProyectoIntegrado
                 {
                     if (reader.GetString(0) == nombre)
                     {
-                        esta = true;
+                        //esta = true;
                         idp = reader.GetInt32(2);
                     }
                     cantidad = reader.GetInt32(1);
+                    precio = reader.GetDouble(2);
                     articulo = new Articulos(nombre, cantidad, idp);
                 }
 

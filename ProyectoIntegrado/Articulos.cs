@@ -16,7 +16,7 @@ namespace ProyectoIntegrado
         private int cantidad = 1;
         private double precio;
 
-        public int Id{ get { return id; } }
+        public int Id{ get { return id; } set { this.id = value; } }
         public int Cantidad { get {return this.cantidad; } set {this.cantidad = value; } }
         public double Precio { get { return this.precio; } set { this.precio = value; } }
         public string Nombre { get { return this.nombre; } }
