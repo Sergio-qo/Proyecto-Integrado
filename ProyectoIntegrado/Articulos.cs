@@ -68,6 +68,12 @@ namespace ProyectoIntegrado
             this.nombre = nombre;
         }
 
+        public Articulos(int cantidad, string nombre)
+        {
+            this.cantidad = cantidad;
+            this.nombre = nombre;
+        }
+
         //public Articulos(string nombre)
         //{
         //    this.id = idst; //Asigno el id desde idst

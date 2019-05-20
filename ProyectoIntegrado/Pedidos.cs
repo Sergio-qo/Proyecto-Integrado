@@ -155,24 +155,63 @@ namespace ProyectoIntegrado
         }
 
         //Elimina un artículo de la lista segun id
-        public void EliminarArticulo(int id)
+        public void EliminarArticulo(string nombre)
         {
             ConexionBBDD conexion = new ConexionBBDD();
-            List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select id, nombre from articulospedido inner join Articulos on idarticulo=id";
-            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            if (conexion.AbrirConexion())
             {
-                articulos.Add(new Articulos(reader.GetString(0)));
+                bool esta = false;
+                string consulta = "select nombre, cantidad from articulospedido inner join Articulos on idarticulo=id";
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+                Articulos articulo = null;
+                int cantidad = 0;
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) == nombre)
+                    {
+                        esta = true;
+                    }
+                    cantidad = reader.GetInt32(1);
+                    articulo = new Articulos(cantidad, nombre);
+                }
+
+                reader.Close();
+
+                if (esta == true && cantidad >= 1)
+                {
+                    DecrementarCantidadArticulo(articulo);
+                }
+                else
+                {
+                    consulta = String.Format("delete from articulospedido where id in(select * from articulos where nombre = '{0}')", nombre);
+                    comando = new MySqlCommand(consulta, conexion.Conexion);
+                    comando.ExecuteNonQuery();
+                }
             }
-            reader.Close();
+            else
+            {
+                MessageBox.Show("Error");
+            }
 
 
-            consulta = String.Format("delete from articulospedido where id = {0}", id);
-            comando = new MySqlCommand(consulta, conexion.Conexion);
-            comando.ExecuteNonQuery();
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //List<Articulos> articulos = new List<Articulos>();
+            //string consulta = "select id, nombre from articulospedido inner join Articulos on idarticulo=id";
+            //MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //MySqlDataReader reader = comando.ExecuteReader();
+
+            //while (reader.Read())
+            //{
+            //    articulos.Add(new Articulos(reader.GetString(0)));
+            //}
+            //reader.Close();
+
+
+            //consulta = String.Format("delete from articulospedido where id = {0}", id);
+            //comando = new MySqlCommand(consulta, conexion.Conexion);
+            //comando.ExecuteNonQuery();
 
             //Recorro la lista y cuando el id coincide lo borra
             //foreach (Articulos elem in articulos)
@@ -239,6 +278,23 @@ namespace ProyectoIntegrado
                 MySqlCommand comando;
 
                 string consulta = String.Format("update articulospedido set cantidad = cantidad + 1 where idarticulo = {0}", articulo.Id);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                comando.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        public void DecrementarCantidadArticulo(Articulos articulo)
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
+
+                string consulta = String.Format("update articulospedido set cantidad = cantidad - 1 where idarticulo = {0}", articulo.Id);
                 comando = new MySqlCommand(consulta, conex.Conexion);
                 comando.ExecuteNonQuery();
             }
