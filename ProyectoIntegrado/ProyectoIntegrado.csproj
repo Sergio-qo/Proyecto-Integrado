@@ -133,6 +133,12 @@
     <Compile Include="FormRespuestaEfectivo.Designer.cs">
       <DependentUpon>FormRespuestaEfectivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRespuestaTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRespuestaTarjeta.Designer.cs">
+      <DependentUpon>FormRespuestaTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pago.cs" />
     <Compile Include="PagoEfectivo.cs" />
     <Compile Include="PagoTarjeta.cs" />
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRespuestaEfectivo.resx">
       <DependentUpon>FormRespuestaEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRespuestaTarjeta.resx">
+      <DependentUpon>FormRespuestaTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
