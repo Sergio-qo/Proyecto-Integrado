@@ -157,11 +157,12 @@ namespace ProyectoIntegrado
         //Elimina un artículo de la lista segun id
         public void EliminarArticulo(string nombre)
         {
+            int idp = 0;
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
             {
                 bool esta = false;
-                string consulta = "select nombre, cantidad from articulospedido inner join Articulos on idarticulo=id";
+                string consulta = "select nombre, cantidad, idarticulo from articulospedido inner join Articulos on idarticulo=id";
                 MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
                 MySqlDataReader reader = comando.ExecuteReader();
                 Articulos articulo = null;
@@ -172,9 +173,10 @@ namespace ProyectoIntegrado
                     if (reader.GetString(0) == nombre)
                     {
                         esta = true;
+                        idp = reader.GetInt32(2);
                     }
                     cantidad = reader.GetInt32(1);
-                    articulo = new Articulos(cantidad, nombre);
+                    articulo = new Articulos(nombre, cantidad, idp);
                 }
 
                 reader.Close();
@@ -185,7 +187,7 @@ namespace ProyectoIntegrado
                 }
                 else
                 {
-                    consulta = String.Format("delete from articulospedido where id in(select * from articulos where nombre = '{0}')", nombre);
+                    consulta = String.Format("delete from articulospedido where idarticulo in(select * from articulos where nombre = '{0}')", nombre);
                     comando = new MySqlCommand(consulta, conexion.Conexion);
                     comando.ExecuteNonQuery();
                 }
@@ -252,19 +254,27 @@ namespace ProyectoIntegrado
             List<Articulos> lista = new List<Articulos>();
 
             ConexionBBDD conex = new ConexionBBDD();
-            MySqlCommand comando;
-
-            string consulta = String.Format("select nombre, cantidad, precio from articulospedido inner join articulos on id=idarticulo");
-            comando = new MySqlCommand(consulta, conex.Conexion);
-
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            if (conex.AbrirConexion())
             {
-                lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
-            }
+                MySqlCommand comando;
 
-            reader.Close();
+                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
+                }
+
+                reader.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            
 
             return lista;
 

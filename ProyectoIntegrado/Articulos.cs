@@ -28,6 +28,13 @@ namespace ProyectoIntegrado
             this.precio = precio;
         }
 
+        public Articulos(string nombre, int cantidad, int id)
+        {
+            this.nombre = nombre;
+            this.cantidad = cantidad;
+            this.id = id;
+        }
+
         public Articulos(string nombre)
         {
             //this.id = id;
@@ -68,11 +75,11 @@ namespace ProyectoIntegrado
             this.nombre = nombre;
         }
 
-        public Articulos(int cantidad, string nombre)
-        {
-            this.cantidad = cantidad;
-            this.nombre = nombre;
-        }
+        //public Articulos(int cantidad, string nombre)
+        //{
+        //    this.cantidad = cantidad;
+        //    this.nombre = nombre;
+        //}
 
         //public Articulos(string nombre)
         //{

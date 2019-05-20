@@ -59,6 +59,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnEliArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -346,11 +347,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnEliArt
+            // 
+            this.btnEliArt.Location = new System.Drawing.Point(594, 42);
+            this.btnEliArt.Name = "btnEliArt";
+            this.btnEliArt.Size = new System.Drawing.Size(20, 23);
+            this.btnEliArt.TabIndex = 50;
+            this.btnEliArt.Text = "-";
+            this.btnEliArt.UseVisualStyleBackColor = true;
+            this.btnEliArt.Click += new System.EventHandler(this.btnEliArt_Click);
+            // 
             // FormBebida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliArt);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox1);
@@ -422,5 +434,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnEliArt;
     }
 }
