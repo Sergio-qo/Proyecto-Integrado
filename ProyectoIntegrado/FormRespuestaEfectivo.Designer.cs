@@ -134,6 +134,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 29;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pcbCarrito
             // 
@@ -205,7 +206,7 @@
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(253, 20);
             this.lblNombre.TabIndex = 42;
-            this.lblNombre.Text = "Llamara a \'nombre\' desde caja";
+            this.lblNombre.Text = "Llamará a \'nombre\' desde caja";
             // 
             // FormRespuestaEfectivo
             // 
