@@ -45,6 +45,7 @@
             this.lblFinalizar = new System.Windows.Forms.Label();
             this.lblAtras = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
+            this.btnEliArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -106,7 +107,7 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.White;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(757, 12);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +120,7 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(778, 12);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(17, 16);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,6 +157,7 @@
             this.btnAgregar.TabIndex = 26;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // button1
             // 
@@ -206,11 +208,22 @@
             this.pcbCarrito.TabIndex = 32;
             this.pcbCarrito.TabStop = false;
             // 
+            // btnEliArt
+            // 
+            this.btnEliArt.Location = new System.Drawing.Point(594, 45);
+            this.btnEliArt.Name = "btnEliArt";
+            this.btnEliArt.Size = new System.Drawing.Size(20, 23);
+            this.btnEliArt.TabIndex = 33;
+            this.btnEliArt.Text = "-";
+            this.btnEliArt.UseVisualStyleBackColor = true;
+            this.btnEliArt.Click += new System.EventHandler(this.btnEliArt_Click);
+            // 
             // FormPostre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliArt);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.lblFinalizar);
             this.Controls.Add(this.lblAtras);
@@ -255,5 +268,6 @@
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnEliArt;
     }
 }

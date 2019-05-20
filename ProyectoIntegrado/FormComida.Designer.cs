@@ -45,6 +45,7 @@
             this.lblFinalizar = new System.Windows.Forms.Label();
             this.lblAtras = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
+            this.btnEliArt = new System.Windows.Forms.Button();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -208,11 +209,22 @@
             this.pcbCarrito.TabIndex = 27;
             this.pcbCarrito.TabStop = false;
             // 
+            // btnEliArt
+            // 
+            this.btnEliArt.Location = new System.Drawing.Point(594, 46);
+            this.btnEliArt.Name = "btnEliArt";
+            this.btnEliArt.Size = new System.Drawing.Size(20, 23);
+            this.btnEliArt.TabIndex = 51;
+            this.btnEliArt.Text = "-";
+            this.btnEliArt.UseVisualStyleBackColor = true;
+            this.btnEliArt.Click += new System.EventHandler(this.btnEliArt_Click);
+            // 
             // FormComida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliArt);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.btnSiguienteDisponible);
             this.Controls.Add(this.lblFinalizar);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnEliArt;
     }
 }

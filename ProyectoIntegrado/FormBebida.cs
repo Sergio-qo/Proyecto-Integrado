@@ -67,98 +67,103 @@ namespace ProyectoIntegrado
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //List<Articulos> articulos = new List<Articulos>();
+            //////////List<Articulos> articulos = new List<Articulos>();
 
-            //articulo = new Articulos(comboBox1.Text);
-            //MessageBox.Show("Añado a "+articulo.Nombre);
-            //if (articulo == null)
-            //{
-            //    articulo = new Articulos(comboBox1.Text);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Entro en incrementar de " + articulo.Nombre);
-            //    articulo.IncrementarCantidad();
-            //}
+            //////////articulo = new Articulos(comboBox1.Text);
+            //////////MessageBox.Show("Añado a "+articulo.Nombre);
+            //////////if (articulo == null)
+            //////////{
+            //////////    articulo = new Articulos(comboBox1.Text);
+            //////////}
+            //////////else
+            //////////{
+            //////////    MessageBox.Show("Entro en incrementar de " + articulo.Nombre);
+            //////////    articulo.IncrementarCantidad();
+            //////////}
 
-            ConexionBBDD conex = new ConexionBBDD();
-            string consulta;
-            MySqlCommand comando;
-            MySqlDataReader reader;
+            //ConexionBBDD conex = new ConexionBBDD();
+            //string consulta;
+            //MySqlCommand comando;
+            //MySqlDataReader reader;
 
             pedido.AnyadirArticulo(new Articulos(comboBox1.Text));
 
-            //bool esta = false;
+            ////////////bool esta = false;
+
+            ////////////if (conex.AbrirConexion())
+            ////////////{
+
+            ////////////    consulta = String.Format("select nombre, id from articulos");
+            ////////////    comando = new MySqlCommand(consulta, conex.Conexion);
+
+            ////////////    reader = comando.ExecuteReader();
+
+            ////////////    while (reader.Read())
+            ////////////    {
+            ////////////        articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
+            ////////////    }
+
+            ////////////    foreach (Articulos articulo in articulos)
+            ////////////    {
+            ////////////        if (articulo.Nombre == comboBox1.Text)
+            ////////////        {
+            ////////////            esta = true;
+            ////////////        }
+            ////////////        else
+            ////////////        {
+            ////////////            esta = false;
+            ////////////        }
+            ////////////    }
+            ////////////    if (esta == false)
+            ////////////    {
+            ////////////        pedido.AnyadirArticulo(new Articulos(comboBox1.Text));
+            ////////////    }
+            ////////////    else
+            ////////////    {
+            ////////////        pedido.IncrementarCantidadArticulo(articulo);
+            ////////////    }
+            ////////////    reader.Close();
+            ////////////    conex.CerrarConexion();
+            ////////////}
+            ////////////else
+            ////////////{
+            ////////////    MessageBox.Show("Error");
+            ////////////}
+
+            ////////////pedido.AnyadirArticulo(articulo);
+
+            List<Articulos> lista = pedido.VerListaArticulos();
+            dataGridView2.Rows.Clear();
+            foreach (Articulos articulo in lista)
+            {
+                dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            }
 
             //if (conex.AbrirConexion())
             //{
-
-            //    consulta = String.Format("select nombre, id from articulos");
+            //    consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
             //    comando = new MySqlCommand(consulta, conex.Conexion);
 
             //    reader = comando.ExecuteReader();
 
             //    while (reader.Read())
             //    {
-            //        articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
+            //        lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
             //    }
 
-            //    foreach (Articulos articulo in articulos)
-            //    {
-            //        if (articulo.Nombre == comboBox1.Text)
-            //        {
-            //            esta = true;
-            //        }
-            //        else
-            //        {
-            //            esta = false;
-            //        }
-            //    }
-            //    if (esta == false)
-            //    {
-            //        pedido.AnyadirArticulo(new Articulos(comboBox1.Text));
-            //    }
-            //    else
-            //    {
-            //        pedido.IncrementarCantidadArticulo(articulo);
-            //    }
             //    reader.Close();
-            //    conex.CerrarConexion();
+            //    dataGridView2.Rows.Clear();
+            //    foreach (Articulos articulo in lista)
+            //    {
+            //        dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            //    }
             //}
             //else
             //{
             //    MessageBox.Show("Error");
             //}
 
-            //pedido.AnyadirArticulo(articulo);
 
-            List<Articulos> lista = new List<Articulos>();
-
-            if (conex.AbrirConexion())
-            {
-                consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
-                comando = new MySqlCommand(consulta, conex.Conexion);
-
-                reader = comando.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
-                }
-
-                reader.Close();
-                dataGridView2.Rows.Clear();
-                foreach (Articulos articulo in lista)
-                {
-                    dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
