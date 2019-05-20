@@ -95,19 +95,19 @@ namespace ProyectoIntegrado
             if (conex.AbrirConexion())
             {
 
-                consulta = String.Format("select nombre, idarticulo from articulospedido inner join articulos on id = idarticulo");
+                consulta = String.Format("select nombre, idarticulo, articulospedido.precio from articulospedido inner join articulos on id = idarticulo");
                 comando = new MySqlCommand(consulta, conex.Conexion);
 
                 reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
+                    articulos.Add(new Articulos(reader.GetString(0), reader.GetDouble(2), reader.GetInt32(1)));
                 }
 
                 reader.Close();
 
-                Articulos articul = null;
+                //Articulos articul = null;
 
                 foreach (Articulos elem in articulos)
                 {

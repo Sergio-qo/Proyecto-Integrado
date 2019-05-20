@@ -13,7 +13,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormPedidos : Form
     {
-        Pedidos pedido;
+        Pedidos pedido = new Pedidos();
         public FormPedidos()
         {
             InitializeComponent();
@@ -27,6 +27,14 @@ namespace ProyectoIntegrado
             else
             {
                 MessageBox.Show("Error al conectar con la base de datos");
+            }
+
+
+            List<Articulos> articulos = pedido.VerListaArticulos();
+
+            foreach (Articulos articulo in articulos)
+            {
+                dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
         }
 

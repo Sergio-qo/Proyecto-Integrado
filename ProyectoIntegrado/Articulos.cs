@@ -21,6 +21,14 @@ namespace ProyectoIntegrado
         public double Precio { get { return this.precio; } set { this.precio = value; } }
         public string Nombre { get { return this.nombre; } }
 
+        public Articulos(string nombre, double precio, int id)
+        {
+            this.nombre = nombre;
+            this.id = id;
+            this.precio = precio;
+        }
+
+
         public Articulos(string nombre, int cantidad, double precio)
         {
             this.nombre = nombre;
