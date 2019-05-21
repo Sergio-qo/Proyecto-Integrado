@@ -108,5 +108,13 @@ namespace ProyectoIntegrado
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
         }
+
+        private void btnSiguienteDisponible_Click(object sender, EventArgs e)
+        {
+            FormPago pago = new FormPago();
+            pago.Show();
+
+            this.Dispose();
+        }
     }
 }

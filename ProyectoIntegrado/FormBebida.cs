@@ -168,9 +168,11 @@ namespace ProyectoIntegrado
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             FormPago pago = new FormPago();
             pago.Show();
+
+            this.Dispose();
         }
 
         private void FormBebida_Load(object sender, EventArgs e)

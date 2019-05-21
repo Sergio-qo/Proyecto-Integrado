@@ -48,10 +48,10 @@
             this.lblFinalizar = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.grbPrimerPlato = new System.Windows.Forms.GroupBox();
-            this.grbSegundoPlato = new System.Windows.Forms.GroupBox();
-            this.grbBebida = new System.Windows.Forms.GroupBox();
             this.cmbPrimer = new System.Windows.Forms.ComboBox();
+            this.grbSegundoPlato = new System.Windows.Forms.GroupBox();
             this.cmbSegundo = new System.Windows.Forms.ComboBox();
+            this.grbBebida = new System.Windows.Forms.GroupBox();
             this.cmbBebida = new System.Windows.Forms.ComboBox();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -176,6 +176,7 @@
             this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 21;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
             // 
             // dataGridView1
             // 
@@ -243,26 +244,6 @@
             this.grbPrimerPlato.TabIndex = 26;
             this.grbPrimerPlato.TabStop = false;
             // 
-            // grbSegundoPlato
-            // 
-            this.grbSegundoPlato.Controls.Add(this.cmbSegundo);
-            this.grbSegundoPlato.Controls.Add(this.lblSegundoPlato);
-            this.grbSegundoPlato.Location = new System.Drawing.Point(431, 132);
-            this.grbSegundoPlato.Name = "grbSegundoPlato";
-            this.grbSegundoPlato.Size = new System.Drawing.Size(134, 68);
-            this.grbSegundoPlato.TabIndex = 27;
-            this.grbSegundoPlato.TabStop = false;
-            // 
-            // grbBebida
-            // 
-            this.grbBebida.Controls.Add(this.cmbBebida);
-            this.grbBebida.Controls.Add(this.lblBebida);
-            this.grbBebida.Location = new System.Drawing.Point(431, 216);
-            this.grbBebida.Name = "grbBebida";
-            this.grbBebida.Size = new System.Drawing.Size(134, 58);
-            this.grbBebida.TabIndex = 28;
-            this.grbBebida.TabStop = false;
-            // 
             // cmbPrimer
             // 
             this.cmbPrimer.FormattingEnabled = true;
@@ -274,6 +255,16 @@
             this.cmbPrimer.Size = new System.Drawing.Size(121, 21);
             this.cmbPrimer.TabIndex = 45;
             // 
+            // grbSegundoPlato
+            // 
+            this.grbSegundoPlato.Controls.Add(this.cmbSegundo);
+            this.grbSegundoPlato.Controls.Add(this.lblSegundoPlato);
+            this.grbSegundoPlato.Location = new System.Drawing.Point(431, 132);
+            this.grbSegundoPlato.Name = "grbSegundoPlato";
+            this.grbSegundoPlato.Size = new System.Drawing.Size(134, 68);
+            this.grbSegundoPlato.TabIndex = 27;
+            this.grbSegundoPlato.TabStop = false;
+            // 
             // cmbSegundo
             // 
             this.cmbSegundo.FormattingEnabled = true;
@@ -284,6 +275,16 @@
             this.cmbSegundo.Name = "cmbSegundo";
             this.cmbSegundo.Size = new System.Drawing.Size(121, 21);
             this.cmbSegundo.TabIndex = 46;
+            // 
+            // grbBebida
+            // 
+            this.grbBebida.Controls.Add(this.cmbBebida);
+            this.grbBebida.Controls.Add(this.lblBebida);
+            this.grbBebida.Location = new System.Drawing.Point(431, 216);
+            this.grbBebida.Name = "grbBebida";
+            this.grbBebida.Size = new System.Drawing.Size(134, 58);
+            this.grbBebida.TabIndex = 28;
+            this.grbBebida.TabStop = false;
             // 
             // cmbBebida
             // 

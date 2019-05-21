@@ -180,6 +180,7 @@
             this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
             this.btnSiguienteDisponible.TabIndex = 22;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
+            this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
             // 
             // lblFinalizar
             // 
