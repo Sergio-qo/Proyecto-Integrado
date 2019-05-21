@@ -54,11 +54,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnEliArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -265,6 +266,7 @@
             this.button2.Size = new System.Drawing.Size(53, 38);
             this.button2.TabIndex = 46;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -287,35 +289,6 @@
             this.groupBox4.Size = new System.Drawing.Size(802, 41);
             this.groupBox4.TabIndex = 39;
             this.groupBox4.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox5.Location = new System.Drawing.Point(-1, 409);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(802, 41);
-            this.groupBox5.TabIndex = 41;
-            this.groupBox5.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Chivito 3.8€",
-            "Beicon y huevo 3.8€"});
-            this.comboBox1.Location = new System.Drawing.Point(441, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 44;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(568, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(20, 23);
-            this.button4.TabIndex = 43;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // btnMinimizar
             // 
@@ -344,11 +317,52 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.groupBox5.Location = new System.Drawing.Point(-1, 409);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(802, 41);
+            this.groupBox5.TabIndex = 41;
+            this.groupBox5.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "patata",
+            "Beicon y huevo 3.8€"});
+            this.comboBox1.Location = new System.Drawing.Point(441, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 44;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(568, 43);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(20, 23);
+            this.button4.TabIndex = 43;
+            this.button4.Text = "+";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnEliArt
+            // 
+            this.btnEliArt.Location = new System.Drawing.Point(594, 42);
+            this.btnEliArt.Name = "btnEliArt";
+            this.btnEliArt.Size = new System.Drawing.Size(20, 23);
+            this.btnEliArt.TabIndex = 50;
+            this.btnEliArt.Text = "-";
+            this.btnEliArt.UseVisualStyleBackColor = true;
+            this.btnEliArt.Click += new System.EventHandler(this.btnEliArt_Click);
+            // 
             // FormBebida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliArt);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox1);
@@ -374,7 +388,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBebida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBebida";
+            this.Text = "Bebidas";
+            this.Load += new System.EventHandler(this.FormBebida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -419,5 +434,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnEliArt;
     }
 }

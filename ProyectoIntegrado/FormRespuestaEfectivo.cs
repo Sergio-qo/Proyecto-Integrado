@@ -17,6 +17,18 @@ namespace ProyectoIntegrado
             InitializeComponent();
         }
 
+        //Vuelve al inicio de la aplicación
+        private void btnSiguienteDisponible_Click(object sender, EventArgs e)
+        {
+            FormPrincipal principal = new FormPrincipal();
+            principal.Show();
 
+            this.Dispose();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

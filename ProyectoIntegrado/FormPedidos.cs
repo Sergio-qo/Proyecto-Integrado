@@ -7,14 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
 {
     public partial class FormPedidos : Form
     {
+        Pedidos pedido = new Pedidos();
         public FormPedidos()
         {
             InitializeComponent();
+            ConexionBBDD conexion = new ConexionBBDD();
+            if (conexion.AbrirConexion())
+            {
+                string consulta = "insert into pedidos values()";
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                comando.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Error al conectar con la base de datos");
+            }
+
+
+            List<Articulos> articulos = pedido.VerListaArticulos();
+
+            foreach (Articulos articulo in articulos)
+            {
+                dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -74,6 +95,16 @@ namespace ProyectoIntegrado
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();     //Boton que hace que se cierre la pagina
+        }
+
+        private void grbBarraSuperior_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

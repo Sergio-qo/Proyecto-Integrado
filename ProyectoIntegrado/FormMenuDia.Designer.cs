@@ -38,12 +38,6 @@
             this.lblSegundoPlato = new System.Windows.Forms.Label();
             this.lblBebida = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.rdbPPU = new System.Windows.Forms.RadioButton();
-            this.rdbPPD = new System.Windows.Forms.RadioButton();
-            this.rdbSPU = new System.Windows.Forms.RadioButton();
-            this.rdbSPD = new System.Windows.Forms.RadioButton();
-            this.rdbBU = new System.Windows.Forms.RadioButton();
-            this.rdbBD = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSiguienteDisponible = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -56,6 +50,9 @@
             this.grbPrimerPlato = new System.Windows.Forms.GroupBox();
             this.grbSegundoPlato = new System.Windows.Forms.GroupBox();
             this.grbBebida = new System.Windows.Forms.GroupBox();
+            this.cmbPrimer = new System.Windows.Forms.ComboBox();
+            this.cmbSegundo = new System.Windows.Forms.ComboBox();
+            this.cmbBebida = new System.Windows.Forms.ComboBox();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -159,72 +156,6 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // rdbPPU
-            // 
-            this.rdbPPU.AutoSize = true;
-            this.rdbPPU.Location = new System.Drawing.Point(6, 31);
-            this.rdbPPU.Name = "rdbPPU";
-            this.rdbPPU.Size = new System.Drawing.Size(85, 17);
-            this.rdbPPU.TabIndex = 14;
-            this.rdbPPU.TabStop = true;
-            this.rdbPPU.Text = "radioButton1";
-            this.rdbPPU.UseVisualStyleBackColor = true;
-            // 
-            // rdbPPD
-            // 
-            this.rdbPPD.AutoSize = true;
-            this.rdbPPD.Location = new System.Drawing.Point(6, 54);
-            this.rdbPPD.Name = "rdbPPD";
-            this.rdbPPD.Size = new System.Drawing.Size(85, 17);
-            this.rdbPPD.TabIndex = 15;
-            this.rdbPPD.TabStop = true;
-            this.rdbPPD.Text = "radioButton2";
-            this.rdbPPD.UseVisualStyleBackColor = true;
-            // 
-            // rdbSPU
-            // 
-            this.rdbSPU.AutoSize = true;
-            this.rdbSPU.Location = new System.Drawing.Point(0, 31);
-            this.rdbSPU.Name = "rdbSPU";
-            this.rdbSPU.Size = new System.Drawing.Size(85, 17);
-            this.rdbSPU.TabIndex = 16;
-            this.rdbSPU.TabStop = true;
-            this.rdbSPU.Text = "radioButton3";
-            this.rdbSPU.UseVisualStyleBackColor = true;
-            // 
-            // rdbSPD
-            // 
-            this.rdbSPD.AutoSize = true;
-            this.rdbSPD.Location = new System.Drawing.Point(0, 54);
-            this.rdbSPD.Name = "rdbSPD";
-            this.rdbSPD.Size = new System.Drawing.Size(85, 17);
-            this.rdbSPD.TabIndex = 17;
-            this.rdbSPD.TabStop = true;
-            this.rdbSPD.Text = "radioButton4";
-            this.rdbSPD.UseVisualStyleBackColor = true;
-            // 
-            // rdbBU
-            // 
-            this.rdbBU.AutoSize = true;
-            this.rdbBU.Location = new System.Drawing.Point(6, 31);
-            this.rdbBU.Name = "rdbBU";
-            this.rdbBU.Size = new System.Drawing.Size(85, 17);
-            this.rdbBU.TabIndex = 18;
-            this.rdbBU.TabStop = true;
-            this.rdbBU.Text = "radioButton5";
-            this.rdbBU.UseVisualStyleBackColor = true;
-            // 
-            // rdbBD
-            // 
-            this.rdbBD.AutoSize = true;
-            this.rdbBD.Location = new System.Drawing.Point(6, 54);
-            this.rdbBD.Name = "rdbBD";
-            this.rdbBD.Size = new System.Drawing.Size(85, 17);
-            this.rdbBD.TabIndex = 19;
-            this.rdbBD.TabStop = true;
-            this.rdbBD.Text = "radioButton6";
-            this.rdbBD.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -304,36 +235,66 @@
             // 
             // grbPrimerPlato
             // 
+            this.grbPrimerPlato.Controls.Add(this.cmbPrimer);
             this.grbPrimerPlato.Controls.Add(this.lblPrimerPlato);
-            this.grbPrimerPlato.Controls.Add(this.rdbPPU);
-            this.grbPrimerPlato.Controls.Add(this.rdbPPD);
             this.grbPrimerPlato.Location = new System.Drawing.Point(431, 48);
             this.grbPrimerPlato.Name = "grbPrimerPlato";
-            this.grbPrimerPlato.Size = new System.Drawing.Size(108, 78);
+            this.grbPrimerPlato.Size = new System.Drawing.Size(134, 69);
             this.grbPrimerPlato.TabIndex = 26;
             this.grbPrimerPlato.TabStop = false;
             // 
             // grbSegundoPlato
             // 
+            this.grbSegundoPlato.Controls.Add(this.cmbSegundo);
             this.grbSegundoPlato.Controls.Add(this.lblSegundoPlato);
-            this.grbSegundoPlato.Controls.Add(this.rdbSPU);
-            this.grbSegundoPlato.Controls.Add(this.rdbSPD);
             this.grbSegundoPlato.Location = new System.Drawing.Point(431, 132);
             this.grbSegundoPlato.Name = "grbSegundoPlato";
-            this.grbSegundoPlato.Size = new System.Drawing.Size(102, 78);
+            this.grbSegundoPlato.Size = new System.Drawing.Size(134, 68);
             this.grbSegundoPlato.TabIndex = 27;
             this.grbSegundoPlato.TabStop = false;
             // 
             // grbBebida
             // 
+            this.grbBebida.Controls.Add(this.cmbBebida);
             this.grbBebida.Controls.Add(this.lblBebida);
-            this.grbBebida.Controls.Add(this.rdbBU);
-            this.grbBebida.Controls.Add(this.rdbBD);
             this.grbBebida.Location = new System.Drawing.Point(431, 216);
             this.grbBebida.Name = "grbBebida";
-            this.grbBebida.Size = new System.Drawing.Size(108, 78);
+            this.grbBebida.Size = new System.Drawing.Size(134, 58);
             this.grbBebida.TabIndex = 28;
             this.grbBebida.TabStop = false;
+            // 
+            // cmbPrimer
+            // 
+            this.cmbPrimer.FormattingEnabled = true;
+            this.cmbPrimer.Items.AddRange(new object[] {
+            "patata",
+            "Beicon y huevo 3.8€"});
+            this.cmbPrimer.Location = new System.Drawing.Point(0, 40);
+            this.cmbPrimer.Name = "cmbPrimer";
+            this.cmbPrimer.Size = new System.Drawing.Size(121, 21);
+            this.cmbPrimer.TabIndex = 45;
+            // 
+            // cmbSegundo
+            // 
+            this.cmbSegundo.FormattingEnabled = true;
+            this.cmbSegundo.Items.AddRange(new object[] {
+            "patata",
+            "Beicon y huevo 3.8€"});
+            this.cmbSegundo.Location = new System.Drawing.Point(0, 41);
+            this.cmbSegundo.Name = "cmbSegundo";
+            this.cmbSegundo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSegundo.TabIndex = 46;
+            // 
+            // cmbBebida
+            // 
+            this.cmbBebida.FormattingEnabled = true;
+            this.cmbBebida.Items.AddRange(new object[] {
+            "patata",
+            "Beicon y huevo 3.8€"});
+            this.cmbBebida.Location = new System.Drawing.Point(0, 31);
+            this.cmbBebida.Name = "cmbBebida";
+            this.cmbBebida.Size = new System.Drawing.Size(121, 21);
+            this.cmbBebida.TabIndex = 47;
             // 
             // FormMenuDia
             // 
@@ -356,7 +317,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuDia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMenuDia";
+            this.Text = "Menú del día";
+            this.Load += new System.EventHandler(this.FormMenuDia_Load);
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -382,12 +344,6 @@
         private System.Windows.Forms.Label lblSegundoPlato;
         private System.Windows.Forms.Label lblBebida;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.RadioButton rdbPPU;
-        private System.Windows.Forms.RadioButton rdbPPD;
-        private System.Windows.Forms.RadioButton rdbSPU;
-        private System.Windows.Forms.RadioButton rdbSPD;
-        private System.Windows.Forms.RadioButton rdbBU;
-        private System.Windows.Forms.RadioButton rdbBD;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSiguienteDisponible;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -402,5 +358,8 @@
         private System.Windows.Forms.GroupBox grbPrimerPlato;
         private System.Windows.Forms.GroupBox grbSegundoPlato;
         private System.Windows.Forms.GroupBox grbBebida;
+        private System.Windows.Forms.ComboBox cmbPrimer;
+        private System.Windows.Forms.ComboBox cmbSegundo;
+        private System.Windows.Forms.ComboBox cmbBebida;
     }
 }

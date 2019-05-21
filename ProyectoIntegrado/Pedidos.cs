@@ -11,7 +11,7 @@ namespace ProyectoIntegrado
      class Pedidos
     {
         //private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
-        private static int idst; //Hago un id estático que sera el que va incrementando
+        //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private int cantidadPedidos;
         private double precioPedido;
@@ -26,9 +26,9 @@ namespace ProyectoIntegrado
 
 
 
-        public Pedidos(int id, int cantidadPedidos, double precioPedido)
+        public Pedidos(int cantidadPedidos, double precioPedido)
         {
-            this.id = id;
+            this.id = 1;
             this.cantidadPedidos = cantidadPedidos;
             this.precioPedido = precioPedido;
             //this.estado = "Por hacer";
@@ -36,42 +36,116 @@ namespace ProyectoIntegrado
 
         public Pedidos()
         {
-            this.id = idst; //Asigno el id desde idst
+            this.id = 1; //Asigno el id desde idst
         }
 
         //Añade un articulo a la lista si no está ya
         public void AnyadirArticulo(Articulos articulo)
         {
-            ConexionBBDD conexion = new ConexionBBDD();
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    List<Articulos> articulos = new List<Articulos>();
+            //    string consulta = "select nombre, idarticulo from articulospedido inner join Articulos on idarticulo=id";
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    MySqlDataReader reader = comando.ExecuteReader();
+
+            //    while (reader.Read())
+            //    {
+            //        articulos.Add(new Articulos(reader.GetString(0), reader.GetInt32(1)));
+            //    }
+            //    reader.Close();
+            //    //Comprueba si el artículo está o no está en la lista
+            //    bool esta = false;
+            //    foreach (Articulos elem in articulos)
+            //    {
+            //        if (elem.Id == articulo.Id)
+            //        {
+            //            esta = true;
+            //        }
+            //    }
+
+            //    if (esta == true)
+            //    {
+            //        consulta = String.Format("update articulospedido set cantidad = cantidad + 1");//si lo quiero utilizar añado estado
+            //        comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+            //        comando.ExecuteNonQuery();
+            //    }
+            //    else
+            //    {
+
+            //        consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, articulo.Cantidad);//si lo quiero utilizar añado estado
+            //        comando = new MySqlCommand(consulta, conexion.Conexion);                                                                                                                                                           //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
+            //        comando.ExecuteNonQuery();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al conectar con bd");
+            //}
+
+            ConexionBBDD conex = new ConexionBBDD();
+            string consulta;
+            MySqlCommand comando;
+            MySqlDataReader reader;
+
             List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
-            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
 
-            while (reader.Read())
-            {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
-            }
-            reader.Close();
-            //Comprueba si el artículo está o no está en la lista
             bool esta = false;
-            foreach (Articulos elem in articulos)
+            if (conex.AbrirConexion())
             {
-                if (elem.Id == articulo.Id)
-                {
-                    esta = true;
-                }
-            }
 
-            if (esta == true)
-            {
-                MessageBox.Show("El artículo que se intenta añadir ya está");
+                consulta = String.Format("select nombre, idarticulo, articulos.precio from articulospedido inner join articulos on id = idarticulo");
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    articulos.Add(new Articulos(reader.GetString(0), reader.GetDouble(2), reader.GetInt32(1)));
+                }
+
+                reader.Close();
+
+                Articulos articul = articulo;
+                consulta = String.Format("select precio from articulos where nombre = '{0}'", articulo.Nombre);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                reader = comando.ExecuteReader();
+                reader.Read();
+                articul.Precio = reader.GetDouble(0);
+                articul.Id = articulo.Id;
+                reader.Close();
+
+                foreach (Articulos elem in articulos)
+                {
+                    if (articulo.Nombre == elem.Nombre)
+                    {
+                        esta = true;
+                    }
+                    articul = elem;
+                    //articul = elem;
+                    //else
+                    //{
+                    //    //esta = false;
+                    //    articul = elem;
+                    //}
+                }
+                if (esta == false)
+                {
+                    consulta = String.Format("insert into articulospedido (idpedido, idarticulo, cantidad, precio) values({0}, {2}, {1}, '{3}')", this.id, articul.Cantidad, articul.Id, articul.Precio);
+                    comando = new MySqlCommand(consulta, conex.Conexion);
+                    comando.ExecuteNonQuery();
+                }
+                else
+                {
+                    IncrementarCantidadArticulo(articulo);
+                }
+                reader.Close();
+                //conex.CerrarConexion();
             }
             else
             {
-                consulta = String.Format("insert into articulospedido (idpedido,idarticulo,cantidad) values({0}, {1}, {2})", this.id, articulo.Id, this.cantidadArticulos);//si lo quiero utilizar añado estado
-                //this.articulos.Add(articulo); //Agrega el artículo a la lista si no esta
-                
+                MessageBox.Show("Error al añadir articulo");
             }
         }
 
@@ -82,29 +156,90 @@ namespace ProyectoIntegrado
             MySqlCommand comando;
             foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
             {
-                string consulta = String.Format("insert into articulospedido (idpedido, idarticulo) values('{0}', '{1}')", this.id, elem.Id);
+                string consulta = String.Format("insert into articulospedido (idpedido) values('{0}')", this.id);
                 comando = new MySqlCommand(consulta, conexion.Conexion);
                 comando.ExecuteNonQuery();
             }
         }
 
         //Elimina un artículo de la lista segun id
-        public void EliminarArticulo(int id)
+        public void EliminarArticulo(string nombre)
         {
+            int idp = 0;
+            double precio;
             ConexionBBDD conexion = new ConexionBBDD();
-            List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
-            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            if (conexion.AbrirConexion())
             {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                //bool esta = false;
+                string consulta = "select nombre, cantidad, idarticulo from articulospedido inner join Articulos on idarticulo=id";
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+                Articulos articulo = null;
+                int cantidad = 0;
+
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) == nombre)
+                    {
+                        //esta = true;
+                        idp = reader.GetInt32(2);
+                    }
+                    cantidad = reader.GetInt32(1);
+                    precio = reader.GetDouble(2);
+                    articulo = new Articulos(nombre, cantidad, idp);
+                }
+
+                reader.Close();
+
+
+                consulta = String.Format("select cantidad from articulospedido inner join Articulos on idarticulo=id where idarticulo = {0}", idp);
+                comando = new MySqlCommand(consulta, conexion.Conexion);
+                reader = comando.ExecuteReader();
+
+                
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    cantidad = reader.GetInt32(0);
+                    reader.Close();
+                    if (cantidad >= 2)
+                    {
+                        DecrementarCantidadArticulo(articulo);
+                    }
+                    else
+                    {
+                        consulta = String.Format("delete from articulospedido where idarticulo in(select id from articulos where nombre = '{0}')", nombre);
+                        comando = new MySqlCommand(consulta, conexion.Conexion);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No esta el artículo");
+                }
             }
-            reader.Close();
+            else
+            {
+                MessageBox.Show("Error");
+            }
 
 
-            consulta = String.Format("delete from articulospedido where id = {0}", id);
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //List<Articulos> articulos = new List<Articulos>();
+            //string consulta = "select id, nombre from articulospedido inner join Articulos on idarticulo=id";
+            //MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //MySqlDataReader reader = comando.ExecuteReader();
+
+            //while (reader.Read())
+            //{
+            //    articulos.Add(new Articulos(reader.GetString(0)));
+            //}
+            //reader.Close();
+
+
+            //consulta = String.Format("delete from articulospedido where id = {0}", id);
+            //comando = new MySqlCommand(consulta, conexion.Conexion);
+            //comando.ExecuteNonQuery();
 
             //Recorro la lista y cuando el id coincide lo borra
             //foreach (Articulos elem in articulos)
@@ -121,13 +256,13 @@ namespace ProyectoIntegrado
         {
             ConexionBBDD conexion = new ConexionBBDD();
             List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select idarticulo, nombre, descripcion from articulospedido inner join Articulos on idarticulo=id";
+            string consulta = "select nombre from articulospedido inner join Articulos on idarticulo=id";
             MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
             while (reader.Read())
             {
-                articulos.Add(new Articulos(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                articulos.Add(new Articulos(reader.GetString(0)));
             }
             reader.Close();
             double precio = 0;
@@ -139,29 +274,71 @@ namespace ProyectoIntegrado
         }
 
 
-        //Muestra la lista de todos los pedidos
-        //public List<Pedidos> VerListaPedidos()
-        //{
-        //    List<Pedidos> lista = new List<Pedidos>();
+        //Muestra la lista de todos los articulos
+        public List<Articulos> VerListaArticulos()
+        {
+            List<Articulos> lista = new List<Articulos>();
 
-        //    ConexionBBDD conex = new ConexionBBDD();
-        //    MySqlCommand comando;
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
 
-        //    string consulta = String.Format("select * from articulospedido ");
-        //    comando = new MySqlCommand(consulta, conex.Conexion);
+                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
+                comando = new MySqlCommand(consulta, conex.Conexion);
 
-        //    MySqlDataReader reader = comando.ExecuteReader();
+                MySqlDataReader reader = comando.ExecuteReader();
 
-        //    while (reader.Read())
-        //    {
-        //        lista.Add(new Pedidos(reader.GetInt32(0), reader.GetInt32(2), reader.GetDouble(3)));
-        //    }
+                while (reader.Read())
+                {
+                    lista.Add(new Articulos(reader.GetString(0), reader.GetInt32(1), reader.GetDouble(2)));
+                }
 
-        //    reader.Close();
+                reader.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            
 
-        //    return lista;
+            return lista;
 
-        //}
+        }
+
+        public void IncrementarCantidadArticulo(Articulos articulo)
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
+
+                string consulta = String.Format("update articulospedido set cantidad = cantidad + 1 where idarticulo = {0}", articulo.Id);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                comando.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        public void DecrementarCantidadArticulo(Articulos articulo)
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                MySqlCommand comando;
+
+                string consulta = String.Format("update articulospedido set cantidad = cantidad - 1 where idarticulo = {0}", articulo.Id);
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                comando.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
 
     }
 }

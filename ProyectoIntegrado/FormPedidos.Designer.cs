@@ -45,9 +45,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -66,6 +66,7 @@
             this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 1;
             this.grbBarraSuperior.TabStop = false;
+            this.grbBarraSuperior.Enter += new System.EventHandler(this.grbBarraSuperior_Enter);
             // 
             // btnMinimizar
             // 
@@ -221,37 +222,31 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.articulo,
-            this.Cantidad,
-            this.Precio});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
+            this.dgvItem,
+            this.dgvCantidad,
+            this.dgvPrecio});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(170, 239);
-            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.Size = new System.Drawing.Size(292, 199);
+            this.dataGridView1.TabIndex = 17;
             // 
-            // articulo
+            // dgvItem
             // 
-            this.articulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.articulo.HeaderText = "Artículo";
-            this.articulo.Name = "articulo";
-            this.articulo.ReadOnly = true;
-            this.articulo.Width = 69;
+            this.dgvItem.HeaderText = "Item";
+            this.dgvItem.Name = "dgvItem";
+            this.dgvItem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Cantidad
+            // dgvCantidad
             // 
-            this.Cantidad.HeaderText = "€";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
+            this.dgvCantidad.HeaderText = "Cantidad";
+            this.dgvCantidad.Name = "dgvCantidad";
             // 
-            // Precio
+            // dgvPrecio
             // 
-            this.Precio.HeaderText = "Nº";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.dgvPrecio.HeaderText = "Precio";
+            this.dgvPrecio.Name = "dgvPrecio";
             // 
             // FormPedidos
             // 
@@ -270,6 +265,7 @@
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPedidos";
+            this.Load += new System.EventHandler(this.FormPedidos_Load);
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -299,8 +295,8 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrecio;
     }
 }
