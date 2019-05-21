@@ -112,5 +112,13 @@ namespace ProyectoIntegrado
         {
 
         }
+
+        private void btnSiguienteDisponible_Click(object sender, EventArgs e)
+        {
+            FormPago pago = new FormPago();
+            pago.Show();
+
+            this.Dispose();
+        }
     }
 }
