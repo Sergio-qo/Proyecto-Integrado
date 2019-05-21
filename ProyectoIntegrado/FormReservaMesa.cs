@@ -75,7 +75,6 @@ namespace ProyectoIntegrado
 
             if (bien)
             {
-                MessageBox.Show("Prueba");
 
 
 
@@ -90,7 +89,7 @@ namespace ProyectoIntegrado
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido reservar la mesa");
+                    MessageBox.Show("No se ha podido reservar la mesa, intentalo con otras fechas");
 
                     FormPrincipal formPortada = new FormPrincipal();
                     formPortada.Show();
