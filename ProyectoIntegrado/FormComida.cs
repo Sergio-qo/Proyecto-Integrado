@@ -17,25 +17,25 @@ namespace ProyectoIntegrado
         public FormComida()
         {
             InitializeComponent();
-            ConexionBBDD conexion = new ConexionBBDD();
-            if (conexion.AbrirConexion())
-            {
-                string consulta = "select nombre from articulos where tipo = 'Menu'";
-                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-                MySqlDataReader reader = comando.ExecuteReader();
-                List<string> lista = new List<string>();
-                while (reader.Read())
-                {
-                    lista.Add(reader.GetString(0));
-                }
-                cmbItems.DataSource = lista;
-            }
-            else
-            {
-                MessageBox.Show("error");
-            }
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    string consulta = "select nombre from articulos where tipo = 'Menu'";
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    MySqlDataReader reader = comando.ExecuteReader();
+            //    List<string> lista = new List<string>();
+            //    while (reader.Read())
+            //    {
+            //        lista.Add(reader.GetString(0));
+            //    }
+            //    cmbItems.DataSource = lista;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("error");
+            //}
 
-            Pedidos pedido = new Pedidos();
+            //Pedidos pedido = new Pedidos();
             List<Articulos> articulos = pedido.VerListaArticulos();
 
             foreach (Articulos articulo in articulos)

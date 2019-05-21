@@ -41,12 +41,11 @@
             this.lblPago = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnAñadirCodigo = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
             this.btnPagoEfectivo = new System.Windows.Forms.Button();
             this.btnPagoTarjeta = new System.Windows.Forms.Button();
+            this.lblResultadoPrecio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -164,19 +163,9 @@
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(431, 372);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(146, 15);
+            this.lblCodigo.Size = new System.Drawing.Size(87, 15);
             this.lblCodigo.TabIndex = 48;
-            this.lblCodigo.Text = "Codigo de descuento:";
-            // 
-            // btnAñadirCodigo
-            // 
-            this.btnAñadirCodigo.BackColor = System.Drawing.Color.White;
-            this.btnAñadirCodigo.Image = ((System.Drawing.Image)(resources.GetObject("btnAñadirCodigo.Image")));
-            this.btnAñadirCodigo.Location = new System.Drawing.Point(702, 363);
-            this.btnAñadirCodigo.Name = "btnAñadirCodigo";
-            this.btnAñadirCodigo.Size = new System.Drawing.Size(53, 29);
-            this.btnAñadirCodigo.TabIndex = 47;
-            this.btnAñadirCodigo.UseVisualStyleBackColor = false;
+            this.lblCodigo.Text = "Total precio:";
             // 
             // lblAtras
             // 
@@ -199,41 +188,45 @@
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Location = new System.Drawing.Point(595, 372);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(86, 20);
-            this.txtDescuento.TabIndex = 54;
-            // 
             // btnPagoEfectivo
             // 
-            this.btnPagoEfectivo.Location = new System.Drawing.Point(455, 120);
+            this.btnPagoEfectivo.Location = new System.Drawing.Point(451, 175);
             this.btnPagoEfectivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnPagoEfectivo.Name = "btnPagoEfectivo";
-            this.btnPagoEfectivo.Size = new System.Drawing.Size(132, 229);
+            this.btnPagoEfectivo.Size = new System.Drawing.Size(118, 118);
             this.btnPagoEfectivo.TabIndex = 55;
+            this.btnPagoEfectivo.Text = "EFECTIVO";
             this.btnPagoEfectivo.UseVisualStyleBackColor = true;
             this.btnPagoEfectivo.Click += new System.EventHandler(this.BtnPagoEfectivo_Click);
             // 
             // btnPagoTarjeta
             // 
-            this.btnPagoTarjeta.Location = new System.Drawing.Point(615, 120);
+            this.btnPagoTarjeta.Location = new System.Drawing.Point(606, 175);
             this.btnPagoTarjeta.Margin = new System.Windows.Forms.Padding(2);
             this.btnPagoTarjeta.Name = "btnPagoTarjeta";
-            this.btnPagoTarjeta.Size = new System.Drawing.Size(132, 229);
+            this.btnPagoTarjeta.Size = new System.Drawing.Size(118, 118);
             this.btnPagoTarjeta.TabIndex = 56;
+            this.btnPagoTarjeta.Text = "TARJETA";
             this.btnPagoTarjeta.UseVisualStyleBackColor = true;
+            // 
+            // lblResultadoPrecio
+            // 
+            this.lblResultadoPrecio.AutoSize = true;
+            this.lblResultadoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultadoPrecio.Location = new System.Drawing.Point(524, 372);
+            this.lblResultadoPrecio.Name = "lblResultadoPrecio";
+            this.lblResultadoPrecio.Size = new System.Drawing.Size(15, 15);
+            this.lblResultadoPrecio.TabIndex = 57;
+            this.lblResultadoPrecio.Text = "0";
             // 
             // FormPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 461);
+            this.Controls.Add(this.lblResultadoPrecio);
             this.Controls.Add(this.btnPagoTarjeta);
             this.Controls.Add(this.btnPagoEfectivo);
-            this.Controls.Add(this.txtDescuento);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblAtras);
             this.Controls.Add(this.groupBox1);
@@ -243,7 +236,6 @@
             this.Controls.Add(this.lblPago);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.btnAñadirCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPago";
@@ -274,11 +266,10 @@
         private System.Windows.Forms.Label lblPago;
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Button btnAñadirCodigo;
         private System.Windows.Forms.Label lblAtras;
         private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Button btnPagoEfectivo;
         private System.Windows.Forms.Button btnPagoTarjeta;
+        private System.Windows.Forms.Label lblResultadoPrecio;
     }
 }
