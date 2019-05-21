@@ -25,5 +25,10 @@ namespace ProyectoIntegrado
 
             this.Dispose();
         }
+
+        private void lblReservaDia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

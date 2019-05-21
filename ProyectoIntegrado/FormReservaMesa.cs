@@ -39,32 +39,68 @@ namespace ProyectoIntegrado
         private void btnSiguienteDisponible_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
+            bool bien = true;
+         
+                if (txtNombreReserva.Text == "")
+                {
+                    errorProvider1.SetError(txtNombreReserva, "Introduce nombre");
+                    bien = false;
+                }
 
-            if(txtNombreReserva.Text == "")
+                if (txtApellidosReserva.Text == "")
+                {
+                    errorProvider1.SetError(txtApellidosReserva, "Introduce apellidos");
+                    bien = false;
+                }
+
+                if (txtEmailReserva.Text == "")
+                {
+                    errorProvider1.SetError(txtEmailReserva, "Introduce email");
+                    bien = false;
+                }
+
+                if (txtNumeroComensales.Text == "")
+                {
+                    errorProvider1.SetError(txtNumeroComensales, "Indica número de comensales");
+                    bien = false;
+                }
+
+                if (cmbHoraReserva.Text == "")
+                {
+                    errorProvider1.SetError(cmbHoraReserva, "Indica hora");
+                    bien = false;
+                }
+
+
+
+            if (bien)
             {
-                errorProvider1.SetError(txtNombreReserva, "Introduce nombre");
-            }
+                MessageBox.Show("Prueba");
 
-            if (txtApellidosReserva.Text == "")
-            {
-                errorProvider1.SetError(txtApellidosReserva, "Introduce apellidos");
-            }
 
-            if (txtEmailReserva.Text == "")
-            {
-                errorProvider1.SetError(txtEmailReserva, "Introduce email");
-            }
 
-            if (txtNumeroComensales.Text == "")
-            {
-                errorProvider1.SetError(txtNumeroComensales, "Indica número de comensales");
-            }
+                ReservaMesa reserva = new ReservaMesa(dtDiaReserva.Value, Convert.ToInt32(txtNumeroComensales.Text), txtNombreReserva.Text, txtApellidosReserva.Text, txtEmailReserva.Text, cmbHoraReserva.Text);
+                if (reserva.ReservarMesa() == 1)
+                {
+                    FormMesaReservada mesaReservada = new FormMesaReservada();
+                    mesaReservada.Show();
 
-            if (cmbHoraReserva.Text == "")
-            {
-                errorProvider1.SetError(cmbHoraReserva, "Indica hora");
-            }
+                    this.Dispose();
 
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido reservar la mesa");
+
+                    FormPrincipal formPortada = new FormPrincipal();
+                    formPortada.Show();
+
+
+                    this.Dispose();
+                }
+            }
+            
+            
 
 
         }
