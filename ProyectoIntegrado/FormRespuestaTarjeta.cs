@@ -34,5 +34,13 @@ namespace ProyectoIntegrado
 
             this.Dispose();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+
+            this.Dispose();
+        }
     }
 }

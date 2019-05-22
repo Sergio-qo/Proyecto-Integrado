@@ -15,7 +15,7 @@ namespace ProyectoIntegrado
     {
         private Articulos articulo = null;
 
-        Pedidos pedido = new Pedidos(false);
+        Pedidos pedido = new Pedidos(true);
 
         public FormBebida()
         {

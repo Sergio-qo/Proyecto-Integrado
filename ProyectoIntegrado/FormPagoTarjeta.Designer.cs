@@ -50,12 +50,16 @@
             this.lblNumeroTarjeta = new System.Windows.Forms.Label();
             this.lblNombreTitular = new System.Windows.Forms.Label();
             this.lblTituloPago = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPrecioAPagarEfectivo = new System.Windows.Forms.TextBox();
+            this.lblInformaPrecio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbPagoTarjeta.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcbCarrito
@@ -76,6 +80,7 @@
             this.lblAtras.Size = new System.Drawing.Size(31, 13);
             this.lblAtras.TabIndex = 42;
             this.lblAtras.Text = "Atras";
+            this.lblAtras.Click += new System.EventHandler(this.lblAtras_Click);
             // 
             // button1
             // 
@@ -86,6 +91,7 @@
             this.button1.Size = new System.Drawing.Size(62, 38);
             this.button1.TabIndex = 39;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnPagar
             // 
@@ -95,6 +101,7 @@
             this.btnPagar.TabIndex = 32;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // grpBarraInferior
             // 
@@ -190,7 +197,7 @@
             this.grbPagoTarjeta.Controls.Add(this.lblNombreTitular);
             this.grbPagoTarjeta.Location = new System.Drawing.Point(464, 80);
             this.grbPagoTarjeta.Name = "grbPagoTarjeta";
-            this.grbPagoTarjeta.Size = new System.Drawing.Size(288, 167);
+            this.grbPagoTarjeta.Size = new System.Drawing.Size(288, 117);
             this.grbPagoTarjeta.TabIndex = 45;
             this.grbPagoTarjeta.TabStop = false;
             // 
@@ -256,11 +263,40 @@
             this.lblTituloPago.TabIndex = 17;
             this.lblTituloPago.Text = "PAGO";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPrecioAPagarEfectivo);
+            this.groupBox2.Controls.Add(this.lblInformaPrecio);
+            this.groupBox2.Location = new System.Drawing.Point(464, 217);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(288, 46);
+            this.groupBox2.TabIndex = 56;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtPrecioAPagarEfectivo
+            // 
+            this.txtPrecioAPagarEfectivo.Enabled = false;
+            this.txtPrecioAPagarEfectivo.Location = new System.Drawing.Point(161, 12);
+            this.txtPrecioAPagarEfectivo.Name = "txtPrecioAPagarEfectivo";
+            this.txtPrecioAPagarEfectivo.Size = new System.Drawing.Size(102, 20);
+            this.txtPrecioAPagarEfectivo.TabIndex = 13;
+            // 
+            // lblInformaPrecio
+            // 
+            this.lblInformaPrecio.AutoSize = true;
+            this.lblInformaPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformaPrecio.Location = new System.Drawing.Point(-3, 16);
+            this.lblInformaPrecio.Name = "lblInformaPrecio";
+            this.lblInformaPrecio.Size = new System.Drawing.Size(157, 16);
+            this.lblInformaPrecio.TabIndex = 11;
+            this.lblInformaPrecio.Text = "El precio a pagar es: ";
+            // 
             // FormPagoTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblTituloPago);
             this.Controls.Add(this.grbPagoTarjeta);
             this.Controls.Add(this.pcbCarrito);
@@ -282,6 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbPagoTarjeta.ResumeLayout(false);
             this.grbPagoTarjeta.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +348,8 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.Label lblTituloPago;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtPrecioAPagarEfectivo;
+        private System.Windows.Forms.Label lblInformaPrecio;
     }
 }
