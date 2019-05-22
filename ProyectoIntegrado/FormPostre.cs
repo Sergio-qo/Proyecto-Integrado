@@ -13,10 +13,11 @@ namespace ProyectoIntegrado
 {
     public partial class FormPostre : Form
     {
-        Pedidos pedido = new Pedidos(true);
+        Pedidos pedido = new Pedidos();
         public FormPostre()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
             {

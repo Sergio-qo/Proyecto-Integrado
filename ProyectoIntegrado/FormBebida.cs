@@ -13,13 +13,14 @@ namespace ProyectoIntegrado
 {
     public partial class FormBebida : Form
     {
-        private Articulos articulo = null;
+        //private Articulos articulo = null;
 
-        Pedidos pedido = new Pedidos(true);
+        Pedidos pedido = new Pedidos();
 
         public FormBebida()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
             {

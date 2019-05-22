@@ -13,10 +13,11 @@ namespace ProyectoIntegrado
 {
     public partial class FormComida : Form
     {
-        Pedidos pedido;
+        Pedidos pedido = new Pedidos();
         public FormComida()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
             //ConexionBBDD conexion = new ConexionBBDD();
             //if (conexion.AbrirConexion())
             //{
