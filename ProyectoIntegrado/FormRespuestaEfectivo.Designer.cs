@@ -212,6 +212,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRespuestaEfectivo";
             this.Text = "Código pedido";
+            this.Load += new System.EventHandler(this.FormRespuestaEfectivo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

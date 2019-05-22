@@ -179,6 +179,7 @@
             this.Name = "FormRespuestaTarjeta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRespuestaTarjeta";
+            this.Load += new System.EventHandler(this.FormRespuestaTarjeta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.grbPago.ResumeLayout(false);

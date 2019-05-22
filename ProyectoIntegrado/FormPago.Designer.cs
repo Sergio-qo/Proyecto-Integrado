@@ -174,6 +174,7 @@
             this.btnPagoTarjeta.TabIndex = 56;
             this.btnPagoTarjeta.Text = "TARJETA";
             this.btnPagoTarjeta.UseVisualStyleBackColor = true;
+            this.btnPagoTarjeta.Click += new System.EventHandler(this.btnPagoTarjeta_Click);
             // 
             // lblResultadoPrecio
             // 

@@ -311,6 +311,7 @@
             this.Name = "FormPagoTarjeta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPagoTarjeta";
+            this.Load += new System.EventHandler(this.FormPagoTarjeta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.grbBarraSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

@@ -12,9 +12,19 @@ namespace ProyectoIntegrado
 {
     public partial class FormRespuestaEfectivo : Form
     {
+        Pedidos pedido = new Pedidos();
         public FormRespuestaEfectivo()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
+            List<Articulos> articulos = pedido.VerListaArticulos();
+
+            foreach (Articulos articulo in articulos)
+            {
+                dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            }
+
+            pedido.HacerPedido();
         }
 
         //Vuelve al inicio de la aplicación
@@ -37,6 +47,11 @@ namespace ProyectoIntegrado
             formPrincipal.Show();
 
             this.Dispose();
+        }
+
+        private void FormRespuestaEfectivo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

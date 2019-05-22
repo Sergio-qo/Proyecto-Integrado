@@ -389,7 +389,7 @@ namespace ProyectoIntegrado
             {
                 MySqlCommand comando;
 
-                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo inner join pedidos on pedidos.id=articulospedido.idpedido where pedidos.id = {0}", this.id);
+                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo inner join pedidos on pedidos.id=articulospedido.idpedido where pedidos.id = {0} and pedidos.activo = true", this.id);
                 comando = new MySqlCommand(consulta, conex.Conexion);
 
                 MySqlDataReader reader = comando.ExecuteReader();

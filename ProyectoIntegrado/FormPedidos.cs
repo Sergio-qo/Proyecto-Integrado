@@ -35,6 +35,8 @@ namespace ProyectoIntegrado
 
             List<Articulos> articulos = pedido.VerListaArticulos();
 
+            dataGridView1.Rows.Clear();
+
             foreach (Articulos articulo in articulos)
             {
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
@@ -105,6 +107,9 @@ namespace ProyectoIntegrado
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

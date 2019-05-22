@@ -12,9 +12,17 @@ namespace ProyectoIntegrado
 {
     public partial class FormPagoEfectivo : Form
     {
+        Pedidos pedido = new Pedidos();
         public FormPagoEfectivo()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
+            List<Articulos> articulos = pedido.VerListaArticulos();
+
+            foreach (Articulos articulo in articulos)
+            {
+                dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -41,6 +49,11 @@ namespace ProyectoIntegrado
             formPago.Show();
 
             this.Dispose();
+        }
+
+        private void FormPagoEfectivo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,19 @@ namespace ProyectoIntegrado
 {
     public partial class FormRespuestaTarjeta : Form
     {
+        Pedidos pedido = new Pedidos();
         public FormRespuestaTarjeta()
         {
             InitializeComponent();
+            pedido.AbrirPedido();
+            List<Articulos> articulos = pedido.VerListaArticulos();
+
+            foreach (Articulos articulo in articulos)
+            {
+                dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
+            }
+
+            pedido.HacerPedido();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -41,6 +51,11 @@ namespace ProyectoIntegrado
             formPrincipal.Show();
 
             this.Dispose();
+        }
+
+        private void FormRespuestaTarjeta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

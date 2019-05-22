@@ -17,24 +17,26 @@ namespace ProyectoIntegrado
         public FormPago()
         {
             InitializeComponent();
-            ConexionBBDD conexion = new ConexionBBDD();
-            if (conexion.AbrirConexion())
-            {
-                string consulta = "insert into pedidos values()";
-                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-                comando.ExecuteNonQuery();
-            }
-            else
-            {
-                MessageBox.Show("Error al conectar con la base de datos");
-            }
-
+            pedido.AbrirPedido();
             List<Articulos> articulos = pedido.VerListaArticulos();
 
             foreach (Articulos articulo in articulos)
             {
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    string consulta = "insert into pedidos values()";
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    comando.ExecuteNonQuery();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al conectar con la base de datos");
+            //}
+
+            
 
         }
 
@@ -66,6 +68,13 @@ namespace ProyectoIntegrado
         private void FormPago_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPagoTarjeta_Click(object sender, EventArgs e)
+        {
+            FormPagoTarjeta formTarjeta = new FormPagoTarjeta();
+            formTarjeta.Show();
+            this.Dispose();
         }
     }
 }

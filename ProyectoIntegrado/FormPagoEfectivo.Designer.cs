@@ -201,6 +201,7 @@
             this.Name = "FormPagoEfectivo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPagoEfectivo";
+            this.Load += new System.EventHandler(this.FormPagoEfectivo_Load);
             this.grbPagoTarjeta.ResumeLayout(false);
             this.grbPagoTarjeta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
