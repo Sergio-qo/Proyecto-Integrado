@@ -432,5 +432,28 @@ namespace ProyectoIntegrado
             }
         }
 
+        public void AbrirPedido()
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            if (conex.AbrirConexion())
+            {
+                string consulta = "select activo from pedido";
+                MySqlCommand comando = new MySqlCommand(consulta, conex.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+
+                }
+                else
+                {
+  
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al conectar");
+            }
+        }
+
     }
 }

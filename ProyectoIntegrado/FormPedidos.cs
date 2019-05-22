@@ -18,11 +18,6 @@ namespace ProyectoIntegrado
         public FormPedidos()
         {
             InitializeComponent();
-            pedido.Creado = true;
-            if (pedido.Creado == false)
-            {
-
-            }
             //ConexionBBDD conexion = new ConexionBBDD();
             //if (conexion.AbrirConexion())
             //{
