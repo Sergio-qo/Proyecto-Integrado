@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservaMesa));
-            this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.grbReserva = new System.Windows.Forms.GroupBox();
             this.txtNumeroComensales = new System.Windows.Forms.TextBox();
             this.txtEmailReserva = new System.Windows.Forms.TextBox();
@@ -48,68 +44,27 @@
             this.lblCorreoReserva = new System.Windows.Forms.Label();
             this.lblApellidoReserva = new System.Windows.Forms.Label();
             this.lblNombreReserva = new System.Windows.Forms.Label();
-            this.lblTituloReserva = new System.Windows.Forms.Label();
             this.lblSiguiente = new System.Windows.Forms.Label();
             this.btnSiguienteDisponible = new System.Windows.Forms.Button();
-            this.lblAtras = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.grbBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbBarVader = new System.Windows.Forms.PictureBox();
+            this.lblTituloReserva = new System.Windows.Forms.Label();
+            this.lblAtras = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.grbReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grbBarraSuperior
-            // 
-            this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
-            this.grbBarraSuperior.Controls.Add(this.btnCerrar);
-            this.grbBarraSuperior.Location = new System.Drawing.Point(-1, 0);
-            this.grbBarraSuperior.Name = "grbBarraSuperior";
-            this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraSuperior.TabIndex = 2;
-            this.grbBarraSuperior.TabStop = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(759, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 20;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(780, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 23;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // grbBarraInferior
-            // 
-            this.grbBarraInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraInferior.Location = new System.Drawing.Point(-1, 409);
-            this.grbBarraInferior.Name = "grbBarraInferior";
-            this.grbBarraInferior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraInferior.TabIndex = 3;
-            this.grbBarraInferior.TabStop = false;
             // 
             // grbReserva
             // 
+            this.grbReserva.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbReserva.Controls.Add(this.txtNumeroComensales);
             this.grbReserva.Controls.Add(this.txtEmailReserva);
             this.grbReserva.Controls.Add(this.txtApellidosReserva);
@@ -123,38 +78,48 @@
             this.grbReserva.Controls.Add(this.lblCorreoReserva);
             this.grbReserva.Controls.Add(this.lblApellidoReserva);
             this.grbReserva.Controls.Add(this.lblNombreReserva);
-            this.grbReserva.Location = new System.Drawing.Point(229, 81);
+            this.grbReserva.Location = new System.Drawing.Point(323, 197);
+            this.grbReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbReserva.Name = "grbReserva";
-            this.grbReserva.Size = new System.Drawing.Size(301, 235);
+            this.grbReserva.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbReserva.Size = new System.Drawing.Size(489, 406);
             this.grbReserva.TabIndex = 4;
             this.grbReserva.TabStop = false;
             // 
             // txtNumeroComensales
             // 
-            this.txtNumeroComensales.Location = new System.Drawing.Point(154, 109);
+            this.txtNumeroComensales.Location = new System.Drawing.Point(264, 219);
+            this.txtNumeroComensales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumeroComensales.Multiline = true;
             this.txtNumeroComensales.Name = "txtNumeroComensales";
-            this.txtNumeroComensales.Size = new System.Drawing.Size(100, 20);
+            this.txtNumeroComensales.Size = new System.Drawing.Size(184, 31);
             this.txtNumeroComensales.TabIndex = 4;
             // 
             // txtEmailReserva
             // 
-            this.txtEmailReserva.Location = new System.Drawing.Point(154, 77);
+            this.txtEmailReserva.Location = new System.Drawing.Point(264, 160);
+            this.txtEmailReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmailReserva.Multiline = true;
             this.txtEmailReserva.Name = "txtEmailReserva";
-            this.txtEmailReserva.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailReserva.Size = new System.Drawing.Size(184, 33);
             this.txtEmailReserva.TabIndex = 3;
             // 
             // txtApellidosReserva
             // 
-            this.txtApellidosReserva.Location = new System.Drawing.Point(154, 45);
+            this.txtApellidosReserva.Location = new System.Drawing.Point(264, 95);
+            this.txtApellidosReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidosReserva.Multiline = true;
             this.txtApellidosReserva.Name = "txtApellidosReserva";
-            this.txtApellidosReserva.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidosReserva.Size = new System.Drawing.Size(184, 33);
             this.txtApellidosReserva.TabIndex = 2;
             // 
             // txtNombreReserva
             // 
-            this.txtNombreReserva.Location = new System.Drawing.Point(154, 15);
+            this.txtNombreReserva.Location = new System.Drawing.Point(264, 29);
+            this.txtNombreReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreReserva.Multiline = true;
             this.txtNombreReserva.Name = "txtNombreReserva";
-            this.txtNombreReserva.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreReserva.Size = new System.Drawing.Size(184, 35);
             this.txtNombreReserva.TabIndex = 1;
             // 
             // cmbHoraReserva
@@ -168,105 +133,105 @@
             "14:00",
             "14:30",
             "15:00"});
-            this.cmbHoraReserva.Location = new System.Drawing.Point(154, 183);
+            this.cmbHoraReserva.Location = new System.Drawing.Point(264, 339);
+            this.cmbHoraReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbHoraReserva.Name = "cmbHoraReserva";
-            this.cmbHoraReserva.Size = new System.Drawing.Size(102, 21);
+            this.cmbHoraReserva.Size = new System.Drawing.Size(184, 28);
             this.cmbHoraReserva.TabIndex = 6;
             // 
             // lblHoraReserva
             // 
             this.lblHoraReserva.AutoSize = true;
-            this.lblHoraReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraReserva.Location = new System.Drawing.Point(20, 183);
+            this.lblHoraReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraReserva.Location = new System.Drawing.Point(29, 339);
+            this.lblHoraReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoraReserva.Name = "lblHoraReserva";
-            this.lblHoraReserva.Size = new System.Drawing.Size(46, 16);
+            this.lblHoraReserva.Size = new System.Drawing.Size(87, 33);
             this.lblHoraReserva.TabIndex = 7;
             this.lblHoraReserva.Text = "Hora:";
             // 
             // lblFechaReserva
             // 
             this.lblFechaReserva.AutoSize = true;
-            this.lblFechaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaReserva.Location = new System.Drawing.Point(20, 146);
+            this.lblFechaReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaReserva.Location = new System.Drawing.Point(30, 278);
+            this.lblFechaReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaReserva.Name = "lblFechaReserva";
-            this.lblFechaReserva.Size = new System.Drawing.Size(36, 16);
+            this.lblFechaReserva.Size = new System.Drawing.Size(67, 33);
             this.lblFechaReserva.TabIndex = 6;
             this.lblFechaReserva.Text = "Día:";
             // 
             // dtDiaReserva
             // 
             this.dtDiaReserva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDiaReserva.Location = new System.Drawing.Point(154, 146);
+            this.dtDiaReserva.Location = new System.Drawing.Point(264, 278);
+            this.dtDiaReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtDiaReserva.Name = "dtDiaReserva";
-            this.dtDiaReserva.Size = new System.Drawing.Size(102, 20);
+            this.dtDiaReserva.Size = new System.Drawing.Size(184, 26);
             this.dtDiaReserva.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 146);
+            this.label1.Location = new System.Drawing.Point(30, 225);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 4;
             // 
             // lblNumeroComensalesReserva
             // 
             this.lblNumeroComensalesReserva.AutoSize = true;
-            this.lblNumeroComensalesReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroComensalesReserva.Location = new System.Drawing.Point(20, 113);
+            this.lblNumeroComensalesReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroComensalesReserva.Location = new System.Drawing.Point(29, 219);
+            this.lblNumeroComensalesReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroComensalesReserva.Name = "lblNumeroComensalesReserva";
-            this.lblNumeroComensalesReserva.Size = new System.Drawing.Size(119, 16);
+            this.lblNumeroComensalesReserva.Size = new System.Drawing.Size(214, 33);
             this.lblNumeroComensalesReserva.TabIndex = 3;
             this.lblNumeroComensalesReserva.Text = "Nº Comensales:";
             // 
             // lblCorreoReserva
             // 
             this.lblCorreoReserva.AutoSize = true;
-            this.lblCorreoReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoReserva.Location = new System.Drawing.Point(20, 81);
+            this.lblCorreoReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoReserva.Location = new System.Drawing.Point(30, 160);
+            this.lblCorreoReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreoReserva.Name = "lblCorreoReserva";
-            this.lblCorreoReserva.Size = new System.Drawing.Size(56, 16);
+            this.lblCorreoReserva.Size = new System.Drawing.Size(106, 33);
             this.lblCorreoReserva.TabIndex = 2;
             this.lblCorreoReserva.Text = "E-mail:";
             // 
             // lblApellidoReserva
             // 
             this.lblApellidoReserva.AutoSize = true;
-            this.lblApellidoReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoReserva.Location = new System.Drawing.Point(20, 49);
+            this.lblApellidoReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoReserva.Location = new System.Drawing.Point(30, 95);
+            this.lblApellidoReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidoReserva.Name = "lblApellidoReserva";
-            this.lblApellidoReserva.Size = new System.Drawing.Size(78, 16);
+            this.lblApellidoReserva.Size = new System.Drawing.Size(146, 33);
             this.lblApellidoReserva.TabIndex = 1;
             this.lblApellidoReserva.Text = "Apellidos:";
             // 
             // lblNombreReserva
             // 
             this.lblNombreReserva.AutoSize = true;
-            this.lblNombreReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreReserva.Location = new System.Drawing.Point(20, 20);
+            this.lblNombreReserva.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreReserva.Location = new System.Drawing.Point(30, 30);
+            this.lblNombreReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreReserva.Name = "lblNombreReserva";
-            this.lblNombreReserva.Size = new System.Drawing.Size(67, 16);
+            this.lblNombreReserva.Size = new System.Drawing.Size(128, 33);
             this.lblNombreReserva.TabIndex = 0;
             this.lblNombreReserva.Text = "Nombre:";
-            // 
-            // lblTituloReserva
-            // 
-            this.lblTituloReserva.AutoSize = true;
-            this.lblTituloReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloReserva.Location = new System.Drawing.Point(302, 44);
-            this.lblTituloReserva.Name = "lblTituloReserva";
-            this.lblTituloReserva.Size = new System.Drawing.Size(229, 20);
-            this.lblTituloReserva.TabIndex = 13;
-            this.lblTituloReserva.Text = "Datos para la reserva mesa";
             // 
             // lblSiguiente
             // 
             this.lblSiguiente.AutoSize = true;
-            this.lblSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSiguiente.Location = new System.Drawing.Point(317, 367);
+            this.lblSiguiente.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSiguiente.Location = new System.Drawing.Point(771, 614);
+            this.lblSiguiente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSiguiente.Name = "lblSiguiente";
-            this.lblSiguiente.Size = new System.Drawing.Size(162, 16);
+            this.lblSiguiente.Size = new System.Drawing.Size(306, 33);
             this.lblSiguiente.TabIndex = 13;
             this.lblSiguiente.Text = "Siguiente (Disponible)";
             // 
@@ -274,30 +239,22 @@
             // 
             this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
             this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
-            this.btnSiguienteDisponible.Location = new System.Drawing.Point(252, 345);
+            this.btnSiguienteDisponible.Location = new System.Drawing.Point(1085, 607);
+            this.btnSiguienteDisponible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
-            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
+            this.btnSiguienteDisponible.Size = new System.Drawing.Size(69, 56);
             this.btnSiguienteDisponible.TabIndex = 7;
             this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
             this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
-            // 
-            // lblAtras
-            // 
-            this.lblAtras.AutoSize = true;
-            this.lblAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtras.Location = new System.Drawing.Point(71, 376);
-            this.lblAtras.Name = "lblAtras";
-            this.lblAtras.Size = new System.Drawing.Size(44, 16);
-            this.lblAtras.TabIndex = 18;
-            this.lblAtras.Text = "Atrás";
             // 
             // btnAtras
             // 
             this.btnAtras.BackColor = System.Drawing.Color.White;
             this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
-            this.btnAtras.Location = new System.Drawing.Point(-1, 365);
+            this.btnAtras.Location = new System.Drawing.Point(31, 607);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(62, 38);
+            this.btnAtras.Size = new System.Drawing.Size(77, 57);
             this.btnAtras.TabIndex = 19;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -306,38 +263,102 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.ptbBarVader);
+            this.panel1.Location = new System.Drawing.Point(-2, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1201, 89);
+            this.panel1.TabIndex = 25;
+            // 
+            // ptbBarVader
+            // 
+            this.ptbBarVader.Image = ((System.Drawing.Image)(resources.GetObject("ptbBarVader.Image")));
+            this.ptbBarVader.Location = new System.Drawing.Point(3, 0);
+            this.ptbBarVader.Name = "ptbBarVader";
+            this.ptbBarVader.Size = new System.Drawing.Size(113, 89);
+            this.ptbBarVader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbBarVader.TabIndex = 26;
+            this.ptbBarVader.TabStop = false;
+            // 
+            // lblTituloReserva
+            // 
+            this.lblTituloReserva.AutoSize = true;
+            this.lblTituloReserva.Font = new System.Drawing.Font("Britannic Bold", 26F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReserva.Location = new System.Drawing.Point(215, 117);
+            this.lblTituloReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTituloReserva.Name = "lblTituloReserva";
+            this.lblTituloReserva.Size = new System.Drawing.Size(745, 58);
+            this.lblTituloReserva.TabIndex = 9;
+            this.lblTituloReserva.Text = "DATOS PARA LA RESERVA MESA";
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.AutoSize = true;
+            this.lblAtras.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtras.Location = new System.Drawing.Point(116, 614);
+            this.lblAtras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(83, 33);
+            this.lblAtras.TabIndex = 26;
+            this.lblAtras.Text = "Atrás";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.White;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1130, 13);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(26, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 27;
+            this.btnMinimizar.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1162, 13);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 28;
+            this.btnCerrar.TabStop = false;
+            // 
             // FormReservaMesa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAtras);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.lblAtras);
+            this.Controls.Add(this.lblTituloReserva);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnSiguienteDisponible);
             this.Controls.Add(this.lblSiguiente);
-            this.Controls.Add(this.lblTituloReserva);
             this.Controls.Add(this.grbReserva);
-            this.Controls.Add(this.grbBarraInferior);
-            this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormReservaMesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reserva mesa";
-            this.grbBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.grbReserva.ResumeLayout(false);
             this.grbReserva.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grbBarraSuperior;
-        private System.Windows.Forms.GroupBox grbBarraInferior;
         private System.Windows.Forms.GroupBox grbReserva;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumeroComensalesReserva;
@@ -352,13 +373,15 @@
         private System.Windows.Forms.TextBox txtEmailReserva;
         private System.Windows.Forms.TextBox txtApellidosReserva;
         private System.Windows.Forms.TextBox txtNombreReserva;
-        private System.Windows.Forms.Label lblTituloReserva;
         private System.Windows.Forms.Label lblSiguiente;
         private System.Windows.Forms.Button btnSiguienteDisponible;
-        private System.Windows.Forms.Label lblAtras;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTituloReserva;
+        private System.Windows.Forms.PictureBox ptbBarVader;
+        private System.Windows.Forms.Label lblAtras;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
