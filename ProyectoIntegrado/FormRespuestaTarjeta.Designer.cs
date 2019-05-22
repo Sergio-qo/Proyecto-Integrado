@@ -36,19 +36,13 @@
             this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.lblPagoTarjeta = new System.Windows.Forms.Label();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
-            this.lblFinalizar = new System.Windows.Forms.Label();
-            this.btnSiguienteDisponible = new System.Windows.Forms.Button();
-            this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.grbPago = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtCodigoPedidoEfectivo = new System.Windows.Forms.TextBox();
+            this.lblInformaCodigoPedido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.grbBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.grbPago.SuspendLayout();
             this.SuspendLayout();
@@ -102,40 +96,11 @@
             // grbBarraSuperior
             // 
             this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
-            this.grbBarraSuperior.Controls.Add(this.btnCerrar);
             this.grbBarraSuperior.Location = new System.Drawing.Point(-1, -3);
             this.grbBarraSuperior.Name = "grbBarraSuperior";
             this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
             this.grbBarraSuperior.TabIndex = 43;
             this.grbBarraSuperior.TabStop = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(759, 12);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 28;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(780, 12);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 29;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblPagoTarjeta
             // 
@@ -157,79 +122,64 @@
             this.pcbCarrito.TabIndex = 49;
             this.pcbCarrito.TabStop = false;
             // 
-            // lblFinalizar
+            // btnSalir
             // 
-            this.lblFinalizar.AutoSize = true;
-            this.lblFinalizar.Location = new System.Drawing.Point(556, 358);
-            this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(45, 13);
-            this.lblFinalizar.TabIndex = 48;
-            this.lblFinalizar.Text = "Finalizar";
-            // 
-            // btnSiguienteDisponible
-            // 
-            this.btnSiguienteDisponible.BackColor = System.Drawing.Color.White;
-            this.btnSiguienteDisponible.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguienteDisponible.Image")));
-            this.btnSiguienteDisponible.Location = new System.Drawing.Point(633, 345);
-            this.btnSiguienteDisponible.Name = "btnSiguienteDisponible";
-            this.btnSiguienteDisponible.Size = new System.Drawing.Size(53, 38);
-            this.btnSiguienteDisponible.TabIndex = 47;
-            this.btnSiguienteDisponible.UseVisualStyleBackColor = false;
-            this.btnSiguienteDisponible.Click += new System.EventHandler(this.btnSiguienteDisponible_Click);
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(11, 21);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(284, 20);
-            this.lblCodigo.TabIndex = 41;
-            this.lblCodigo.Text = "Tu código de pedido es el número:";
+            this.btnSalir.Location = new System.Drawing.Point(529, 345);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(148, 23);
+            this.btnSalir.TabIndex = 51;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // grbPago
             // 
-            this.grbPago.Controls.Add(this.lblNombre);
-            this.grbPago.Controls.Add(this.lblCodigo);
-            this.grbPago.Location = new System.Drawing.Point(459, 146);
+            this.grbPago.Controls.Add(this.txtCodigoPedidoEfectivo);
+            this.grbPago.Controls.Add(this.lblInformaCodigoPedido);
+            this.grbPago.Location = new System.Drawing.Point(461, 164);
             this.grbPago.Margin = new System.Windows.Forms.Padding(2);
             this.grbPago.Name = "grbPago";
             this.grbPago.Padding = new System.Windows.Forms.Padding(2);
-            this.grbPago.Size = new System.Drawing.Size(307, 194);
-            this.grbPago.TabIndex = 51;
+            this.grbPago.Size = new System.Drawing.Size(307, 106);
+            this.grbPago.TabIndex = 52;
             this.grbPago.TabStop = false;
             // 
-            // lblNombre
+            // txtCodigoPedidoEfectivo
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(29, 116);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(253, 20);
-            this.lblNombre.TabIndex = 42;
-            this.lblNombre.Text = "Llamará a \'nombre\' desde caja";
+            this.txtCodigoPedidoEfectivo.Enabled = false;
+            this.txtCodigoPedidoEfectivo.Location = new System.Drawing.Point(93, 60);
+            this.txtCodigoPedidoEfectivo.Name = "txtCodigoPedidoEfectivo";
+            this.txtCodigoPedidoEfectivo.Size = new System.Drawing.Size(102, 20);
+            this.txtCodigoPedidoEfectivo.TabIndex = 44;
+            // 
+            // lblInformaCodigoPedido
+            // 
+            this.lblInformaCodigoPedido.AutoSize = true;
+            this.lblInformaCodigoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformaCodigoPedido.Location = new System.Drawing.Point(30, 24);
+            this.lblInformaCodigoPedido.Name = "lblInformaCodigoPedido";
+            this.lblInformaCodigoPedido.Size = new System.Drawing.Size(250, 16);
+            this.lblInformaCodigoPedido.TabIndex = 43;
+            this.lblInformaCodigoPedido.Text = "Tú código de pedido es el número:";
             // 
             // FormRespuestaTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grbPago);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbBarraSuperior);
             this.Controls.Add(this.lblPagoTarjeta);
             this.Controls.Add(this.pcbCarrito);
-            this.Controls.Add(this.lblFinalizar);
-            this.Controls.Add(this.btnSiguienteDisponible);
-            this.Controls.Add(this.grbPago);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRespuestaTarjeta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRespuestaTarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.grbBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.grbPago.ResumeLayout(false);
             this.grbPago.PerformLayout();
@@ -247,14 +197,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrecio;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox grbBarraSuperior;
-        private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label lblPagoTarjeta;
         private System.Windows.Forms.PictureBox pcbCarrito;
-        private System.Windows.Forms.Label lblFinalizar;
-        private System.Windows.Forms.Button btnSiguienteDisponible;
-        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox grbPago;
-        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtCodigoPedidoEfectivo;
+        private System.Windows.Forms.Label lblInformaCodigoPedido;
     }
 }
