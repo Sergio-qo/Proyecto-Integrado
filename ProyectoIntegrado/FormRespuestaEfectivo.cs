@@ -25,6 +25,11 @@ namespace ProyectoIntegrado
             }
 
             pedido.HacerPedido();
+
+            Random rnd = new Random();
+            //rnd.Next();
+
+            txtCodigoPedidoEfectivo.Text = Convert.ToString(rnd.Next(9999));
         }
 
         //Vuelve al inicio de la aplicación

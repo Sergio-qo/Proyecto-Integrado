@@ -24,6 +24,9 @@ namespace ProyectoIntegrado
             {
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
+
+
+            lblResultadoPrecio.Text = Convert.ToString(pedido.CalcularPrecio());
             //ConexionBBDD conexion = new ConexionBBDD();
             //if (conexion.AbrirConexion())
             //{
@@ -42,9 +45,18 @@ namespace ProyectoIntegrado
 
         private void BtnPagoEfectivo_Click(object sender, EventArgs e)
         {
-            FormPagoEfectivo formpagoefectivo = new FormPagoEfectivo();
-            formpagoefectivo.Show();
-            this.Hide();
+
+            if(lblResultadoPrecio.Text == "0")
+            {
+                MessageBox.Show("No hay artículos");
+            }
+            else
+            {
+                FormPagoEfectivo formpagoefectivo = new FormPagoEfectivo();
+                formpagoefectivo.Show();
+                this.Hide();
+            }
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -72,9 +84,19 @@ namespace ProyectoIntegrado
 
         private void btnPagoTarjeta_Click(object sender, EventArgs e)
         {
-            FormPagoTarjeta formTarjeta = new FormPagoTarjeta();
-            formTarjeta.Show();
-            this.Dispose();
+            if (lblResultadoPrecio.Text == "0")
+            {
+                MessageBox.Show("No hay artículos");
+            }
+            else
+            {
+                FormPagoTarjeta formTarjeta = new FormPagoTarjeta();
+                formTarjeta.Show();
+                this.Dispose();
+            }
+
+
+            
         }
     }
 }

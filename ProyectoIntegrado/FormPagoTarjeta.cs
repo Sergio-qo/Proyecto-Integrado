@@ -23,6 +23,8 @@ namespace ProyectoIntegrado
             {
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
+
+            txtPrecioAPagarEfectivo.Text = Convert.ToString(pedido.CalcularPrecio());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -37,10 +39,30 @@ namespace ProyectoIntegrado
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            FormRespuestaTarjeta formRespuestaTarjeta = new FormRespuestaTarjeta();
-            formRespuestaTarjeta.Show();
+            errorProvider1.Clear();
+            bool bien = true;
 
-            this.Dispose();
+            if (txtNombreReserva.Text == "")
+            {
+                errorProvider1.SetError(txtNombreReserva, "Introduce nombre");
+                bien = false;
+            }
+
+            if (txtApellidosReserva.Text == "")
+            {
+                errorProvider1.SetError(txtApellidosReserva, "Introduce número tarjeta");
+                bien = false;
+            }
+
+
+            if (bien)
+            {
+                FormRespuestaTarjeta formRespuestaTarjeta = new FormRespuestaTarjeta();
+                formRespuestaTarjeta.Show();
+
+                this.Dispose();
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

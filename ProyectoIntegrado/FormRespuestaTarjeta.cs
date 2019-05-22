@@ -25,6 +25,11 @@ namespace ProyectoIntegrado
             }
 
             pedido.HacerPedido();
+
+            Random rnd = new Random();
+
+
+            txtCodigoPedidoTarjeta.Text = Convert.ToString(rnd.Next(9999));
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -55,7 +60,9 @@ namespace ProyectoIntegrado
 
         private void FormRespuestaTarjeta_Load(object sender, EventArgs e)
         {
+            
 
+            
         }
     }
 }

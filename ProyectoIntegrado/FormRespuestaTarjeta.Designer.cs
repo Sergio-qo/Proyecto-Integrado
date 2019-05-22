@@ -40,7 +40,7 @@
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grbPago = new System.Windows.Forms.GroupBox();
-            this.txtCodigoPedidoEfectivo = new System.Windows.Forms.TextBox();
+            this.txtCodigoPedidoTarjeta = new System.Windows.Forms.TextBox();
             this.lblInformaCodigoPedido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
@@ -134,7 +134,7 @@
             // 
             // grbPago
             // 
-            this.grbPago.Controls.Add(this.txtCodigoPedidoEfectivo);
+            this.grbPago.Controls.Add(this.txtCodigoPedidoTarjeta);
             this.grbPago.Controls.Add(this.lblInformaCodigoPedido);
             this.grbPago.Location = new System.Drawing.Point(461, 164);
             this.grbPago.Margin = new System.Windows.Forms.Padding(2);
@@ -144,13 +144,13 @@
             this.grbPago.TabIndex = 52;
             this.grbPago.TabStop = false;
             // 
-            // txtCodigoPedidoEfectivo
+            // txtCodigoPedidoTarjeta
             // 
-            this.txtCodigoPedidoEfectivo.Enabled = false;
-            this.txtCodigoPedidoEfectivo.Location = new System.Drawing.Point(93, 60);
-            this.txtCodigoPedidoEfectivo.Name = "txtCodigoPedidoEfectivo";
-            this.txtCodigoPedidoEfectivo.Size = new System.Drawing.Size(102, 20);
-            this.txtCodigoPedidoEfectivo.TabIndex = 44;
+            this.txtCodigoPedidoTarjeta.Enabled = false;
+            this.txtCodigoPedidoTarjeta.Location = new System.Drawing.Point(93, 60);
+            this.txtCodigoPedidoTarjeta.Name = "txtCodigoPedidoTarjeta";
+            this.txtCodigoPedidoTarjeta.Size = new System.Drawing.Size(102, 20);
+            this.txtCodigoPedidoTarjeta.TabIndex = 44;
             // 
             // lblInformaCodigoPedido
             // 
@@ -202,7 +202,7 @@
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox grbPago;
-        private System.Windows.Forms.TextBox txtCodigoPedidoEfectivo;
+        private System.Windows.Forms.TextBox txtCodigoPedidoTarjeta;
         private System.Windows.Forms.Label lblInformaCodigoPedido;
     }
 }

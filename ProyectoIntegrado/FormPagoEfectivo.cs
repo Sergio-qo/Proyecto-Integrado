@@ -23,6 +23,8 @@ namespace ProyectoIntegrado
             {
                 dataGridView1.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
+
+            txtPrecioAPagarEfectivo.Text = Convert.ToString(pedido.CalcularPrecio());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

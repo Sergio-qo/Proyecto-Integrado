@@ -28,6 +28,12 @@ namespace ProyectoIntegrado
             this.precio = precio;
         }
 
+        public Articulos(int cantidad, double precio)
+        {
+            this.cantidad = cantidad;
+            this.precio = precio;
+        }
+
 
         public Articulos(string nombre, int cantidad, double precio)
         {

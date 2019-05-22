@@ -359,22 +359,33 @@ namespace ProyectoIntegrado
         //Calcula el precio total de este pedido
         public double CalcularPrecio()
         {
-            ConexionBBDD conexion = new ConexionBBDD();
-            List<Articulos> articulos = new List<Articulos>();
-            string consulta = "select nombre from articulospedido inner join Articulos on idarticulo=id";
-            MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-            MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
-            {
-                articulos.Add(new Articulos(reader.GetString(0)));
-            }
-            reader.Close();
             double precio = 0;
-            foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
+            ConexionBBDD conexion = new ConexionBBDD();
+            if (conexion.AbrirConexion())
             {
-                precio += articulo.Precio * articulo.Cantidad;
+                List<Articulos> articulos = new List<Articulos>();
+                string consulta = String.Format("select cantidad, articulospedido.precio from articulospedido inner join articulos on idarticulo=id where articulospedido.idpedido = {0}", this.id);
+                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    articulos.Add(new Articulos(reader.GetInt32(0), reader.GetDouble(1)));
+                }
+                reader.Close();
+                precio = 0;
+                foreach (Articulos articulo in articulos) //Sumo al precio el precio de cada artículo por su cantidad
+                {
+                    precio += articulo.Precio * articulo.Cantidad;
+                }
+                
             }
+            else
+            {
+                MessageBox.Show("Error al conectar BBDD");
+            }
+
+            conexion.CerrarConexion();
             return precio;
         }
 

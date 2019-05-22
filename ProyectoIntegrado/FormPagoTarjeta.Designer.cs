@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPagoTarjeta));
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.lblAtras = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPrecioAPagarEfectivo = new System.Windows.Forms.TextBox();
             this.lblInformaPrecio = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.grbBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -60,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbPagoTarjeta.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbCarrito
@@ -291,6 +294,10 @@
             this.lblInformaPrecio.TabIndex = 11;
             this.lblInformaPrecio.Text = "El precio a pagar es: ";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormPagoTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +328,7 @@
             this.grbPagoTarjeta.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +360,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtPrecioAPagarEfectivo;
         private System.Windows.Forms.Label lblInformaPrecio;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

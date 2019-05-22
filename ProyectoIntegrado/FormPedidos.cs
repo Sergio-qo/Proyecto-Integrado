@@ -111,5 +111,13 @@ namespace ProyectoIntegrado
         {
 
         }
+
+        private void btnCarrito_Click(object sender, EventArgs e)
+        {
+            FormPago pago = new FormPago();
+            pago.Show();
+
+            this.Dispose();
+        }
     }
 }
