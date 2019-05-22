@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
 {
-     class Pedidos
+    class Pedidos
     {
         //private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
         //private static int idst; //Hago un id estático que sera el que va incrementando
@@ -16,6 +16,10 @@ namespace ProyectoIntegrado
         private int cantidadPedidos;
         private double precioPedido;
         private int cantidadArticulos = 0;
+        private bool creado = false;
+
+        public bool Creado { get { return this.creado; } set { this.creado = value; } }
+
         public int Id { get { return this.id; } }
         //private string estado;
 
@@ -34,9 +38,62 @@ namespace ProyectoIntegrado
             //this.estado = "Por hacer";
         }
 
+        public Pedidos(bool b)
+        {
+            ConexionBBDD conex = new ConexionBBDD();
+            string consulta;
+            MySqlCommand comando;
+            MySqlDataReader reader;
+
+            if (conex.AbrirConexion())
+            {
+                consulta = "SELECT id FROM pedidos";
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.id = reader.GetInt32(0);
+                }
+                reader.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Error conexión");
+            }
+        }
+
         public Pedidos()
         {
-            this.id = 1; //Asigno el id desde idst
+            ConexionBBDD conex = new ConexionBBDD();
+            string consulta;
+            MySqlCommand comando;
+            MySqlDataReader reader;
+
+            if (conex.AbrirConexion())
+            {
+                consulta = "insert into pedidos values()";
+                comando = new MySqlCommand(consulta, conex.Conexion);
+                comando.ExecuteNonQuery();
+
+                consulta = "SELECT id FROM pedidos";
+                comando = new MySqlCommand(consulta, conex.Conexion);
+
+                reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    this.id = reader.GetInt32(0);
+                }
+                reader.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Error conexión");
+            }
+
+            //this.id = 1; //Asigno el id desde idst
         }
 
         //Añade un articulo a la lista si no está ya
@@ -95,7 +152,7 @@ namespace ProyectoIntegrado
             if (conex.AbrirConexion())
             {
 
-                consulta = String.Format("select nombre, id, articulos.precio from articulospedido inner join articulos on id = idarticulo");
+                consulta = String.Format("select nombre, articulos.id, articulos.precio from articulospedido inner join articulos on id = idarticulo inner join pedidos on pedidos.id=articulospedido.idpedido where pedidos.id = {0}", this.id);
                 comando = new MySqlCommand(consulta, conex.Conexion);
 
                 reader = comando.ExecuteReader();
@@ -193,7 +250,7 @@ namespace ProyectoIntegrado
                 reader.Close();
 
 
-                consulta = String.Format("select cantidad from articulospedido inner join Articulos on idarticulo=id where idarticulo = {0}", idp);
+                consulta = String.Format("select cantidad from articulospedido inner join Articulos on idarticulo=id inner join pedidos on pedidos.id = articulospedido.idpedido where idarticulo = {0} and pedidos.id = {1}", idp, this.id);
                 comando = new MySqlCommand(consulta, conexion.Conexion);
                 reader = comando.ExecuteReader();
 
@@ -209,7 +266,7 @@ namespace ProyectoIntegrado
                     }
                     else
                     {
-                        consulta = String.Format("delete from articulospedido where idarticulo in(select id from articulos where nombre = '{0}')", nombre);
+                        consulta = String.Format("delete from articulospedido where idarticulo in(select id from articulos where nombre = '{0}') and idpedido = {1}", nombre, this.id);
                         comando = new MySqlCommand(consulta, conexion.Conexion);
                         comando.ExecuteNonQuery();
                     }
@@ -285,7 +342,7 @@ namespace ProyectoIntegrado
             {
                 MySqlCommand comando;
 
-                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo");
+                string consulta = String.Format("select nombre, cantidad, articulospedido.precio from articulospedido inner join articulos on id=idarticulo inner join pedidos on pedidos.id=articulospedido.idpedido where pedidos.id = {0}", this.id);
                 comando = new MySqlCommand(consulta, conex.Conexion);
 
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -331,7 +388,7 @@ namespace ProyectoIntegrado
             {
                 MySqlCommand comando;
 
-                string consulta = String.Format("update articulospedido set cantidad = cantidad - 1 where idarticulo = {0}", articulo.Id);
+                string consulta = String.Format("update articulospedido inner join pedidos on pedidos.id = articulospedido.idpedido set cantidad = cantidad - 1 where idarticulo = {0} and pedidos.id = {1}", articulo.Id, this.id);
                 comando = new MySqlCommand(consulta, conex.Conexion);
                 comando.ExecuteNonQuery();
             }

@@ -35,7 +35,7 @@ namespace ProyectoIntegrado
                 MessageBox.Show("error");
             }
 
-            Pedidos pedido = new Pedidos();
+            //Pedidos pedido = new Pedidos();
             List<Articulos> articulos = pedido.VerListaArticulos();
 
             foreach (Articulos articulo in articulos)

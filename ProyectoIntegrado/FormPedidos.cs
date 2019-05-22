@@ -13,21 +13,28 @@ namespace ProyectoIntegrado
 {
     public partial class FormPedidos : Form
     {
-        Pedidos pedido = new Pedidos();
+        
+
+
         public FormPedidos()
         {
             InitializeComponent();
-            ConexionBBDD conexion = new ConexionBBDD();
-            if (conexion.AbrirConexion())
+            pedido.Creado = true;
+            if (pedido.Creado == false)
             {
-                string consulta = "insert into pedidos values()";
-                MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
-                comando.ExecuteNonQuery();
+                pedido = new Pedidos();
             }
-            else
-            {
-                MessageBox.Show("Error al conectar con la base de datos");
-            }
+            //ConexionBBDD conexion = new ConexionBBDD();
+            //if (conexion.AbrirConexion())
+            //{
+            //    string consulta = "insert into pedidos values()";
+            //    MySqlCommand comando = new MySqlCommand(consulta, conexion.Conexion);
+            //    comando.ExecuteNonQuery();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al conectar con la base de datos");
+            //}
 
 
             List<Articulos> articulos = pedido.VerListaArticulos();
