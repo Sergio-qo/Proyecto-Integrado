@@ -109,9 +109,6 @@ namespace ProyectoIntegrado
 
         }
 
-        private void FormPedidos_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

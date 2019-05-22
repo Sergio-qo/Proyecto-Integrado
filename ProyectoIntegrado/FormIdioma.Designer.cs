@@ -29,97 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIdioma));
-            this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.lblAjustes = new System.Windows.Forms.Label();
-            this.lblIdioma = new System.Windows.Forms.Label();
             this.rdbSpanish = new System.Windows.Forms.RadioButton();
             this.rdbEnglish = new System.Windows.Forms.RadioButton();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblAtras = new System.Windows.Forms.Label();
             this.btnAceptarIdioma = new System.Windows.Forms.Button();
-            this.grbBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbBarVader = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grbBarraSuperior
-            // 
-            this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
-            this.grbBarraSuperior.Controls.Add(this.btnCerrar);
-            this.grbBarraSuperior.Location = new System.Drawing.Point(-1, 0);
-            this.grbBarraSuperior.Name = "grbBarraSuperior";
-            this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraSuperior.TabIndex = 1;
-            this.grbBarraSuperior.TabStop = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(759, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 23;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(780, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 22;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // grbBarraInferior
-            // 
-            this.grbBarraInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraInferior.Location = new System.Drawing.Point(-1, 409);
-            this.grbBarraInferior.Name = "grbBarraInferior";
-            this.grbBarraInferior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraInferior.TabIndex = 2;
-            this.grbBarraInferior.TabStop = false;
             // 
             // lblAjustes
             // 
             this.lblAjustes.AutoSize = true;
-            this.lblAjustes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAjustes.Location = new System.Drawing.Point(312, 68);
+            this.lblAjustes.Font = new System.Drawing.Font("Britannic Bold", 26F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjustes.Location = new System.Drawing.Point(357, 126);
+            this.lblAjustes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAjustes.Name = "lblAjustes";
-            this.lblAjustes.Size = new System.Drawing.Size(128, 29);
+            this.lblAjustes.Size = new System.Drawing.Size(480, 58);
             this.lblAjustes.TabIndex = 3;
-            this.lblAjustes.Text = "AJUSTES";
-            // 
-            // lblIdioma
-            // 
-            this.lblIdioma.AutoSize = true;
-            this.lblIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdioma.Location = new System.Drawing.Point(335, 156);
-            this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(60, 16);
-            this.lblIdioma.TabIndex = 5;
-            this.lblIdioma.Text = "IDIOMA";
+            this.lblAjustes.Text = "AJUSTES DE IDIOMA";
             // 
             // rdbSpanish
             // 
             this.rdbSpanish.AutoSize = true;
             this.rdbSpanish.Checked = true;
-            this.rdbSpanish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbSpanish.Location = new System.Drawing.Point(338, 205);
+            this.rdbSpanish.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbSpanish.Location = new System.Drawing.Point(507, 239);
+            this.rdbSpanish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdbSpanish.Name = "rdbSpanish";
-            this.rdbSpanish.Size = new System.Drawing.Size(85, 24);
+            this.rdbSpanish.Size = new System.Drawing.Size(181, 51);
             this.rdbSpanish.TabIndex = 6;
             this.rdbSpanish.TabStop = true;
             this.rdbSpanish.Text = "Español";
@@ -128,10 +73,11 @@
             // rdbEnglish
             // 
             this.rdbEnglish.AutoSize = true;
-            this.rdbEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEnglish.Location = new System.Drawing.Point(338, 246);
+            this.rdbEnglish.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEnglish.Location = new System.Drawing.Point(507, 326);
+            this.rdbEnglish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdbEnglish.Name = "rdbEnglish";
-            this.rdbEnglish.Size = new System.Drawing.Size(70, 24);
+            this.rdbEnglish.Size = new System.Drawing.Size(148, 51);
             this.rdbEnglish.TabIndex = 7;
             this.rdbEnglish.Text = "Inglés";
             this.rdbEnglish.UseVisualStyleBackColor = true;
@@ -140,9 +86,10 @@
             // 
             this.btnAtras.BackColor = System.Drawing.Color.White;
             this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
-            this.btnAtras.Location = new System.Drawing.Point(12, 356);
+            this.btnAtras.Location = new System.Drawing.Point(18, 548);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(62, 38);
+            this.btnAtras.Size = new System.Drawing.Size(74, 55);
             this.btnAtras.TabIndex = 20;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -150,44 +97,92 @@
             // lblAtras
             // 
             this.lblAtras.AutoSize = true;
-            this.lblAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtras.Location = new System.Drawing.Point(89, 367);
+            this.lblAtras.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtras.Location = new System.Drawing.Point(100, 554);
+            this.lblAtras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAtras.Name = "lblAtras";
-            this.lblAtras.Size = new System.Drawing.Size(44, 16);
+            this.lblAtras.Size = new System.Drawing.Size(83, 33);
             this.lblAtras.TabIndex = 19;
             this.lblAtras.Text = "Atrás";
             // 
             // btnAceptarIdioma
             // 
-            this.btnAceptarIdioma.Location = new System.Drawing.Point(338, 317);
+            this.btnAceptarIdioma.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAceptarIdioma.Font = new System.Drawing.Font("Lucida Sans Unicode", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarIdioma.Location = new System.Drawing.Point(493, 424);
+            this.btnAceptarIdioma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptarIdioma.Name = "btnAceptarIdioma";
-            this.btnAceptarIdioma.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarIdioma.Size = new System.Drawing.Size(174, 62);
             this.btnAceptarIdioma.TabIndex = 21;
             this.btnAceptarIdioma.Text = "Cambiar";
-            this.btnAceptarIdioma.UseVisualStyleBackColor = true;
+            this.btnAceptarIdioma.UseVisualStyleBackColor = false;
             this.btnAceptarIdioma.Click += new System.EventHandler(this.btnAceptarIdioma_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.ptbBarVader);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1201, 85);
+            this.panel1.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1130, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ptbBarVader
+            // 
+            this.ptbBarVader.Image = ((System.Drawing.Image)(resources.GetObject("ptbBarVader.Image")));
+            this.ptbBarVader.Location = new System.Drawing.Point(3, 0);
+            this.ptbBarVader.Name = "ptbBarVader";
+            this.ptbBarVader.Size = new System.Drawing.Size(113, 85);
+            this.ptbBarVader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbBarVader.TabIndex = 27;
+            this.ptbBarVader.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1162, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 28;
+            this.btnCerrar.TabStop = false;
             // 
             // FormIdioma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAceptarIdioma);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblAtras);
             this.Controls.Add(this.rdbEnglish);
             this.Controls.Add(this.rdbSpanish);
-            this.Controls.Add(this.lblIdioma);
             this.Controls.Add(this.lblAjustes);
-            this.Controls.Add(this.grbBarraInferior);
-            this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormIdioma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Idioma";
             this.Load += new System.EventHandler(this.FormIdioma_Load);
-            this.grbBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,17 +190,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grbBarraSuperior;
-        private System.Windows.Forms.GroupBox grbBarraInferior;
         private System.Windows.Forms.Label lblAjustes;
-        private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.RadioButton rdbSpanish;
         private System.Windows.Forms.RadioButton rdbEnglish;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label lblAtras;
         private System.Windows.Forms.Button btnAceptarIdioma;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbBarVader;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.PictureBox btnMinimizar;
     }
 }

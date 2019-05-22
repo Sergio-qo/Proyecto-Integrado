@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
-            this.grbBarraSuperior = new System.Windows.Forms.GroupBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.grbBarraInferior = new System.Windows.Forms.GroupBox();
             this.grbMenuLateral = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAtras = new System.Windows.Forms.Button();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.btnCarrito = new System.Windows.Forms.Button();
@@ -44,65 +44,20 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grbBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.ptbBarVader = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.grbMenuLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grbBarraSuperior
-            // 
-            this.grbBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraSuperior.Controls.Add(this.btnMinimizar);
-            this.grbBarraSuperior.Controls.Add(this.btnCerrar);
-            this.grbBarraSuperior.Location = new System.Drawing.Point(-1, 0);
-            this.grbBarraSuperior.Name = "grbBarraSuperior";
-            this.grbBarraSuperior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraSuperior.TabIndex = 1;
-            this.grbBarraSuperior.TabStop = false;
-            this.grbBarraSuperior.Enter += new System.EventHandler(this.grbBarraSuperior_Enter);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(760, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 16);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 24;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(781, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(17, 16);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 25;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // grbBarraInferior
-            // 
-            this.grbBarraInferior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grbBarraInferior.Location = new System.Drawing.Point(-1, 409);
-            this.grbBarraInferior.Name = "grbBarraInferior";
-            this.grbBarraInferior.Size = new System.Drawing.Size(802, 41);
-            this.grbBarraInferior.TabIndex = 2;
-            this.grbBarraInferior.TabStop = false;
             // 
             // grbMenuLateral
             // 
@@ -112,113 +67,13 @@
             this.grbMenuLateral.Controls.Add(this.btnCarrito);
             this.grbMenuLateral.Controls.Add(this.lblAtras);
             this.grbMenuLateral.Controls.Add(this.lblFinalizar);
-            this.grbMenuLateral.Location = new System.Drawing.Point(-1, 47);
+            this.grbMenuLateral.Location = new System.Drawing.Point(1, 96);
+            this.grbMenuLateral.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbMenuLateral.Name = "grbMenuLateral";
-            this.grbMenuLateral.Size = new System.Drawing.Size(310, 356);
+            this.grbMenuLateral.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbMenuLateral.Size = new System.Drawing.Size(465, 585);
             this.grbMenuLateral.TabIndex = 3;
             this.grbMenuLateral.TabStop = false;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.White;
-            this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
-            this.btnAtras.Location = new System.Drawing.Point(6, 311);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(62, 38);
-            this.btnAtras.TabIndex = 7;
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // pcbCarrito
-            // 
-            this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
-            this.pcbCarrito.Location = new System.Drawing.Point(6, 10);
-            this.pcbCarrito.Name = "pcbCarrito";
-            this.pcbCarrito.Size = new System.Drawing.Size(62, 50);
-            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbCarrito.TabIndex = 16;
-            this.pcbCarrito.TabStop = false;
-            // 
-            // btnCarrito
-            // 
-            this.btnCarrito.AutoSize = true;
-            this.btnCarrito.BackColor = System.Drawing.Color.White;
-            this.btnCarrito.Image = ((System.Drawing.Image)(resources.GetObject("btnCarrito.Image")));
-            this.btnCarrito.Location = new System.Drawing.Point(239, 291);
-            this.btnCarrito.Name = "btnCarrito";
-            this.btnCarrito.Size = new System.Drawing.Size(59, 59);
-            this.btnCarrito.TabIndex = 6;
-            this.btnCarrito.UseVisualStyleBackColor = false;
-            // 
-            // lblAtras
-            // 
-            this.lblAtras.AutoSize = true;
-            this.lblAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtras.Location = new System.Drawing.Point(83, 322);
-            this.lblAtras.Name = "lblAtras";
-            this.lblAtras.Size = new System.Drawing.Size(44, 16);
-            this.lblAtras.TabIndex = 15;
-            this.lblAtras.Text = "Atrás";
-            // 
-            // lblFinalizar
-            // 
-            this.lblFinalizar.AutoSize = true;
-            this.lblFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinalizar.Location = new System.Drawing.Point(166, 322);
-            this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(67, 16);
-            this.lblFinalizar.TabIndex = 14;
-            this.lblFinalizar.Text = "Finalizar";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(328, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Menu Del Dia";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(427, 303);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 100);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Bebidas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(527, 57);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 100);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Comidas";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(328, 185);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 100);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Bocadillos";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(527, 185);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 100);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Postres";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView1
             // 
@@ -227,9 +82,10 @@
             this.dgvItem,
             this.dgvCantidad,
             this.dgvPrecio});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 102);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(292, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(438, 306);
             this.dataGridView1.TabIndex = 17;
             // 
             // dgvItem
@@ -248,39 +104,210 @@
             this.dgvPrecio.HeaderText = "Precio";
             this.dgvPrecio.Name = "dgvPrecio";
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.White;
+            this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
+            this.btnAtras.Location = new System.Drawing.Point(8, 500);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(69, 70);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // pcbCarrito
+            // 
+            this.pcbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pcbCarrito.Image")));
+            this.pcbCarrito.Location = new System.Drawing.Point(180, 15);
+            this.pcbCarrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pcbCarrito.Name = "pcbCarrito";
+            this.pcbCarrito.Size = new System.Drawing.Size(83, 77);
+            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCarrito.TabIndex = 16;
+            this.pcbCarrito.TabStop = false;
+            // 
+            // btnCarrito
+            // 
+            this.btnCarrito.AutoSize = true;
+            this.btnCarrito.BackColor = System.Drawing.Color.White;
+            this.btnCarrito.Image = ((System.Drawing.Image)(resources.GetObject("btnCarrito.Image")));
+            this.btnCarrito.Location = new System.Drawing.Point(383, 500);
+            this.btnCarrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCarrito.Name = "btnCarrito";
+            this.btnCarrito.Size = new System.Drawing.Size(73, 70);
+            this.btnCarrito.TabIndex = 6;
+            this.btnCarrito.UseVisualStyleBackColor = false;
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.AutoSize = true;
+            this.lblAtras.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtras.Location = new System.Drawing.Point(85, 521);
+            this.lblAtras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(83, 33);
+            this.lblAtras.TabIndex = 15;
+            this.lblAtras.Text = "Atrás";
+            // 
+            // lblFinalizar
+            // 
+            this.lblFinalizar.AutoSize = true;
+            this.lblFinalizar.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalizar.Location = new System.Drawing.Point(245, 521);
+            this.lblFinalizar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinalizar.Name = "lblFinalizar";
+            this.lblFinalizar.Size = new System.Drawing.Size(130, 33);
+            this.lblFinalizar.TabIndex = 14;
+            this.lblFinalizar.Text = "Finalizar";
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(552, 101);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(270, 165);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(725, 512);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(225, 138);
+            this.button2.TabIndex = 5;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(883, 101);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(252, 165);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(552, 323);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(270, 154);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(883, 323);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(252, 154);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.ptbBarVader);
+            this.panel1.Location = new System.Drawing.Point(-2, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1204, 92);
+            this.panel1.TabIndex = 26;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(475, 97);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(51, 596);
+            this.panel2.TabIndex = 27;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1165, 13);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 28;
+            this.btnCerrar.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.White;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1133, 13);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(26, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 27;
+            this.btnMinimizar.TabStop = false;
+            // 
+            // ptbBarVader
+            // 
+            this.ptbBarVader.Image = ((System.Drawing.Image)(resources.GetObject("ptbBarVader.Image")));
+            this.ptbBarVader.Location = new System.Drawing.Point(3, 0);
+            this.ptbBarVader.Name = "ptbBarVader";
+            this.ptbBarVader.Size = new System.Drawing.Size(113, 89);
+            this.ptbBarVader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbBarVader.TabIndex = 26;
+            this.ptbBarVader.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Location = new System.Drawing.Point(473, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(25, 602);
+            this.panel3.TabIndex = 27;
+            // 
             // FormPedidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grbMenuLateral);
-            this.Controls.Add(this.grbBarraInferior);
-            this.Controls.Add(this.grbBarraSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPedidos";
-            this.Load += new System.EventHandler(this.FormPedidos_Load);
-            this.grbBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.grbMenuLateral.ResumeLayout(false);
             this.grbMenuLateral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBarVader)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grbBarraSuperior;
-        private System.Windows.Forms.GroupBox grbBarraInferior;
         private System.Windows.Forms.GroupBox grbMenuLateral;
         private System.Windows.Forms.Label lblFinalizar;
         private System.Windows.Forms.Label lblAtras;
@@ -292,11 +319,15 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrecio;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox ptbBarVader;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

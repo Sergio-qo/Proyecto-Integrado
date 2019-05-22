@@ -39,11 +39,13 @@
             this.lblTituloComida = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPortada)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMinimizar
@@ -76,7 +78,7 @@
             this.btnReserva.AutoSize = true;
             this.btnReserva.BackColor = System.Drawing.Color.White;
             this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
-            this.btnReserva.Location = new System.Drawing.Point(667, 420);
+            this.btnReserva.Location = new System.Drawing.Point(667, 454);
             this.btnReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReserva.Name = "btnReserva";
             this.btnReserva.Size = new System.Drawing.Size(201, 206);
@@ -89,7 +91,7 @@
             this.btnPedidos.AutoSize = true;
             this.btnPedidos.BackColor = System.Drawing.Color.White;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
-            this.btnPedidos.Location = new System.Drawing.Point(304, 420);
+            this.btnPedidos.Location = new System.Drawing.Point(304, 454);
             this.btnPedidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(201, 206);
@@ -125,7 +127,7 @@
             // 
             this.lblTituloReserva.AutoSize = true;
             this.lblTituloReserva.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloReserva.Location = new System.Drawing.Point(951, 454);
+            this.lblTituloReserva.Location = new System.Drawing.Point(663, 402);
             this.lblTituloReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloReserva.Name = "lblTituloReserva";
             this.lblTituloReserva.Size = new System.Drawing.Size(205, 47);
@@ -136,7 +138,7 @@
             // 
             this.lblTituloComida.AutoSize = true;
             this.lblTituloComida.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloComida.Location = new System.Drawing.Point(910, 260);
+            this.lblTituloComida.Location = new System.Drawing.Point(296, 402);
             this.lblTituloComida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloComida.Name = "lblTituloComida";
             this.lblTituloComida.Size = new System.Drawing.Size(192, 47);
@@ -157,12 +159,22 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(13, 187);
+            this.pictureBox2.Location = new System.Drawing.Point(36, 212);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(235, 360);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(921, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 360);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -170,6 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTituloComida);
@@ -189,6 +202,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +219,7 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
