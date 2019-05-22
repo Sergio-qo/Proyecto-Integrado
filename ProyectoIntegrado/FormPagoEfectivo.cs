@@ -43,5 +43,4 @@ namespace ProyectoIntegrado
             this.Dispose();
         }
     }
-    }
 }
