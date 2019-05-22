@@ -26,6 +26,8 @@ namespace ProyectoIntegrado
         //public List<Articulos> Articulos { get { return this.articulos; } }
         public double PrecioPedido { get{ return precioPedido; } }
 
+        public Pedidos pedido { get { return this; } }
+
 
 
 
@@ -38,63 +40,95 @@ namespace ProyectoIntegrado
             //this.estado = "Por hacer";
         }
 
-        public Pedidos(bool b)
+        public Pedidos(bool existente)
         {
-            ConexionBBDD conex = new ConexionBBDD();
-            string consulta;
-            MySqlCommand comando;
-            MySqlDataReader reader;
-
-            if (conex.AbrirConexion())
+            if (existente)
             {
-                consulta = "SELECT id FROM pedidos";
-                comando = new MySqlCommand(consulta, conex.Conexion);
+                ConexionBBDD conex = new ConexionBBDD();
+                string consulta;
+                MySqlCommand comando;
+                MySqlDataReader reader;
 
-                reader = comando.ExecuteReader();
-                while (reader.Read())
+                if (conex.AbrirConexion())
                 {
-                    this.id = reader.GetInt32(0);
-                }
-                reader.Close();
+                    consulta = "SELECT id FROM pedidos";
+                    comando = new MySqlCommand(consulta, conex.Conexion);
 
+                    reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        this.id = reader.GetInt32(0);
+                    }
+                    reader.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error conexión");
+                }
             }
             else
             {
-                MessageBox.Show("Error conexión");
-            }
-        }
+                ConexionBBDD conex = new ConexionBBDD();
+                string consulta;
+                MySqlCommand comando;
+                MySqlDataReader reader;
 
-        public Pedidos()
-        {
-            ConexionBBDD conex = new ConexionBBDD();
-            string consulta;
-            MySqlCommand comando;
-            MySqlDataReader reader;
-
-            if (conex.AbrirConexion())
-            {
-                consulta = "insert into pedidos values()";
-                comando = new MySqlCommand(consulta, conex.Conexion);
-                comando.ExecuteNonQuery();
-
-                consulta = "SELECT id FROM pedidos";
-                comando = new MySqlCommand(consulta, conex.Conexion);
-
-                reader = comando.ExecuteReader();
-                while (reader.Read())
+                if (conex.AbrirConexion())
                 {
-                    this.id = reader.GetInt32(0);
+                    consulta = "insert into pedidos values()";
+                    comando = new MySqlCommand(consulta, conex.Conexion);
+                    comando.ExecuteNonQuery();
+
+                    consulta = "SELECT id FROM pedidos";
+                    comando = new MySqlCommand(consulta, conex.Conexion);
+
+                    reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        this.id = reader.GetInt32(0);
+                    }
+                    reader.Close();
+
                 }
-                reader.Close();
-
+                else
+                {
+                    MessageBox.Show("Error conexión");
+                }
             }
-            else
-            {
-                MessageBox.Show("Error conexión");
-            }
-
-            //this.id = 1; //Asigno el id desde idst
         }
+
+        //public Pedidos()
+        //{
+        //    ConexionBBDD conex = new ConexionBBDD();
+        //    string consulta;
+        //    MySqlCommand comando;
+        //    MySqlDataReader reader;
+
+        //    if (conex.AbrirConexion())
+        //    {
+        //        consulta = "insert into pedidos values()";
+        //        comando = new MySqlCommand(consulta, conex.Conexion);
+        //        comando.ExecuteNonQuery();
+
+        //        consulta = "SELECT id FROM pedidos";
+        //        comando = new MySqlCommand(consulta, conex.Conexion);
+
+        //        reader = comando.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            this.id = reader.GetInt32(0);
+        //        }
+        //        reader.Close();
+
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Error conexión");
+        //    }
+
+        //    //this.id = 1; //Asigno el id desde idst
+        //}
 
         //Añade un articulo a la lista si no está ya
         public void AnyadirArticulo(Articulos articulo)
@@ -364,7 +398,7 @@ namespace ProyectoIntegrado
 
         }
 
-        public void IncrementarCantidadArticulo(Articulos articulo)
+        void IncrementarCantidadArticulo(Articulos articulo)
         {
             ConexionBBDD conex = new ConexionBBDD();
             if (conex.AbrirConexion())
@@ -381,7 +415,7 @@ namespace ProyectoIntegrado
             }
         }
 
-        public void DecrementarCantidadArticulo(Articulos articulo)
+        void DecrementarCantidadArticulo(Articulos articulo)
         {
             ConexionBBDD conex = new ConexionBBDD();
             if (conex.AbrirConexion())

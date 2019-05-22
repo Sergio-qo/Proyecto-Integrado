@@ -13,7 +13,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormBocadillos : Form
     {
-        Pedidos pedido = new Pedidos();
+        Pedidos pedido = new Pedidos(true);
         public FormBocadillos()
         {
             InitializeComponent();
@@ -64,7 +64,6 @@ namespace ProyectoIntegrado
 
         private void btnEliArt_Click(object sender, EventArgs e)
         {
-            Pedidos pedido = new Pedidos();
             pedido.EliminarArticulo(cmbItems.Text);
 
             List<Articulos> articulos = pedido.VerListaArticulos();

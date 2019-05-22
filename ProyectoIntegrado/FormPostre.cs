@@ -13,7 +13,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormPostre : Form
     {
-        Pedidos pedido = new Pedidos();
+        Pedidos pedido = new Pedidos(true);
         public FormPostre()
         {
             InitializeComponent();
@@ -35,7 +35,6 @@ namespace ProyectoIntegrado
                 MessageBox.Show("error");
             }
 
-            Pedidos pedido = new Pedidos();
             List<Articulos> articulos = pedido.VerListaArticulos();
 
             foreach (Articulos articulo in articulos)
@@ -74,7 +73,6 @@ namespace ProyectoIntegrado
 
         private void btnEliArt_Click(object sender, EventArgs e)
         {
-            Pedidos pedido = new Pedidos();
             pedido.EliminarArticulo(cmbItems.Text);
 
             List<Articulos> articulos = pedido.VerListaArticulos();

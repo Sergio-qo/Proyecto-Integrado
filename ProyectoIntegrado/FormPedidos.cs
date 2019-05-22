@@ -13,16 +13,15 @@ namespace ProyectoIntegrado
 {
     public partial class FormPedidos : Form
     {
-        
 
-
+        Pedidos pedido = new Pedidos(true);
         public FormPedidos()
         {
             InitializeComponent();
             pedido.Creado = true;
             if (pedido.Creado == false)
             {
-                pedido = new Pedidos();
+
             }
             //ConexionBBDD conexion = new ConexionBBDD();
             //if (conexion.AbrirConexion())

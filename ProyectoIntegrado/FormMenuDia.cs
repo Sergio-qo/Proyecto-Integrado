@@ -13,7 +13,7 @@ namespace ProyectoIntegrado
 {
     public partial class FormMenuDia : Form
     {
-        Pedidos pedido = new Pedidos();
+        Pedidos pedido = new Pedidos(true);
         public FormMenuDia()
         {
             InitializeComponent();
