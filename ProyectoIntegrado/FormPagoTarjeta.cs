@@ -26,5 +26,26 @@ namespace ProyectoIntegrado
         {
             this.WindowState = FormWindowState.Minimized; //Boton para minimizar la pagina
         }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            FormRespuestaTarjeta formRespuestaTarjeta = new FormRespuestaTarjeta();
+            formRespuestaTarjeta.Show();
+
+            this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormPago formPago = new FormPago();
+            formPago.Show();
+
+            this.Dispose();
+        }
+
+        private void lblAtras_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
