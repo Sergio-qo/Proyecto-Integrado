@@ -90,10 +90,7 @@ namespace ProyectoIntegrado
             
         }
 
-        private void FormComida_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnEliArt_Click(object sender, EventArgs e)
         {

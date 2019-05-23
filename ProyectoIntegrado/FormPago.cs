@@ -77,10 +77,7 @@ namespace ProyectoIntegrado
             this.Dispose();
         }
 
-        private void FormPago_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnPagoTarjeta_Click(object sender, EventArgs e)
         {
