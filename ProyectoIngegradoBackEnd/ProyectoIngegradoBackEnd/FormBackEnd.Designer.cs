@@ -52,6 +52,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ListaProductos = new System.Windows.Forms.DataGridView();
+            this.Artículo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volverHaciendo = new System.Windows.Forms.Button();
             this.aHecho = new System.Windows.Forms.Button();
             this.volverPorHacer = new System.Windows.Forms.Button();
@@ -60,9 +63,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Artículo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -269,6 +269,24 @@
             this.ListaProductos.Size = new System.Drawing.Size(345, 169);
             this.ListaProductos.TabIndex = 23;
             // 
+            // Artículo
+            // 
+            this.Artículo.HeaderText = "Nombre";
+            this.Artículo.Name = "Artículo";
+            this.Artículo.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Descripción";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Cantidad";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // volverHaciendo
             // 
             this.volverHaciendo.Location = new System.Drawing.Point(818, 359);
@@ -321,6 +339,7 @@
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(301, 169);
             this.dataGridView3.TabIndex = 18;
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
@@ -337,6 +356,7 @@
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(303, 169);
             this.dataGridView2.TabIndex = 17;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
@@ -353,6 +373,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(301, 169);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -360,26 +381,8 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 300000;
+            this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Artículo
-            // 
-            this.Artículo.HeaderText = "Nombre";
-            this.Artículo.Name = "Artículo";
-            this.Artículo.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Descripción";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Cantidad";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // FormBackEnd
             // 

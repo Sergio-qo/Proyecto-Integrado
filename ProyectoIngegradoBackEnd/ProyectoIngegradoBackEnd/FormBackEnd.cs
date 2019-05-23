@@ -41,6 +41,7 @@ namespace ProyectoIngegradoBackEnd
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ConexionBD.AbrirConexion();
+            var x = dataGridView1.SelectedRows;
             string Id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             ListaProductos.Rows.Clear();
             ActualizarProductos(Id);
@@ -53,7 +54,7 @@ namespace ProyectoIngegradoBackEnd
             ConexionBD.AbrirConexion();
             string email = dataGridView5.SelectedRows[0].Cells[4].Value.ToString();
             string Idstr = dataGridView5.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("select correo from reservamesa where id ='{0}'", Idstr);
+            string consulta = string.Format("select correo from ReservaMesa where id ='{0}'", Idstr);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             reader.Read();
@@ -69,7 +70,7 @@ namespace ProyectoIngegradoBackEnd
             client.EnableSsl = true;
             client.Send(mail);
             MessageBox.Show("Email Enviado");
-            string consulta2 = string.Format("delete from reservamesa where id ='{0}'", Idstr);
+            string consulta2 = string.Format("delete from ReservaMesa where id ='{0}'", Idstr);
             MySqlCommand comando2 = new MySqlCommand(consulta2, ConexionBD.Conexion);
             comando2.ExecuteNonQuery();
             dataGridView5.Rows.Clear();
@@ -84,7 +85,7 @@ namespace ProyectoIngegradoBackEnd
         }
         public void ActualizarEmpleados()
         {
-            String consulta = "SELECT id,dia,hora,numComensales,correo FROM reservamesa";
+            String consulta = "SELECT id,dia,hora,numComensales,correo FROM ReservaMesa";
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows == true)
@@ -108,7 +109,7 @@ namespace ProyectoIngegradoBackEnd
         }
         public void actualizarPorhacer()
         {
-            String consulta = "SELECT IdPedido,HoraPedido,PrecioPedido FROM pedido where proceso='Por Hacer'";
+            String consulta = "SELECT id,hora,precio FROM Pedidos where proceso='Por Hacer'";
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows == true)
@@ -130,7 +131,7 @@ namespace ProyectoIngegradoBackEnd
         }
         public void actualizarHaciendo()
         {
-            String consulta = "SELECT IdPedido,HoraPedido,PrecioPedido FROM pedido where proceso='Haciendo'";
+            String consulta = "SELECT id,hora,precio FROM Pedidos where proceso='Haciendo'";
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows == true)
@@ -153,7 +154,7 @@ namespace ProyectoIngegradoBackEnd
         }
         public void actualizarHecho()
         {
-            String consulta = "SELECT IdPedido,HoraPedido,PrecioPedido FROM pedido where proceso='Hecho'";
+            String consulta = "SELECT id,hora,precio FROM Pedidos where proceso='Hecho'";
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows==true)
@@ -176,7 +177,7 @@ namespace ProyectoIngegradoBackEnd
         }
         public void ActualizarProductos(string Id)
         {
-            String consulta = string.Format("Select nombre,descripcion,cantidad from articulospedido where IdPedido ='{0}'", Id);
+            String consulta = string.Format("Select nombre,descripcion,cantidad from articulospedido inner join Articulos on articulospedido.idarticulo= Articulos.id where idpedido ='{0}'", Id);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows == true)
@@ -204,7 +205,7 @@ namespace ProyectoIngegradoBackEnd
             ConexionBD.AbrirConexion();
             string email = dataGridView5.SelectedRows[0].Cells[4].Value.ToString();
             string Idstr = dataGridView5.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("select correo from reservamesa where id ='{0}'", Idstr);
+            string consulta = string.Format("select correo from ReservaMesa where id ='{0}'", Idstr);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             reader.Read();
@@ -220,7 +221,7 @@ namespace ProyectoIngegradoBackEnd
             client.EnableSsl = true;
             client.Send(mail);
             MessageBox.Show("Email Enviado");
-            string consulta2 = string.Format("delete from reservamesa where id ='{0}'", Idstr);
+            string consulta2 = string.Format("delete from ReservaMesa where id ='{0}'", Idstr);
             MySqlCommand comando2 = new MySqlCommand(consulta2, ConexionBD.Conexion);
             comando2.ExecuteNonQuery();
             dataGridView5.Rows.Clear();
@@ -246,7 +247,7 @@ namespace ProyectoIngegradoBackEnd
         {
             ConexionBD.AbrirConexion();
             string Id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("Update pedido set proceso='Haciendo' where IdPedido ='{0}'", Id);
+            string consulta = string.Format("Update Pedidos set proceso='Haciendo' where id ='{0}'", Id);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.ExecuteNonQuery();
             dataGridView1.Rows.Clear();
@@ -262,7 +263,7 @@ namespace ProyectoIngegradoBackEnd
         {
             ConexionBD.AbrirConexion();
             string Id = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("Update pedido set proceso='Hecho' where IdPedido ='{0}'", Id);
+            string consulta = string.Format("Update Pedidos set proceso='Hecho' where id ='{0}'", Id);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.ExecuteNonQuery();
             dataGridView1.Rows.Clear();
@@ -278,7 +279,7 @@ namespace ProyectoIngegradoBackEnd
         {
             ConexionBD.AbrirConexion();
             string Id = dataGridView3.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("Update pedido set proceso='Haciendo' where IdPedido ='{0}'", Id);
+            string consulta = string.Format("Update Pedidos set proceso='Haciendo' where id ='{0}'", Id);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.ExecuteNonQuery();
             dataGridView1.Rows.Clear();
@@ -294,7 +295,7 @@ namespace ProyectoIngegradoBackEnd
         {
             ConexionBD.AbrirConexion();
             string Id = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            string consulta = string.Format("Update pedido set proceso='Por Hacer' where IdPedido ='{0}'", Id);
+            string consulta = string.Format("Update Pedidos set proceso='Por Hacer' where id ='{0}'", Id);
             MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
             comando.ExecuteNonQuery();
             dataGridView1.Rows.Clear();

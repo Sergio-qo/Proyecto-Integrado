@@ -26,7 +26,7 @@ namespace ProyectoIngegradoBackEnd
                         // Se define la cadena de conexión para la conexión.
                         string server = "server=127.0.0.1;";
                         string port = "port=3306;";
-                        string database = "database=proyectoint;";
+                        string database = "database=mydb;";
                         string usuario = "uid=root;";
                         string password = "pwd=;";
                         instancia.ConnectionString = server + port + database + usuario + password;

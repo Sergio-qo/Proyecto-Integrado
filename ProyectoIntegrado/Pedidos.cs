@@ -14,7 +14,9 @@ namespace ProyectoIntegrado
         //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
         private int cantidadPedidos;
+        private string proceso;
         private double precioPedido;
+        private string hora;
         private int cantidadArticulos = 0;
         private bool creado = false;
 
@@ -37,11 +39,15 @@ namespace ProyectoIntegrado
             this.id = 1;
             this.cantidadPedidos = cantidadPedidos;
             this.precioPedido = precioPedido;
+            this.proceso = "Por Hacer";
+            this.hora = DateTime.Now.ToString("HH:mm");
             //this.estado = "Por hacer";
         }
 
         public Pedidos()
         {
+            this.proceso = "Por Hacer";
+            this.hora = DateTime.Now.ToString("HH:mm");
             //if (existente)
             //{
             //    ConexionBBDD conex = new ConexionBBDD();
@@ -475,7 +481,7 @@ namespace ProyectoIntegrado
                     if (activo == false)
                     {
                         reader.Close();
-                        consulta = "insert into pedidos (activo) values(true)";
+                        consulta = string.Format("insert into pedidos (activo,proceso,hora) values(true,{0},{1})",this.proceso,this.hora);
                         comando = new MySqlCommand(consulta, conex.Conexion);
                         comando.ExecuteNonQuery();
                     }
@@ -483,7 +489,7 @@ namespace ProyectoIntegrado
                 else
                 {
                     reader.Close();
-                    consulta = "insert into pedidos (activo) values(true)";
+                    consulta = string.Format("insert into pedidos (activo,hora) values(true,'{0}')", this.hora);
                     comando = new MySqlCommand(consulta, conex.Conexion);
                     comando.ExecuteNonQuery();
                 }

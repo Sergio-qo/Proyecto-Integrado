@@ -51,7 +51,7 @@ namespace ProyectoIntegrado
                 MySqlCommand comando;
                 MySqlDataReader reader;
 
-                consulta = "SELECT hora, dia FROM reservamesa";
+                consulta = "SELECT hora, dia FROM ReservaMesa";
                 comando = new MySqlCommand(consulta, conexi.Conexion);
                 bool esta = false;
 
@@ -66,7 +66,7 @@ namespace ProyectoIntegrado
                 reader.Close();
                 if (esta == false)
                 {
-                    consulta = "INSERT INTO reservaMesa (id,dia,numComensales,nombre,apellidos,correo,hora) " +
+                    consulta = "INSERT INTO ReservaMesa (id,dia,numComensales,nombre,apellidos,correo,hora) " +
                                   "VALUES (@id,@dia,@num,@nom,@ape,@corr,@hor)";
 
                     comando = new MySqlCommand(consulta, conexi.Conexion);
