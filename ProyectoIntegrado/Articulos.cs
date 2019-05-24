@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrado
 {
-    class Articulos
+    public class Articulos
     {
         //private static int idst; //Hago un id estático que sera el que va incrementando
         private int id; //Este id cojerá el valor de idst cada vez que se cree un pedido
