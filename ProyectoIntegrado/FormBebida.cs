@@ -196,5 +196,13 @@ namespace ProyectoIntegrado
                 dataGridView2.Rows.Add(articulo.Nombre, articulo.Cantidad, articulo.Precio);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormPedidos formPedido = new FormPedidos();
+            formPedido.Show();
+
+            this.Dispose();
+        }
     }
 }
