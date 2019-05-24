@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace ProyectoIntegrado
 {
-    class Pedidos
+    public class Pedidos
     {
         //private List<Articulos> articulos = new List<Articulos>(); //Creo una lista de artículos
         //private static int idst; //Hago un id estático que sera el que va incrementando
@@ -247,8 +247,9 @@ namespace ProyectoIntegrado
             }
         }
 
-        public void HacerPedido()
+        public bool HacerPedido()
         {
+            bool hecho = true;
             //List<Articulos> articulos = new List<Articulos>();
             ConexionBBDD conexion = new ConexionBBDD();
             if (conexion.AbrirConexion())
@@ -262,6 +263,7 @@ namespace ProyectoIntegrado
             else
             {
                 MessageBox.Show("Error");
+                hecho = false;
             }
             //foreach (Articulos elem in articulos) //Este for rellena los los artículos que tiene el pedido en la base de datos
             //{
@@ -269,13 +271,14 @@ namespace ProyectoIntegrado
             //    comando = new MySqlCommand(consulta, conexion.Conexion);
             //    comando.ExecuteNonQuery();
             //}
-
+            return hecho;
 
         }
 
         //Elimina un artículo de la lista segun id
-        public void EliminarArticulo(string nombre)
+        public bool EliminarArticulo(string nombre)
         {
+            bool res = true;
             int idp = 0;
             double precio;
             ConexionBBDD conexion = new ConexionBBDD();
@@ -327,12 +330,14 @@ namespace ProyectoIntegrado
                 else
                 {
                     MessageBox.Show("No esta el artículo");
+                    res = false;
                 }
             }
             else
             {
                 MessageBox.Show("Error");
             }
+            return res;
 
 
             //ConexionBBDD conexion = new ConexionBBDD();
