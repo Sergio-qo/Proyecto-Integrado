@@ -481,7 +481,7 @@ namespace ProyectoIntegrado
                     if (activo == false)
                     {
                         reader.Close();
-                        consulta = string.Format("insert into pedidos (activo,proceso,hora) values(true,{0},{1})",this.proceso,this.hora);
+                        consulta = string.Format("insert into pedidos (activo,hora) values(true,'{0}')", this.hora);
                         comando = new MySqlCommand(consulta, conex.Conexion);
                         comando.ExecuteNonQuery();
                     }
