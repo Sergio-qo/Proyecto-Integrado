@@ -127,7 +127,7 @@
             // 
             this.dtCaducidadTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCaducidadTarjeta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCaducidadTarjeta.Location = new System.Drawing.Point(194, 23);
+            this.dtCaducidadTarjeta.Location = new System.Drawing.Point(194, 130);
             this.dtCaducidadTarjeta.Name = "dtCaducidadTarjeta";
             this.dtCaducidadTarjeta.Size = new System.Drawing.Size(140, 26);
             this.dtCaducidadTarjeta.TabIndex = 16;
@@ -145,7 +145,7 @@
             // txtApellidosReserva
             // 
             this.txtApellidosReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidosReserva.Location = new System.Drawing.Point(194, 130);
+            this.txtApellidosReserva.Location = new System.Drawing.Point(194, 22);
             this.txtApellidosReserva.Name = "txtApellidosReserva";
             this.txtApellidosReserva.Size = new System.Drawing.Size(140, 26);
             this.txtApellidosReserva.TabIndex = 14;
