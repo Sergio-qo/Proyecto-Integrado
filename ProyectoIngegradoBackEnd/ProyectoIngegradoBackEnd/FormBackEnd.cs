@@ -50,7 +50,7 @@ namespace ProyectoIngegradoBackEnd
 
         private void aceptarMesa_Click(object sender, EventArgs e)
         {
-
+            ConexionBD.CerrarConexion();
             ConexionBD.AbrirConexion();
             string email = dataGridView5.SelectedRows[0].Cells[4].Value.ToString();
             string Idstr = dataGridView5.SelectedRows[0].Cells[0].Value.ToString();
@@ -202,6 +202,7 @@ namespace ProyectoIngegradoBackEnd
 
         private void rechazarMesa_Click(object sender, EventArgs e)
         {
+            ConexionBD.CerrarConexion();
             ConexionBD.AbrirConexion();
             string email = dataGridView5.SelectedRows[0].Cells[4].Value.ToString();
             string Idstr = dataGridView5.SelectedRows[0].Cells[0].Value.ToString();
